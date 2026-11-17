@@ -1,44 +1,31 @@
-# ERA5 article assets and numerical provenance
+# ERA5 maps: history and resolution
 
-Archive-asset selection: **CONFIRMED BY THE AUTHOR**. The archive must contain
-exactly the two ERA5 PDF/PNG pairs used in the article. Those accepted files are
-retained in `publication/figures/main/era5_hellinger_maps.*` and `era5_bias_maps.*`.
-The source revision and four SHA-256 identities are recorded in
-`data/metadata/era5_asset_provenance.json` and checked by the publication tests.
+Status: **resolved** in manuscript revision `a19496f` (MV_graphcut_overleaf).
 
-Regenerated figures match 14/17 published pairs pixel for pixel; Fig. 5 differs
-only by anti-aliasing; the two ERA5 pairs differ for the reason below. This asset
-selection does not authorize replacing the corrected arrays or claim that they
-produce the archived ERA5 figures. Their historical cohort difference remains
-explicit below.
+Until Overleaf revision `f22ca16`, the manuscript's ERA5 maps (Figs. 1–2) were
+rendered from research caches computed before the October 2026 data correction,
+while Tables 2–3, Fig. 6, Fig. A3 and all quoted values came from the corrected
+cohort. The maps were then re-rendered with the same renderers
+(`figures/era5_distributional.R`, `figures/era5_mean_bias.R`) from the corrected
+arrays in `results/era5/`. Page size, layout and captions are unchanged.
 
-Both accepted ERA5 PDF rasters, every embedded image and their PNG previews match
-renders from the older research caches exactly. With the corrected October
-publication inputs, dimensions and text positions agree, but numerical fields
-and pixels differ. The full Hellinger GC mean is 0.188669922715227 for the older
-cache versus 0.189363224696502 for the corrected cohort. D-MMM is
-0.247142215813498 versus 0.247919686851482. Maximum cell differences are
-0.449670338510979 in GC Hellinger distance, 8.2978668820341 K in GC temperature
-bias and 8.980547686517115 mm/day in GC precipitation bias.
+Differences between the superseded and current maps (area-weighted):
 
-Evidence: `data/metadata/era5_field_comparison.csv`, `era5_bias_comparison.csv`
-and `era5_asset_provenance.json` identify exact arrays, sources and differences.
-The accepted graphics trace to the older research cache bytes, not a newly
-inferred producing workspace commit. The corrected workspace identity remains
-in SCIENTIFIC_PROVENANCE.md. Underlying producing lineage is qualified.
+| Field | Superseded | Current |
+| --- | --- | --- |
+| D-MMM Hellinger distance (mean) | 0.24714 | 0.24792 |
+| GC Hellinger distance (mean) | 0.18867 | 0.18936 |
+| MMM temperature MAE | 0.868 K | 0.866 K |
+| GC temperature MAE | 0.611 K | 0.604 K |
+| GC precipitation MAE | 0.481 mm/day | 0.481 mm/day |
 
-Diagnosis: numerical arrays and historical workspace/cohort differ (B/C), with
-model labelling differences evidenced by the historical review (E). The review
-records 3,460 changed selected labels at lambda=0.125 and 20 versus 21 selected
-models. Preprocessing/support effects cannot be isolated from these derived
-fields alone (D remains unproven); this is not merely cosmetic (A). No new climate
-experiment or label optimisation was run. A3 matches the corrected values.
+Baseline maps are essentially unchanged (spatial correlation ≥ 0.999). The GC
+maps differ in patches where a different model was selected: 3,460 changed labels
+at λ = 0.125 and 21 instead of 20 selected models. Cells changed by up to 0.45 in
+Hellinger distance, 8.3 K and 9.0 mm/day. Regional means in every region named
+in the text (tropical South America, Andes, East Africa, Maritime Continent, High
+Asia, ITCZ) differ by at most 0.002 in Hellinger distance, so the qualitative
+description in the article holds for both versions.
 
-Author decision: preserve the accepted article graphics in the prospective
-Zenodo archive. Corrected-cohort renders remain separate generated outputs;
-reproduction never overwrites the accepted assets. No Zenodo deposit is created
-by this decision. Any future numerical-cohort reconciliation or manuscript change
-is a separate scientific review, not an implicit consequence of archive selection.
-
-Neither accepted graphics nor corrected scientific arrays have been replaced.
-Rendering all 17 figure families does not by itself establish 17/17 agreement.
+Evidence: `data/metadata/era5_asset_provenance.json` (current and superseded asset
+hashes and cache identities), `era5_field_comparison.csv`, `era5_bias_comparison.csv`.

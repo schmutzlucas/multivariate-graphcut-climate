@@ -68,9 +68,9 @@ class PublicationInputs(unittest.TestCase):
         self.assertTrue(any("pme_reference_improvement.pdf" in r["publication_pdf"] for r in rows))
         self.assertFalse(any("boxplots_only" in r["publication_pdf"] for r in rows))
 
-    def test_author_selected_era5_article_assets(self):
+    def test_era5_article_assets(self):
         ledger = json.loads((ROOT / "data/metadata/era5_asset_provenance.json").read_text(encoding="utf-8"))
-        assets = ledger["archive_policy"]["assets"]
+        assets = ledger["current_assets"]["assets"]
         self.assertEqual(len(assets), 4)
         expected = {f"publication/figures/main/{stem}.{ext}" for stem in
                     ("era5_hellinger_maps", "era5_bias_maps") for ext in ("pdf", "png")}

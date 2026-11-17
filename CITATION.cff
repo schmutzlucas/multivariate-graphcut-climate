@@ -8,7 +8,9 @@ authors:
     given-names: Lucas
     affiliation: "University of Lausanne, Switzerland"
 repository-code: "https://github.com/schmutzlucas/multivariate-graphcut-climate"
-license: MIT
+license:
+  - MIT
+  - CC-BY-4.0
 keywords:
   - climate-model ensembles
   - multivariate distributions
@@ -22,7 +24,8 @@ abstract: >-
   all article figures and tables from included results, demonstrates the
   longitude-periodic graph-cut solver, and provides entry points for the full
   ERA5 and perfect-model experiments, which require external prepared
-  ERA5/CMIP6 data. The external graph-cut solver and climate data keep their
+  ERA5/CMIP6 data. Code is MIT-licensed; results, figures and documentation
+  are CC BY 4.0. The external graph-cut solver and climate data keep their
   own terms.
 references:
   - type: article

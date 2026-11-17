@@ -18,7 +18,7 @@ means *unknown*, never *verified*.
 | `data/metadata/`, `data/*.json` | source identities, prepared-input checksums, cohort identities, ERA5 cohort comparison | provenance |
 | `tests/fixtures/era5_production_patch.rds` | 4×2-cell crop of production PMFs | regression tests |
 
-Every numerical asset is checksummed in a directory `manifest.csv`,
+Licence: CC BY 4.0 (`LICENSE-DATA`). Every numerical asset is checksummed in a directory `manifest.csv`,
 `publication/SHA256SUMS` and `data/DATA_MANIFEST.csv`. CSV values keep full
 double precision. The RDS results and supports are **metadata-redacted copies**:
 private storage paths were removed, and scientific arrays, coordinates, labels
@@ -29,8 +29,7 @@ research originals. `data/cohort_provenance.json` and
 Numerical cohort: all included results come from the **corrected October 2026
 cohort** (calendar-complete inputs, non-negative precipitation QC, UTC-day ERA5
 precipitation, exact-scope supports). That cohort produced the numbers in the
-final manuscript. The only article items not rendered from it are the published
-ERA5 maps (Figs. 1–2); see [KNOWN_ISSUES.md](KNOWN_ISSUES.md).
+manuscript. Every article figure, table and quoted value is rendered from it.
 
 ## 2. External public source collections (`2_external_public`)
 
@@ -64,8 +63,6 @@ has not yet decided on an access route.
 - ACCESS-CM2 (historical v20191108 vs advertised v20191118) and BCC-CSM2-MR
   (historical r1i1p1f1 replacement history) source-version qualifications.
 - Incomplete original ERA5 CDS request and aggregation receipts.
-- The two ERA5 article figure pairs, archived as published but rendered from the
-  older cohort.
 
 ## Research-source identities
 
@@ -78,5 +75,5 @@ complete development history. It is cited by revision for provenance only:
 | spatial-regularisation cohort | `89f0d0ed14963775cec4b12c628d36c0c38f862b` |
 | A3 λ trade-off metrics | `3f8cce7a3da597bfe34b938ca51669404c9330f3` |
 | final plotting code (`paper1-submission`) | `0671145c239d6b8ee9e53760bef46ac4d569614b` |
-| manuscript verified against (`MV_graphcut_overleaf`) | `f22ca16a5bf98e13d325e332f3d3fbbf7a05c3e9` |
+| manuscript verified against (`MV_graphcut_overleaf`) | `a19496fb5ce37f967c974a30b2eb9053ce97be62` |
 | native solver (`schmutzlucas/gcoWrapR`, public) | `6b655d5feff7e7912d2ac0a7de95d0f8edd6d434` |

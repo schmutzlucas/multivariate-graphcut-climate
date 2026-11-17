@@ -6,27 +6,18 @@ can be reproduced or interpreted. It separates deficiencies of the **original**
 whose numbers are reported in the final manuscript and included here.
 Nothing below changes a published number.
 
-## 1. Article ERA5 maps (Figs. 1–2) come from an older numerical cohort
+## 1. ERA5 maps (Figs. 1–2): resolved
 
-| Item | Numerical source | Status |
-| --- | --- | --- |
-| Tables 2–3, Fig. 6 (λ maps), Fig. A3, ERA5 text values | corrected cohort (`results/era5`, `results/spatial_regularisation`) | reproduced exactly from included data |
-| Figs. 1–2 (ERA5 Hellinger and bias maps) | older cohort, pre-correction research caches | archived exactly as published; **not** reproducible from the included corrected arrays |
-
-The two figure pairs in `publication/figures/main/era5_*` are byte-identical to
-the manuscript assets. At the author's request, the archive keeps them exactly as
-published. Rendering the included corrected arrays with the same renderer gives
-the same layout but different values. Area means differ only in the fourth
-decimal, so the tabulated three-decimal values are unaffected (GC 0.18867 vs
-0.18936; D-MMM 0.24714 vs 0.24792). Individual cells differ by up to 0.45 in GC
-Hellinger distance, 8.3 K in temperature bias and 9.0 mm/day in precipitation
-bias. Historical review records 3,460 changed labels at λ=0.125 and 20 versus 21
-selected models. Full evidence: [ERA5_RECONCILIATION.md](ERA5_RECONCILIATION.md),
-`data/metadata/era5_field_comparison.csv`, `era5_bias_comparison.csv` and
-`era5_asset_provenance.json`.
-
-`tools/reproduce.R` renders the corrected-cohort versions under
-`$MVGC_OUTPUT_ROOT/figures/`. It never overwrites the archived article assets.
+All article figures, tables and quoted values now come from the same corrected
+cohort. Earlier manuscript versions (up to Overleaf `f22ca16`) showed ERA5 maps
+rendered from pre-correction research caches. Those maps were replaced in the
+manuscript by renders of the included corrected arrays (Overleaf `a19496f`);
+the archived assets are byte-identical to them. The superseded figures are not
+in this repository. Their identities and the cell-wise differences (area means
+change only in the fourth decimal; GC labels changed in a few per cent of the
+globe) are kept in `data/metadata/era5_asset_provenance.json`,
+`era5_field_comparison.csv` and `era5_bias_comparison.csv`. All text and table
+values were checked and did not need to change.
 
 ## 2. Histogram supports pool evaluation-period information
 
@@ -78,10 +69,9 @@ is recorded in `data/metadata/source_manifest.csv` and `data/input_provenance.js
 
 ## 5. Reproduction scope
 
-- **Level 1** (included data): all 17 figure pairs and five tables render. 14 pairs
+- **Level 1** (included data): all 17 figure pairs and five tables render. 16 pairs
   are pixel-identical to the article. Fig. 5 differs only by anti-aliasing in 54
-  pixels, with identical plotted data. Figs. 1–2 differ (issue 1). Table numbers
-  equal the manuscript row by row.
+  pixels, with identical plotted data. Table numbers equal the manuscript row by row.
 - **Level 2** (synthetic demo and tests with the pinned solver): verified locally
   on Windows/R 4.4.3. A Linux CI job installs the solver from its public repository.
 - **Level 3** (full experiments): requires the ~803 GB prepared collection, which
@@ -103,8 +93,8 @@ is recorded in `data/metadata/source_manifest.csv` and `data/input_provenance.js
 
 ## 7. Licensing and third-party software
 
-- Original author-owned code and documentation: MIT (see `LICENSE`, scope in
-  `THIRD_PARTY_NOTICES.md`).
+- Code: MIT (`LICENSE`). Results, data records, figures and documentation:
+  CC BY 4.0 (`LICENSE-DATA`). Scope in `THIRD_PARTY_NOTICES.md`.
 - The longitude-periodic GCO solver (`schmutzlucas/gcoWrapR@6b655d5`) is **not**
   included. Its bundled GCO v3 notice imposes research-only use and redistribution
   conditions, while its wrapper metadata declares GPL (>=2). This repository only

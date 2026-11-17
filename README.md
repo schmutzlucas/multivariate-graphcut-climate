@@ -104,16 +104,13 @@ checksums are verified first, and the archived article assets in `publication/`
 are never overwritten. Single families can be run directly, e.g.
 `Rscript --vanilla figures/pme_overlays.R` or `Rscript --vanilla tables/render.R`.
 
-Verified against the final manuscript (Windows, R 4.4.3):
+Verified against the manuscript (Overleaf revision `a19496f`; Windows, R 4.4.3):
 
 - **All five tables and the quoted in-text values** (PME pooled gains, A3 values)
   are identical to the manuscript.
-- **14 of 17 figure pairs** (Figs. 3, 4, 6, A1, A2a–d, A3, S1–S5) are
-  pixel-identical to the published assets.
+- **16 of 17 figure pairs** (all except Fig. 5) are pixel-identical to the
+  published assets.
 - **Fig. 5** has identical data. 54 anti-aliased pixels differ by ≤ 2/765 intensity.
-- **Figs. 1–2 (ERA5 maps)** are archived exactly as published, but the published
-  versions were rendered from an older numerical cohort. The included corrected
-  arrays produce slightly different maps; see [docs/KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md).
 
 Other systems and graphics library versions may change PDF bytes or anti-aliasing
 without changing the plotted numbers.
@@ -179,9 +176,8 @@ Exact model, member and version identities are in `data/metadata/source_manifest
 
 ## Limitations and known issues
 
-See [docs/KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md). In brief: the published ERA5
-maps predate the corrected cohort, and the histogram supports pool
-evaluation-period data. Some upstream source versions remain qualified. Full
+See [docs/KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md). In brief: the histogram
+supports pool evaluation-period data. Some upstream source versions remain qualified. Full
 experiments require non-archived prepared data. LDR scores are distributional
 diagnostics, not validation of physical extremes.
 
@@ -195,9 +191,13 @@ requests citation of Boykov, Veksler and Zabih (2001), Kolmogorov and Zabih
 
 ## Licence
 
-Original code and documentation in this repository: MIT ([LICENSE](LICENSE)).
-The MIT licence does not cover the external graph-cut solver, R/CRAN
-dependencies, or ERA5/CMIP6 data, which keep their own terms. See
+- **Code** (`R/`, `src/`, `experiments/`, `figures/*.R`, `tables/`, `tests/`,
+  `tools/`, `config/`): MIT, see [LICENSE](LICENSE).
+- **Results, data records, figures and documentation** (`results/`, `data/`,
+  `publication/`, `docs/`, Markdown files): CC BY 4.0, see [LICENSE-DATA](LICENSE-DATA).
+
+Neither licence covers the external graph-cut solver, R/CRAN dependencies, or the
+ERA5/CMIP6 source data, which keep their own terms. See
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `config/dependency_licences.csv`.
 
 Contact: Lucas Schmutz, University of Lausanne (lucas.schmutz@unil.ch).

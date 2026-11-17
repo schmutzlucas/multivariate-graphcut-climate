@@ -87,10 +87,6 @@ rows += [
     dict(category="4_verification_pending", asset="ERA5 original CDS request receipts",
          description="Incomplete hourly-month request/aggregation receipts", bytes="", sha256="",
          provenance="data/input_provenance.json", access="", status="cannot be recovered; documented"),
-    dict(category="4_verification_pending", asset="publication/figures/main/era5_hellinger_maps.* and era5_bias_maps.*",
-         description="Article figure assets from the older numerical cohort", bytes="", sha256="",
-         provenance="data/metadata/era5_asset_provenance.json", access="this repository",
-         status="archived as published by author decision; not reproducible from included arrays"),
 ]
 with OUT.open("w", encoding="utf-8", newline="") as stream:
     writer = csv.DictWriter(stream, fieldnames=FIELDS, lineterminator="\n")

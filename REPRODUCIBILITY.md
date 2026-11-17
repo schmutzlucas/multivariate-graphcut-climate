@@ -27,12 +27,12 @@ figures. Level 1 lays out these numbers; it does not re-estimate densities or
 rerun the optimiser. PME tables derive from all 450 reference/period/diagnostic
 score pairs. The histogram figure derives from saved cellwise correlations.
 
-### Agreement with the final manuscript (Overleaf `f22ca16`)
+### Agreement with the manuscript (Overleaf `a19496f`)
 
 | Check | Result |
 | --- | --- |
 | archived figure assets vs manuscript files (34 files) | byte-identical |
-| regenerated figures vs published (pixel comparison of PNG and 150-dpi PDF rasters) | 14/17 identical; Fig. 5 differs in 54 anti-aliased pixels (≤ 2/765), same data; Figs. 1–2 differ (older cohort, see below) |
+| regenerated figures vs published (pixel comparison of PNG and 150-dpi PDF rasters) | 16/17 identical; Fig. 5 differs in 54 anti-aliased pixels (≤ 2/765), same data |
 | generated table values vs manuscript tables (Tables 1–3, B1–B2) | identical row by row |
 | in-text values (PME pooled gains 25.9/25.7/24.8/20.5/13.5 %; A3 Hellinger/fragmentation values; D-MMM 0.24792) | identical |
 
@@ -42,11 +42,8 @@ graphics library versions can change anti-aliasing and fonts.
 
 ### ERA5 maps (Figs. 1–2)
 
-The published ERA5 maps were rendered from the research caches that preceded the
-October 2026 data correction. The tables and text use the corrected cohort. At the
-author's request, the archive keeps the published figure files unchanged. Running
-the renderers on the included corrected arrays yields maps with the same layout
-and slightly different values. Details: [docs/KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md),
+Earlier manuscript versions showed ERA5 maps from pre-correction data. They were
+replaced by renders of the included corrected arrays; see
 [docs/ERA5_RECONCILIATION.md](docs/ERA5_RECONCILIATION.md).
 
 ## Level 2

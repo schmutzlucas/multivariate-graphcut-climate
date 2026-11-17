@@ -6,7 +6,7 @@ Scientific modules and entry points originate in
 `paper1-submission` `0671145c239d6b8ee9e53760bef46ac4d569614b`. This public
 repository has its own history and omits internal development records. The
 manuscript verified against is `schmutzlucas/MV_graphcut_overleaf`
-`f22ca16a5bf98e13d325e332f3d3fbbf7a05c3e9`, including the separate supplement.
+`a19496fb5ce37f967c974a30b2eb9053ce97be62`, including the separate supplement.
 Both research repositories are private and are cited for provenance only.
 
 The accepted original computations used different frozen source records:
@@ -41,8 +41,8 @@ definitions were retained under descriptive module names; historical repair
 orchestration and investigation scripts are excluded. Plotters retain accepted
 layout/numerical data, with only the connected Fig. 5 published.
 
-The compact workflow renders 17 figure pairs and five tables; the published ERA5
-maps predate the corrected cohort (see ERA5_RECONCILIATION.md). It does not establish
+The compact workflow renders 17 figure pairs and five tables, all from the
+corrected cohort (ERA5 map history in ERA5_RECONCILIATION.md). It does not establish
 new raw-climate/PMF/global-optimizer execution. Original production source
 identity and source-to-input acquisition remain qualified where evidence is
 incomplete. No claim of universal bit-identical solver labels across platforms
@@ -64,9 +64,9 @@ with the archive; it is distinct from every source revision.
 
 ## Manuscript/cohort consistency
 
-Tables, in-text values, Fig. 6 and Fig. A3 agree with the corrected cohort. The
-published ERA5 maps (Figs. 1–2) were rendered from older research caches. The
-author chose to archive them unchanged. See KNOWN_ISSUES.md, section 1.
+All figures, tables and quoted values of manuscript revision `a19496f` come from
+the corrected cohort. Earlier ERA5 maps from pre-correction caches were replaced;
+see ERA5_RECONCILIATION.md.
 
 ## Histogram supports
 

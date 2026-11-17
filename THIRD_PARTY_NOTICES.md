@@ -44,12 +44,14 @@ ERA5 and CMIP6 source collections and exact source identities are listed in
 provider/model's actual access and licence terms before acquiring or redistributing
 data. BCC/ACCESS source-version qualifications remain unresolved and explicit.
 
-## Scope of the MIT licence
+## Scope of the repository licences
 
-MIT covers original author-owned code and documentation in this repository. It
-is not a licence for GCO, external climate files or provider material. The
-compact numerical results and figures are derived from ERA5/CMIP6 data; users
-should also acknowledge and comply with the source collections' terms.
+MIT (`LICENSE`) covers the original source code. CC BY 4.0 (`LICENSE-DATA`)
+covers the compact results, data records, figures and documentation. Neither is
+a licence for GCO, R/CRAN packages, or ERA5/CMIP6 source data. The compact results
+and figures are derived from ERA5 (Copernicus Climate Change Service) and CMIP6
+model output; reuse should also acknowledge those sources and follow their terms,
+including any model-specific CMIP6 licence conditions.
 
 Redistribution permission for the cylindrical GCO modification has not been
 sought from the GCO rights holders. This repository avoids the question by not

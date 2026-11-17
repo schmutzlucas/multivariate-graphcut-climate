@@ -2,7 +2,7 @@
 
 The selected article is **Beyond mean fields: a multivariate graph-cut approach
 to climate-model combination**, manuscript revision
-`f22ca16a5bf98e13d325e332f3d3fbbf7a05c3e9`, including its separate Supplement.
+`a19496fb5ce37f967c974a30b2eb9053ce97be62`, including its separate Supplement.
 
 | Article component | Generation entry point | Compact numerical input |
 | --- | --- | --- |
@@ -39,4 +39,3 @@ distance is at lambda=0.025; the selected configuration remains 0.125.
 All mapped figure bytes are identical to this manuscript revision. The complete
 machine-readable mapping, including LaTeX labels, inputs, configuration,
 verification status and limitations, is `publication/article_inventory.csv`.
-The published ERA5 maps predate the corrected cohort; see KNOWN_ISSUES.md.
