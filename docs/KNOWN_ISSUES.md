@@ -69,9 +69,8 @@ is recorded in `data/metadata/source_manifest.csv` and `data/input_provenance.js
 
 ## 5. Reproduction scope
 
-- **Level 1** (included data): all 17 figure pairs and five tables render. 16 pairs
-  are pixel-identical to the article. Fig. 5 differs only by anti-aliasing in 54
-  pixels, with identical plotted data. Table numbers equal the manuscript row by row.
+- **Level 1** (included data): all 17 figure pairs and five tables render, pixel-identical
+  to the article figures; table numbers equal the manuscript row by row.
 - **Level 2** (synthetic demo and tests with the pinned solver): verified locally
   on Windows/R 4.4.3. A Linux CI job installs the solver from its public repository.
 - **Level 3** (full experiments): requires the ~803 GB prepared collection, which

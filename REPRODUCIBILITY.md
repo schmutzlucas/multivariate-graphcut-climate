@@ -27,12 +27,12 @@ figures. Level 1 lays out these numbers; it does not re-estimate densities or
 rerun the optimiser. PME tables derive from all 450 reference/period/diagnostic
 score pairs. The histogram figure derives from saved cellwise correlations.
 
-### Agreement with the manuscript (Overleaf `a19496f`)
+### Agreement with the manuscript (Overleaf `02e1166`)
 
 | Check | Result |
 | --- | --- |
 | archived figure assets vs manuscript files (34 files) | byte-identical |
-| regenerated figures vs published (pixel comparison of PNG and 150-dpi PDF rasters) | 16/17 identical; Fig. 5 differs in 54 anti-aliased pixels (≤ 2/765), same data |
+| regenerated figures vs published (pixel comparison of PNG and 150-dpi PDF rasters) | 17/17 identical |
 | generated table values vs manuscript tables (Tables 1–3, B1–B2) | identical row by row |
 | in-text values (PME pooled gains 25.9/25.7/24.8/20.5/13.5 %; A3 Hellinger/fragmentation values; D-MMM 0.24792) | identical |
 

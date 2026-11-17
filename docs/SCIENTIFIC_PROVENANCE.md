@@ -6,7 +6,7 @@ Scientific modules and entry points originate in
 `paper1-submission` `0671145c239d6b8ee9e53760bef46ac4d569614b`. This public
 repository has its own history and omits internal development records. The
 manuscript verified against is `schmutzlucas/MV_graphcut_overleaf`
-`a19496fb5ce37f967c974a30b2eb9053ce97be62`, including the separate supplement.
+`02e11666e50bfde8c6976c1a0abd654caa3ff2b8`, including the separate supplement.
 Both research repositories are private and are cited for provenance only.
 
 The accepted original computations used different frozen source records:
@@ -64,7 +64,7 @@ with the archive; it is distinct from every source revision.
 
 ## Manuscript/cohort consistency
 
-All figures, tables and quoted values of manuscript revision `a19496f` come from
+All figures, tables and quoted values of manuscript revision `02e1166` come from
 the corrected cohort. Earlier ERA5 maps from pre-correction caches were replaced;
 see ERA5_RECONCILIATION.md.
 

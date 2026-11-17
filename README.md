@@ -104,13 +104,12 @@ checksums are verified first, and the archived article assets in `publication/`
 are never overwritten. Single families can be run directly, e.g.
 `Rscript --vanilla figures/pme_overlays.R` or `Rscript --vanilla tables/render.R`.
 
-Verified against the manuscript (Overleaf revision `a19496f`; Windows, R 4.4.3):
+Verified against the manuscript (Overleaf revision `02e1166`; Windows, R 4.4.3):
 
 - **All five tables and the quoted in-text values** (PME pooled gains, A3 values)
   are identical to the manuscript.
-- **16 of 17 figure pairs** (all except Fig. 5) are pixel-identical to the
-  published assets.
-- **Fig. 5** has identical data. 54 anti-aliased pixels differ by ≤ 2/765 intensity.
+- **All 17 figure pairs** regenerate pixel-identical to the figures in the
+  manuscript; the manuscript's figure files are the repository's renders.
 
 Other systems and graphics library versions may change PDF bytes or anti-aliasing
 without changing the plotted numbers.

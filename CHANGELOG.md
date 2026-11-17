@@ -10,8 +10,8 @@ multivariate graph-cut approach to climate-model combination*.
 - Compact numerical results of the corrected October 2026 cohort; all tables and
   in-text values equal the manuscript.
 - 17 figure PDF/PNG pairs and five table fragments, byte-identical to the
-  manuscript assets (Overleaf `a19496f`); ERA5 Figs. 1–2 re-rendered from the
-  corrected cohort in the manuscript.
+  manuscript assets (Overleaf `02e1166`); ERA5 Figs. 1–2 and Fig. 5 in the
+  manuscript replaced by renders from this repository.
 - Licences: MIT for code, CC BY 4.0 for results, data records, figures and docs.
 - Exact production histogram supports (path-redacted copies).
 - Machine-readable article inventory and public data manifest.

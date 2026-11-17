@@ -2,7 +2,7 @@
 
 The selected article is **Beyond mean fields: a multivariate graph-cut approach
 to climate-model combination**, manuscript revision
-`a19496fb5ce37f967c974a30b2eb9053ce97be62`, including its separate Supplement.
+`02e11666e50bfde8c6976c1a0abd654caa3ff2b8`, including its separate Supplement.
 
 | Article component | Generation entry point | Compact numerical input |
 | --- | --- | --- |

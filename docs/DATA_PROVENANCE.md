@@ -75,5 +75,5 @@ complete development history. It is cited by revision for provenance only:
 | spatial-regularisation cohort | `89f0d0ed14963775cec4b12c628d36c0c38f862b` |
 | A3 λ trade-off metrics | `3f8cce7a3da597bfe34b938ca51669404c9330f3` |
 | final plotting code (`paper1-submission`) | `0671145c239d6b8ee9e53760bef46ac4d569614b` |
-| manuscript verified against (`MV_graphcut_overleaf`) | `a19496fb5ce37f967c974a30b2eb9053ce97be62` |
+| manuscript verified against (`MV_graphcut_overleaf`) | `02e11666e50bfde8c6976c1a0abd654caa3ff2b8` |
 | native solver (`schmutzlucas/gcoWrapR`, public) | `6b655d5feff7e7912d2ac0a7de95d0f8edd6d434` |
