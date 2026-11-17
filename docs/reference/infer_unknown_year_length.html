@@ -1,0 +1,53 @@
+<!DOCTYPE html><html><head><title>R: Estimate a fixed year length for an unsupported calendar</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>infer_unknown_year_length</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Estimate a fixed year length for an unsupported calendar</h2>
+
+<h3>Description</h3>
+
+<p>This legacy fallback divides the number of records by the inclusive filename
+year span and rounds to an integer. It cannot establish that individual dates
+or complete years are actually present; use the independent CF audit for that.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>infer_unknown_year_length(parsed_dates, n_time)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="parsed_dates">parsed_dates</code></td>
+<td>
+<p>List with integer <code>start_year</code> and <code>end_year</code>.</p>
+</td></tr>
+<tr><td><code id="n_time">n_time</code></td>
+<td>
+<p>Number of time records in the file.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Estimated year length, restricted to 200 through 500 days.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>infer_unknown_year_length(list(start_year=2000L, end_year=2001L), 720L)
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

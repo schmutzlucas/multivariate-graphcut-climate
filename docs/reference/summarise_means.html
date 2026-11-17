@@ -1,0 +1,42 @@
+<!DOCTYPE html><html><head><title>R: Summarise method-wise area-weighted means of stacked PME...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>summarise_means</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Summarise method-wise area-weighted means of stacked PME density samples</h2>
+
+<h3>Description</h3>
+
+<p>Summarise method-wise area-weighted means of stacked PME density samples
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>summarise_means(df_period)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="df_period">df_period</code></td>
+<td>
+<p>Data frame with method, value and weight columns.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Tibble with one row per method and weighted_mean, computed over finite
+value/weight pairs. Requires dplyr; does not compute reference-wise improvements.
+</p>
+
+</main>
+
+</div>
+</body></html>

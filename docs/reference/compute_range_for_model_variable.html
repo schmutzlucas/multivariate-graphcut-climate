@@ -1,0 +1,107 @@
+<!DOCTYPE html><html><head><title>R: Stream one model-variable's experiment-scoped support extrema</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>compute_range_for_model_variable</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Stream one model-variable's experiment-scoped support extrema</h2>
+
+<h3>Description</h3>
+
+<p>Stream one model-variable's experiment-scoped support extrema
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>compute_range_for_model_variable(
+  model,
+  variable,
+  data_dir,
+  years,
+  lon,
+  lat,
+  strict_time_checks,
+  season_selection_mode,
+  time_decode_mode,
+  requested_year_policy,
+  time_chunk_size,
+  read_mode,
+  max_full_read_gb,
+  slab_time_count
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="model">model</code></td>
+<td>
+<p>Single prepared model identifier, resolved through registry or data_dir.</p>
+</td></tr>
+<tr><td><code id="variable">variable</code></td>
+<td>
+<p>Prepared variable name; pr extrema use log1p scale.</p>
+</td></tr>
+<tr><td><code id="data_dir">data_dir</code></td>
+<td>
+<p>Prepared input hierarchy root when no input registry is active.</p>
+</td></tr>
+<tr><td><code id="years">years</code></td>
+<td>
+<p>Exact requested year union, not automatically the file's entire coverage.</p>
+</td></tr>
+<tr><td><code id="lon">lon</code>, <code id="lat">lat</code></td>
+<td>
+<p>Requested longitude/latitude vectors in desired output order.</p>
+</td></tr>
+<tr><td><code id="strict_time_checks">strict_time_checks</code></td>
+<td>
+<p>Whether to enforce legacy daily-mapping assumptions.</p>
+</td></tr>
+<tr><td><code id="season_selection_mode">season_selection_mode</code></td>
+<td>
+<p>Auto, exact_month_day, or fractional full-year selection.</p>
+</td></tr>
+<tr><td><code id="time_decode_mode">time_decode_mode</code></td>
+<td>
+<p>Auto, helpers_cf, or empirical decoding.</p>
+</td></tr>
+<tr><td><code id="requested_year_policy">requested_year_policy</code></td>
+<td>
+<p>Warn or stop for unavailable/incomplete years.</p>
+</td></tr>
+<tr><td><code id="time_chunk_size">time_chunk_size</code></td>
+<td>
+<p>Maximum records per chunk in chunked mode.</p>
+</td></tr>
+<tr><td><code id="read_mode">read_mode</code></td>
+<td>
+<p>Full, slab, chunked, or auto. Auto compares selected-cube size
+with max_full_read_gb, choosing full or slab.</p>
+</td></tr>
+<tr><td><code id="max_full_read_gb">max_full_read_gb</code></td>
+<td>
+<p>Positive GiB threshold for automatic full-cube reading.</p>
+</td></tr>
+<tr><td><code id="slab_time_count">slab_time_count</code></td>
+<td>
+<p>Maximum records per slab in slab mode.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List with lon x lat min/max matrices and input/calendar/read diagnostics.
+Opens/closes its own file and omits missing samples; this legacy helper alone
+does not certify corrected-input provenance, complete dates or physical units.
+</p>
+
+</main>
+
+</div>
+</body></html>

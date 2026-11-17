@@ -1,0 +1,48 @@
+<!DOCTYPE html><html><head><title>R: Extract calibration/evaluation score maps for...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>compute_gc_selected_maps</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Extract calibration/evaluation score maps for graph-cut-selected models</h2>
+
+<h3>Description</h3>
+
+<p>Extract calibration/evaluation score maps for graph-cut-selected models
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>compute_gc_selected_maps(gc_result, h_dist_pres, h_dist_fut, partial_fut)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="gc_result">gc_result</code></td>
+<td>
+<p>Solver list with integer-valued one-based label_attribution matrix.</p>
+</td></tr>
+<tr><td><code id="h_dist_pres">h_dist_pres</code>, <code id="h_dist_fut">h_dist_fut</code>, <code id="partial_fut">partial_fut</code></td>
+<td>
+<p>Matching [lon,lat,model] calibration,
+ordinary evaluation and LDR evaluation score arrays, respectively.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List of lon x lat matrices present, future and partial_future. Does not
+reoptimise labels; each cell uses its selected candidate's already computed
+score. Invalid label identity/shape raises an error instead of leaving NA cells.
+</p>
+
+</main>
+
+</div>
+</body></html>

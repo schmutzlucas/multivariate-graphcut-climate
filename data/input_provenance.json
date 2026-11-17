@@ -1,0 +1,2624 @@
+{
+  "schema_version": 2,
+  "registry_sha256": "c34724582dfbe7ed2f1ef73886bf83f88d758482e8f81922f70d6ca7a2a653b6",
+  "inputs": [
+    {
+      "logical_id": "corrected_ERA5_pr",
+      "model": "ERA5",
+      "variable": "pr",
+      "filename": "pr_ERA5_19500101-20231231_UTC.nc",
+      "bytes": 4416994317,
+      "sha256": "ea34440db636850e84dc04b6c79b834402f73c7f57a91ede349b0ab50e3cc5f4",
+      "source_identity": [
+        {
+          "dataset": "reanalysis-era5-single-levels",
+          "variable": "total_precipitation",
+          "frequency": "hourly",
+          "doi": "10.24381/cds.adbb2d47"
+        }
+      ],
+      "calendar": "proleptic_gregorian",
+      "provenance_qualifications": [
+        "Original CDS request receipts are not uniformly retained for all hourly months"
+      ],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_ERA5_tas",
+      "model": "ERA5",
+      "variable": "tas",
+      "filename": "tas_ERA5_19400101-20241031.nc",
+      "bytes": 8078373058,
+      "sha256": "7aa7db3cba9a3c84ce71db8fccc8b2ed1c9bb2a92b765f9f65c68820c877e184",
+      "source_identity": [
+        {
+          "dataset": "reanalysis-era5-single-levels",
+          "variable": "2m_temperature",
+          "doi": "10.24381/cds.adbb2d47"
+        }
+      ],
+      "calendar": "proleptic_gregorian",
+      "provenance_qualifications": [
+        "Original CDS request/aggregation receipts are not uniformly retained; original prepared values unchanged"
+      ],
+      "effective_units": "K",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_ERA5_psl",
+      "model": "ERA5",
+      "variable": "psl",
+      "filename": "psl_ERA5_19400101-20241031.nc",
+      "bytes": 8078633698,
+      "sha256": "e96e460331e88439f7d0b1d2cf8e2bede87225d14489075af41a77ef1b229a29",
+      "source_identity": [
+        {
+          "dataset": "reanalysis-era5-single-levels",
+          "variable": "mean_sea_level_pressure",
+          "doi": "10.24381/cds.adbb2d47"
+        }
+      ],
+      "calendar": "proleptic_gregorian",
+      "provenance_qualifications": [
+        "Original CDS request/aggregation receipts are not uniformly retained; original prepared values unchanged"
+      ],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_ACCESS-CM2_pr",
+      "model": "ACCESS-CM2",
+      "variable": "pr",
+      "filename": "pr_ACCESS-CM2_19500101-21001231.nc",
+      "bytes": 13091182961,
+      "sha256": "b3506dc4adabe7e04117e0e67e7fcd2484edefb0c68d381c7f0e2c2a88ad675f",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "version": "20191108",
+          "dataset_id": "CMIP6.CMIP.CSIRO-ARCCSS.ACCESS-CM2.historical.r1i1p1f1.day.pr.gn.v20191108",
+          "provenance_hold": "Publisher registration advertises historical v20191118, but its file inventory/hosting and retrievable release were not found. This calendar-complete candidate uses published v20191108, not an invented v20191118.",
+          "member": "r1i1p1f1"
+        },
+        {
+          "experiment": "ssp585",
+          "version": "20210317",
+          "dataset_id": "CMIP6.ScenarioMIP.CSIRO-ARCCSS.ACCESS-CM2.ssp585.r1i1p1f1.day.pr.gn.v20210317",
+          "provenance_hold": "",
+          "member": "r1i1p1f1"
+        }
+      ],
+      "calendar": "proleptic_gregorian",
+      "provenance_qualifications": [
+        "Publisher registration advertises historical v20191118, but its file inventory/hosting and retrievable release were not found. This calendar-complete candidate uses published v20191108, not an invented v20191118."
+      ],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_ACCESS-CM2_tas",
+      "model": "ACCESS-CM2",
+      "variable": "tas",
+      "filename": "tas_ACCESS-CM2_19500101-21001231.nc",
+      "bytes": 10800038492,
+      "sha256": "8e0ca106371e2fc763c647af639988c91ea5e5a9d1d687db7df55e45982b0afe",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "version": "20191108",
+          "dataset_id": "CMIP6.CMIP.CSIRO-ARCCSS.ACCESS-CM2.historical.r1i1p1f1.day.tas.gn.v20191108",
+          "provenance_hold": "Publisher registration advertises historical v20191118, but its file inventory/hosting and retrievable release were not found. This calendar-complete candidate uses published v20191108, not an invented v20191118.",
+          "member": "r1i1p1f1"
+        },
+        {
+          "experiment": "ssp585",
+          "version": "20210317",
+          "dataset_id": "CMIP6.ScenarioMIP.CSIRO-ARCCSS.ACCESS-CM2.ssp585.r1i1p1f1.day.tas.gn.v20210317",
+          "provenance_hold": "",
+          "member": "r1i1p1f1"
+        }
+      ],
+      "calendar": "proleptic_gregorian",
+      "provenance_qualifications": [
+        "Publisher registration advertises historical v20191118, but its file inventory/hosting and retrievable release were not found. This calendar-complete candidate uses published v20191108, not an invented v20191118."
+      ],
+      "effective_units": "K",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_ACCESS-CM2_psl",
+      "model": "ACCESS-CM2",
+      "variable": "psl",
+      "filename": "psl_ACCESS-CM2_19500101-21001231.nc",
+      "bytes": 10297092529,
+      "sha256": "1355a82a21c4300958f7d823319f775d2cadaca1660885b4b5763655fcbc994c",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "version": "20191108",
+          "dataset_id": "CMIP6.CMIP.CSIRO-ARCCSS.ACCESS-CM2.historical.r1i1p1f1.day.psl.gn.v20191108",
+          "provenance_hold": "Publisher registration advertises historical v20191118, but its file inventory/hosting and retrievable release were not found. This calendar-complete candidate uses published v20191108, not an invented v20191118.",
+          "member": "r1i1p1f1"
+        },
+        {
+          "experiment": "ssp585",
+          "version": "20210317",
+          "dataset_id": "CMIP6.ScenarioMIP.CSIRO-ARCCSS.ACCESS-CM2.ssp585.r1i1p1f1.day.psl.gn.v20210317",
+          "provenance_hold": "",
+          "member": "r1i1p1f1"
+        }
+      ],
+      "calendar": "proleptic_gregorian",
+      "provenance_qualifications": [
+        "Publisher registration advertises historical v20191118, but its file inventory/hosting and retrievable release were not found. This calendar-complete candidate uses published v20191108, not an invented v20191118."
+      ],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_BCC-CSM2-MR_pr",
+      "model": "BCC-CSM2-MR",
+      "variable": "pr",
+      "filename": "pr_BCC-CSM2-MR_19500101-21001231.nc",
+      "bytes": 13287875193,
+      "sha256": "bdcabbebd6a78f1b9c246f3a819d087774018660d688f02f36063cdbd34e0d13",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "20181126"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190318",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.BCC.BCC-CSM2-MR.ssp585.r1i1p1f1.day.pr.gn.v20190318"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [
+        "Historical r1i1p1f1 v20181126 is fully downloaded and technically checked. Publisher replacement chain ends at v20201019 with an unpublication date. Reason unresolved; working member-coherence candidate only, not publisher clearance."
+      ],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_BCC-CSM2-MR_tas",
+      "model": "BCC-CSM2-MR",
+      "variable": "tas",
+      "filename": "tas_BCC-CSM2-MR_19500101-21001231.nc",
+      "bytes": 10760987498,
+      "sha256": "3dcfb580870e73fcee5a4b81342e05ce24560230f64bf07b9817e73a7b763f9d",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "20181126"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190318",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.BCC.BCC-CSM2-MR.ssp585.r1i1p1f1.day.tas.gn.v20190318"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [
+        "Historical r1i1p1f1 v20181126 is fully downloaded and technically checked. Publisher replacement chain ends at v20201019 with an unpublication date. Reason unresolved; working member-coherence candidate only, not publisher clearance."
+      ],
+      "effective_units": "K",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_BCC-CSM2-MR_psl",
+      "model": "BCC-CSM2-MR",
+      "variable": "psl",
+      "filename": "psl_BCC-CSM2-MR_19500101-21001231.nc",
+      "bytes": 10378605146,
+      "sha256": "4298b192ad9b5fcbaf72824498a17a327ee560d3625a164d72e49a129e09e510",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "20181126"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190318",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.BCC.BCC-CSM2-MR.ssp585.r1i1p1f1.day.psl.gn.v20190318"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [
+        "Historical r1i1p1f1 v20181126 is fully downloaded and technically checked. Publisher replacement chain ends at v20201019 with an unpublication date. Reason unresolved; working member-coherence candidate only, not publisher clearance."
+      ],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_CanESM5_pr",
+      "model": "CanESM5",
+      "variable": "pr",
+      "filename": "pr_CanESM5_19500101-21001230.nc",
+      "bytes": 13056720029,
+      "sha256": "c8945350dd7c8f5da7c9d624a89c9ba57a11794fb0a01a4603834f2462f7d499",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190429",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.CCCma.CanESM5.historical.r1i1p1f1.day.pr.gn.v20190429"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190429",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.CCCma.CanESM5.ssp585.r1i1p1f1.day.pr.gn.v20190429"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_CanESM5_tas",
+      "model": "CanESM5",
+      "variable": "tas",
+      "filename": "tas_CanESM5_19500101-21001230.nc",
+      "bytes": 10798888843,
+      "sha256": "04976107a36e0f051a8b5b77a7fc6f83267f8981ad5f419670858cd09eb82ca9",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190429",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.CCCma.CanESM5.historical.r1i1p1f1.day.tas.gn.v20190429"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190429",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.CCCma.CanESM5.ssp585.r1i1p1f1.day.tas.gn.v20190429"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "K",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_CanESM5_psl",
+      "model": "CanESM5",
+      "variable": "psl",
+      "filename": "psl_CanESM5_19500101-21001230.nc",
+      "bytes": 10353756501,
+      "sha256": "b6212aeb6f804d4f58cbefea9227ae5b9d1dda5c3d16c25d45d78c992484c747",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190429",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.CCCma.CanESM5.historical.r1i1p1f1.day.psl.gn.v20190429"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190429",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.CCCma.CanESM5.ssp585.r1i1p1f1.day.psl.gn.v20190429"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_CMCC-CM2-SR5_pr",
+      "model": "CMCC-CM2-SR5",
+      "variable": "pr",
+      "filename": "pr_CMCC-CM2-SR5_19500101-21001230.nc",
+      "bytes": 13137331840,
+      "sha256": "dc15040eda8e9f48739eb8882cf7a621ef0fdbc1d00747294d87c33456fa879e",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20200616",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.CMCC.CMCC-CM2-SR5.historical.r1i1p1f1.day.pr.gn.v20200616"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20200622",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.CMCC.CMCC-CM2-SR5.ssp585.r1i1p1f1.day.pr.gn.v20200622"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_CMCC-CM2-SR5_tas",
+      "model": "CMCC-CM2-SR5",
+      "variable": "tas",
+      "filename": "tas_CMCC-CM2-SR5_19500101-21001230.nc",
+      "bytes": 10851702373,
+      "sha256": "11166b4845663cd212b0fec38eee68a64b31c7bd08dfaf2752375007af92830f",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20200616",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.CMCC.CMCC-CM2-SR5.historical.r1i1p1f1.day.tas.gn.v20200616"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20200622",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.CMCC.CMCC-CM2-SR5.ssp585.r1i1p1f1.day.tas.gn.v20200622"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "K",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_CMCC-CM2-SR5_psl",
+      "model": "CMCC-CM2-SR5",
+      "variable": "psl",
+      "filename": "psl_CMCC-CM2-SR5_19500101-21001230.nc",
+      "bytes": 10332250135,
+      "sha256": "1a6a11669bd744a3eaeff7e4871a5dab689f3352d3e4b2a158637bc7d85ec9ad",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20200616",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.CMCC.CMCC-CM2-SR5.historical.r1i1p1f1.day.psl.gn.v20200616"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20200622",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.CMCC.CMCC-CM2-SR5.ssp585.r1i1p1f1.day.psl.gn.v20200622"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_CMCC-ESM2_pr",
+      "model": "CMCC-ESM2",
+      "variable": "pr",
+      "filename": "pr_CMCC-ESM2_19500101-21001230.nc",
+      "bytes": 13136925040,
+      "sha256": "b5aff6aa7514cd25a0a60a8908615330b9fccfe774e4f46a3779b4cb1b40b92e",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20210114",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.CMCC.CMCC-ESM2.historical.r1i1p1f1.day.pr.gn.v20210114"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20210126",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.CMCC.CMCC-ESM2.ssp585.r1i1p1f1.day.pr.gn.v20210126"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_CMCC-ESM2_tas",
+      "model": "CMCC-ESM2",
+      "variable": "tas",
+      "filename": "tas_CMCC-ESM2_19500101-21001230.nc",
+      "bytes": 10852108065,
+      "sha256": "9dc6af127906e11b8689f59175d65820552f5c519634209b7d5aed0cbfaa9505",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20210114",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.CMCC.CMCC-ESM2.historical.r1i1p1f1.day.tas.gn.v20210114"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20210126",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.CMCC.CMCC-ESM2.ssp585.r1i1p1f1.day.tas.gn.v20210126"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "K",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_CMCC-ESM2_psl",
+      "model": "CMCC-ESM2",
+      "variable": "psl",
+      "filename": "psl_CMCC-ESM2_19500101-21001230.nc",
+      "bytes": 10331185035,
+      "sha256": "3991988cbca85b6f7d59e5aed2ed790c8d71277aacdd51c0dafecbce722bf6f0",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20210114",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.CMCC.CMCC-ESM2.historical.r1i1p1f1.day.psl.gn.v20210114"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20210126",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.CMCC.CMCC-ESM2.ssp585.r1i1p1f1.day.psl.gn.v20210126"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_CNRM-CM6-1-HR_pr",
+      "model": "CNRM-CM6-1-HR",
+      "variable": "pr",
+      "filename": "pr_CNRM-CM6-1-HR_19500101-21001230.nc",
+      "bytes": 12762279932,
+      "sha256": "5e445ccec0fafa4c3499c3a715df3f854d716c01f54a3aeb7ce58a82115b3108",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f2",
+          "version": "v20191021",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1-HR.historical.r1i1p1f2.day.pr.gr.v20191021"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f2",
+          "version": "v20191202",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.CNRM-CERFACS.CNRM-CM6-1-HR.ssp585.r1i1p1f2.day.pr.gr.v20191202"
+        }
+      ],
+      "calendar": "standard",
+      "provenance_qualifications": [],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_CNRM-CM6-1-HR_tas",
+      "model": "CNRM-CM6-1-HR",
+      "variable": "tas",
+      "filename": "tas_CNRM-CM6-1-HR_19500101-21001230.nc",
+      "bytes": 10352132684,
+      "sha256": "7e8e67504fb371ce81ee8e4699563092873fbc96d9ceb4de6f0dcd483cf17929",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f2",
+          "version": "v20191021",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1-HR.historical.r1i1p1f2.day.tas.gr.v20191021"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f2",
+          "version": "v20191202",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.CNRM-CERFACS.CNRM-CM6-1-HR.ssp585.r1i1p1f2.day.tas.gr.v20191202"
+        }
+      ],
+      "calendar": "standard",
+      "provenance_qualifications": [],
+      "effective_units": "K",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_CNRM-CM6-1-HR_psl",
+      "model": "CNRM-CM6-1-HR",
+      "variable": "psl",
+      "filename": "psl_CNRM-CM6-1-HR_19500101-21001230.nc",
+      "bytes": 9956728301,
+      "sha256": "472792a45a280f8e4b4c8620380deb4948235b7b4f54ec4798ced3a826eab5da",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f2",
+          "version": "v20191021",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.CMIP.CNRM-CERFACS.CNRM-CM6-1-HR.historical.r1i1p1f2.day.psl.gr.v20191021"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f2",
+          "version": "v20191202",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.CNRM-CERFACS.CNRM-CM6-1-HR.ssp585.r1i1p1f2.day.psl.gr.v20191202"
+        }
+      ],
+      "calendar": "standard",
+      "provenance_qualifications": [],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_CNRM-ESM2-1_pr",
+      "model": "CNRM-ESM2-1",
+      "variable": "pr",
+      "filename": "pr_CNRM-ESM2-1_19500101-21001230.nc",
+      "bytes": 12935279121,
+      "sha256": "4c53291f145be46c9747f14f5bf9c1718212e4705df7043e0c8b832b6f43dd83",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f2",
+          "version": "v20181206",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.CMIP.CNRM-CERFACS.CNRM-ESM2-1.historical.r1i1p1f2.day.pr.gr.v20181206"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f2",
+          "version": "v20191021",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.CNRM-CERFACS.CNRM-ESM2-1.ssp585.r1i1p1f2.day.pr.gr.v20191021"
+        }
+      ],
+      "calendar": "standard",
+      "provenance_qualifications": [],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_CNRM-ESM2-1_tas",
+      "model": "CNRM-ESM2-1",
+      "variable": "tas",
+      "filename": "tas_CNRM-ESM2-1_19500101-21001230.nc",
+      "bytes": 10521768085,
+      "sha256": "88422da2b02895d329348f547217a825b3c42ebbf0dbfa7d11abfc37fdb45031",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f2",
+          "version": "v20181206",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.CMIP.CNRM-CERFACS.CNRM-ESM2-1.historical.r1i1p1f2.day.tas.gr.v20181206"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f2",
+          "version": "v20191021",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.CNRM-CERFACS.CNRM-ESM2-1.ssp585.r1i1p1f2.day.tas.gr.v20191021"
+        }
+      ],
+      "calendar": "standard",
+      "provenance_qualifications": [],
+      "effective_units": "K",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_CNRM-ESM2-1_psl",
+      "model": "CNRM-ESM2-1",
+      "variable": "psl",
+      "filename": "psl_CNRM-ESM2-1_19500101-21001230.nc",
+      "bytes": 10073292117,
+      "sha256": "cb146f53d5a32b25187f8eeca248b4c1eaa2319db498d738079fd744232ae353",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f2",
+          "version": "v20181206",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.CMIP.CNRM-CERFACS.CNRM-ESM2-1.historical.r1i1p1f2.day.psl.gr.v20181206"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f2",
+          "version": "v20191021",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.CNRM-CERFACS.CNRM-ESM2-1.ssp585.r1i1p1f2.day.psl.gr.v20191021"
+        }
+      ],
+      "calendar": "standard",
+      "provenance_qualifications": [],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_EC-Earth3-CC_pr",
+      "model": "EC-Earth3-CC",
+      "variable": "pr",
+      "filename": "pr_EC-Earth3-CC_19500101-21001230.nc",
+      "bytes": 12190351596,
+      "sha256": "10904e68ab3d501f5c92920076eb4a429094e7b739e48b274ed3fa9985b2af65",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20210113",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.CMIP.EC-Earth-Consortium.EC-Earth3-CC.historical.r1i1p1f1.day.pr.gr.v20210113"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20210113",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.EC-Earth-Consortium.EC-Earth3-CC.ssp585.r1i1p1f1.day.pr.gr.v20210113"
+        }
+      ],
+      "calendar": "proleptic_gregorian",
+      "provenance_qualifications": [],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_EC-Earth3-CC_tas",
+      "model": "EC-Earth3-CC",
+      "variable": "tas",
+      "filename": "tas_EC-Earth3-CC_19500101-21001230.nc",
+      "bytes": 10806360167,
+      "sha256": "49f4bb6c0f2087a8556c4112221d20fe83320ad8b3d6ece602a467b0ac326f09",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20210113",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.CMIP.EC-Earth-Consortium.EC-Earth3-CC.historical.r1i1p1f1.day.tas.gr.v20210113"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20210113",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.EC-Earth-Consortium.EC-Earth3-CC.ssp585.r1i1p1f1.day.tas.gr.v20210113"
+        }
+      ],
+      "calendar": "proleptic_gregorian",
+      "provenance_qualifications": [],
+      "effective_units": "K",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_EC-Earth3-CC_psl",
+      "model": "EC-Earth3-CC",
+      "variable": "psl",
+      "filename": "psl_EC-Earth3-CC_19500101-21001230.nc",
+      "bytes": 10333672243,
+      "sha256": "7aa6c35f3f95f14a107a44bdacca4f3f323c968d22c5d6dd88f645db3e790f92",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20210113",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.CMIP.EC-Earth-Consortium.EC-Earth3-CC.historical.r1i1p1f1.day.psl.gr.v20210113"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20210113",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.EC-Earth-Consortium.EC-Earth3-CC.ssp585.r1i1p1f1.day.psl.gr.v20210113"
+        }
+      ],
+      "calendar": "proleptic_gregorian",
+      "provenance_qualifications": [],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_GFDL-ESM4_pr",
+      "model": "GFDL-ESM4",
+      "variable": "pr",
+      "filename": "pr_GFDL-ESM4_19500101-21001230.nc",
+      "bytes": 13117208858,
+      "sha256": "06cb7931654f8f916ba31400962ef5da4b7df1dbb7040e1a37d9550598fff3fd",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190726",
+          "grid": "gr1",
+          "source_dataset_id": "c3s-cmip6.CMIP.NOAA-GFDL.GFDL-ESM4.historical.r1i1p1f1.day.pr.gr1.v20190726"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20180701",
+          "grid": "gr1",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.NOAA-GFDL.GFDL-ESM4.ssp585.r1i1p1f1.day.pr.gr1.v20180701"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_GFDL-ESM4_tas",
+      "model": "GFDL-ESM4",
+      "variable": "tas",
+      "filename": "tas_GFDL-ESM4_19500101-21001230.nc",
+      "bytes": 10821125401,
+      "sha256": "187de1d9b268480a49b9bf35f41fbd2c590eca81fae420a9bdd18b5c229128c6",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190726",
+          "grid": "gr1",
+          "source_dataset_id": "c3s-cmip6.CMIP.NOAA-GFDL.GFDL-ESM4.historical.r1i1p1f1.day.tas.gr1.v20190726"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20180701",
+          "grid": "gr1",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.NOAA-GFDL.GFDL-ESM4.ssp585.r1i1p1f1.day.tas.gr1.v20180701"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "K",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_GFDL-ESM4_psl",
+      "model": "GFDL-ESM4",
+      "variable": "psl",
+      "filename": "psl_GFDL-ESM4_19500101-21001230.nc",
+      "bytes": 10309311383,
+      "sha256": "8fe9bdf5763a5571784e40a8e6bfad6a0d8a322ead7f996eb2cd0a37c924ea5c",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190726",
+          "grid": "gr1",
+          "source_dataset_id": "c3s-cmip6.CMIP.NOAA-GFDL.GFDL-ESM4.historical.r1i1p1f1.day.psl.gr1.v20190726"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20180701",
+          "grid": "gr1",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.NOAA-GFDL.GFDL-ESM4.ssp585.r1i1p1f1.day.psl.gr1.v20180701"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_HadGEM3-GC31-LL_pr",
+      "model": "HadGEM3-GC31-LL",
+      "variable": "pr",
+      "filename": "pr_HadGEM3-GC31-LL_19500101-21001230.nc",
+      "bytes": 14175327994,
+      "sha256": "82c4a732bde303b8cb0632c8d36bd4da3b41283712d08131307fa543d0648ee8",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f3",
+          "version": "v20190624",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.MOHC.HadGEM3-GC31-LL.historical.r1i1p1f3.day.pr.gn.v20190624"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f3",
+          "version": "v20200114",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.MOHC.HadGEM3-GC31-LL.ssp585.r1i1p1f3.day.pr.gn.v20200114"
+        }
+      ],
+      "calendar": "360_day",
+      "provenance_qualifications": [
+        "Original flux attribute stale; independent source-map controls confirm values already multiplied by 86400. No further conversion."
+      ],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_HadGEM3-GC31-LL_tas",
+      "model": "HadGEM3-GC31-LL",
+      "variable": "tas",
+      "filename": "tas_HadGEM3-GC31-LL_19500101-21001230.nc",
+      "bytes": 14175327882,
+      "sha256": "4e29c78536a7c7a349c62a274fcca0b83c1d2190af1a29e3cfadcda0ba5b560c",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f3",
+          "version": "v20190624",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.MOHC.HadGEM3-GC31-LL.historical.r1i1p1f3.day.tas.gn.v20190624"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f3",
+          "version": "v20200114",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.MOHC.HadGEM3-GC31-LL.ssp585.r1i1p1f3.day.tas.gn.v20200114"
+        }
+      ],
+      "calendar": "360_day",
+      "provenance_qualifications": [],
+      "effective_units": "K",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_HadGEM3-GC31-LL_psl",
+      "model": "HadGEM3-GC31-LL",
+      "variable": "psl",
+      "filename": "psl_HadGEM3-GC31-LL_19500101-21001230.nc",
+      "bytes": 14175327984,
+      "sha256": "29f40bbe49735a023f05c5b27db62771e6fcd19e3c7cce05745347bc1cf6b9e8",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f3",
+          "version": "v20190624",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.MOHC.HadGEM3-GC31-LL.historical.r1i1p1f3.day.psl.gn.v20190624"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f3",
+          "version": "v20200114",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.MOHC.HadGEM3-GC31-LL.ssp585.r1i1p1f3.day.psl.gn.v20200114"
+        }
+      ],
+      "calendar": "360_day",
+      "provenance_qualifications": [],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_HadGEM3-GC31-MM_pr",
+      "model": "HadGEM3-GC31-MM",
+      "variable": "pr",
+      "filename": "pr_HadGEM3-GC31-MM_19500101-21001230.nc",
+      "bytes": 14175331102,
+      "sha256": "8e2224a224c8b2c0c98bba3d410df492b06a6f0d6a6b641edd6b9fb0c173a4b2",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f3",
+          "version": "v20191207",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.MOHC.HadGEM3-GC31-MM.historical.r1i1p1f3.day.pr.gn.v20191207"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f3",
+          "version": "v20200515",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.MOHC.HadGEM3-GC31-MM.ssp585.r1i1p1f3.day.pr.gn.v20200515"
+        }
+      ],
+      "calendar": "360_day",
+      "provenance_qualifications": [
+        "Original flux attribute stale; independent source-map controls confirm values already multiplied by 86400. No further conversion."
+      ],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_HadGEM3-GC31-MM_tas",
+      "model": "HadGEM3-GC31-MM",
+      "variable": "tas",
+      "filename": "tas_HadGEM3-GC31-MM_19500101-21001230.nc",
+      "bytes": 14175329923,
+      "sha256": "d0499f0cadc21949e9042136876184ca081cdfc689877052a539e195ad84b694",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f3",
+          "version": "v20191207",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.MOHC.HadGEM3-GC31-MM.historical.r1i1p1f3.day.tas.gn.v20191207"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f3",
+          "version": "v20200515",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.MOHC.HadGEM3-GC31-MM.ssp585.r1i1p1f3.day.tas.gn.v20200515"
+        }
+      ],
+      "calendar": "360_day",
+      "provenance_qualifications": [],
+      "effective_units": "K",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_HadGEM3-GC31-MM_psl",
+      "model": "HadGEM3-GC31-MM",
+      "variable": "psl",
+      "filename": "psl_HadGEM3-GC31-MM_19500101-21001230.nc",
+      "bytes": 14175331383,
+      "sha256": "7ee3cfe97c513a902e5d38ceccdfa7d4d271d0b583123194000aa37ee0942862",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f3",
+          "version": "v20191207",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.MOHC.HadGEM3-GC31-MM.historical.r1i1p1f3.day.psl.gn.v20191207"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f3",
+          "version": "v20200515",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.MOHC.HadGEM3-GC31-MM.ssp585.r1i1p1f3.day.psl.gn.v20200515"
+        }
+      ],
+      "calendar": "360_day",
+      "provenance_qualifications": [],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_INM-CM4-8_pr",
+      "model": "INM-CM4-8",
+      "variable": "pr",
+      "filename": "pr_INM-CM4-8_19500101-21001230.nc",
+      "bytes": 13243521233,
+      "sha256": "a58b7cd28f0e6eb323cc8ae2ede804811b65d85d018e9157ff76515cb907806c",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190530",
+          "grid": "gr1",
+          "source_dataset_id": "c3s-cmip6.CMIP.INM.INM-CM4-8.historical.r1i1p1f1.day.pr.gr1.v20190530"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190603",
+          "grid": "gr1",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.INM.INM-CM4-8.ssp585.r1i1p1f1.day.pr.gr1.v20190603"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_INM-CM4-8_tas",
+      "model": "INM-CM4-8",
+      "variable": "tas",
+      "filename": "tas_INM-CM4-8_19500101-21001230.nc",
+      "bytes": 10817678336,
+      "sha256": "25e3296db0b00f73cd323cb1078c6864ecd6c8649fd7ca599c38f1eb0d07efa1",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190530",
+          "grid": "gr1",
+          "source_dataset_id": "c3s-cmip6.CMIP.INM.INM-CM4-8.historical.r1i1p1f1.day.tas.gr1.v20190530"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190603",
+          "grid": "gr1",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.INM.INM-CM4-8.ssp585.r1i1p1f1.day.tas.gr1.v20190603"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "K",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_INM-CM4-8_psl",
+      "model": "INM-CM4-8",
+      "variable": "psl",
+      "filename": "psl_INM-CM4-8_19500101-21001230.nc",
+      "bytes": 10260009961,
+      "sha256": "c78f2f7cad815a1e6a96067b54dc811a0392944c8794e75835b2e6bd076525ab",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190530",
+          "grid": "gr1",
+          "source_dataset_id": "c3s-cmip6.CMIP.INM.INM-CM4-8.historical.r1i1p1f1.day.psl.gr1.v20190530"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190603",
+          "grid": "gr1",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.INM.INM-CM4-8.ssp585.r1i1p1f1.day.psl.gr1.v20190603"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_INM-CM5-0_pr",
+      "model": "INM-CM5-0",
+      "variable": "pr",
+      "filename": "pr_INM-CM5-0_19500101-21001230.nc",
+      "bytes": 13255256021,
+      "sha256": "1fc115693c456d97297a7329d9cb06b3c3e2fd90f06b4fdedbc7ee45dc2377e0",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190610",
+          "grid": "gr1",
+          "source_dataset_id": "c3s-cmip6.CMIP.INM.INM-CM5-0.historical.r1i1p1f1.day.pr.gr1.v20190610"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190724",
+          "grid": "gr1",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.INM.INM-CM5-0.ssp585.r1i1p1f1.day.pr.gr1.v20190724"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_INM-CM5-0_tas",
+      "model": "INM-CM5-0",
+      "variable": "tas",
+      "filename": "tas_INM-CM5-0_19500101-21001230.nc",
+      "bytes": 10813901647,
+      "sha256": "cfbe4d73c955b545b672c27fa2307e5d778d251a9bbc78623019bca2ca670dad",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190610",
+          "grid": "gr1",
+          "source_dataset_id": "c3s-cmip6.CMIP.INM.INM-CM5-0.historical.r1i1p1f1.day.tas.gr1.v20190610"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190724",
+          "grid": "gr1",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.INM.INM-CM5-0.ssp585.r1i1p1f1.day.tas.gr1.v20190724"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "K",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_INM-CM5-0_psl",
+      "model": "INM-CM5-0",
+      "variable": "psl",
+      "filename": "psl_INM-CM5-0_19500101-21001230.nc",
+      "bytes": 10269057240,
+      "sha256": "307a436de9ca768a8f53b7df7cfa411f483e9982677e196d1632205a657b6549",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190610",
+          "grid": "gr1",
+          "source_dataset_id": "c3s-cmip6.CMIP.INM.INM-CM5-0.historical.r1i1p1f1.day.psl.gr1.v20190610"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190724",
+          "grid": "gr1",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.INM.INM-CM5-0.ssp585.r1i1p1f1.day.psl.gr1.v20190724"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_KACE-1-0-G_pr",
+      "model": "KACE-1-0-G",
+      "variable": "pr",
+      "filename": "pr_KACE-1-0-G_19500101-21001230.nc",
+      "bytes": 14175327978,
+      "sha256": "80bd01ac9899a24900d5923eddba2484aeba4431b75efe5aa995449ee45685d4",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190911",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.CMIP.NIMS-KMA.KACE-1-0-G.historical.r1i1p1f1.day.pr.gr.v20190911"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190920",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.NIMS-KMA.KACE-1-0-G.ssp585.r1i1p1f1.day.pr.gr.v20190920"
+        }
+      ],
+      "calendar": "360_day",
+      "provenance_qualifications": [
+        "Original flux attribute stale; independent source-map controls confirm values already multiplied by 86400. No further conversion."
+      ],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_KACE-1-0-G_tas",
+      "model": "KACE-1-0-G",
+      "variable": "tas",
+      "filename": "tas_KACE-1-0-G_19500101-21001230.nc",
+      "bytes": 14175327892,
+      "sha256": "4e967144c631bf6fc68d6f21b0fc6916b16771329dd312e7dd92030068b5209b",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20200316",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.CMIP.NIMS-KMA.KACE-1-0-G.historical.r1i1p1f1.day.tas.gr.v20200316"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190920",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.NIMS-KMA.KACE-1-0-G.ssp585.r1i1p1f1.day.tas.gr.v20190920"
+        }
+      ],
+      "calendar": "360_day",
+      "provenance_qualifications": [],
+      "effective_units": "K",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_KACE-1-0-G_psl",
+      "model": "KACE-1-0-G",
+      "variable": "psl",
+      "filename": "psl_KACE-1-0-G_19500101-21001230.nc",
+      "bytes": 14175331084,
+      "sha256": "d0d724db54149c1ab78980dffaf5686934daeaca1f04c14649ec4a9f7c4388c5",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190911",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.CMIP.NIMS-KMA.KACE-1-0-G.historical.r1i1p1f1.day.psl.gr.v20190911"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190920",
+          "grid": "gr",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.NIMS-KMA.KACE-1-0-G.ssp585.r1i1p1f1.day.psl.gr.v20190920"
+        }
+      ],
+      "calendar": "360_day",
+      "provenance_qualifications": [],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_MIROC6_pr",
+      "model": "MIROC6",
+      "variable": "pr",
+      "filename": "pr_MIROC6_19500101-21001230.nc",
+      "bytes": 12261137567,
+      "sha256": "9d1e47cf819c08b42b27987aeae23dcd31926e7f86da70cc6a0d4eac50a9cf5f",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20191016",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.MIROC.MIROC6.historical.r1i1p1f1.day.pr.gn.v20191016"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20191016",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.MIROC.MIROC6.ssp585.r1i1p1f1.day.pr.gn.v20191016"
+        }
+      ],
+      "calendar": "standard",
+      "provenance_qualifications": [],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_MIROC6_tas",
+      "model": "MIROC6",
+      "variable": "tas",
+      "filename": "tas_MIROC6_19500101-21001230.nc",
+      "bytes": 10789281798,
+      "sha256": "e5b6b26ee259205974df387a66c561f8c6eb0396822a001111a91cbdc3b99c71",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20191016",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.MIROC.MIROC6.historical.r1i1p1f1.day.tas.gn.v20191016"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20191016",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.MIROC.MIROC6.ssp585.r1i1p1f1.day.tas.gn.v20191016"
+        }
+      ],
+      "calendar": "standard",
+      "provenance_qualifications": [],
+      "effective_units": "K",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_MIROC6_psl",
+      "model": "MIROC6",
+      "variable": "psl",
+      "filename": "psl_MIROC6_19500101-21001230.nc",
+      "bytes": 10305035771,
+      "sha256": "e073e5f47a0d82fafec703a165e65f34a709e59c1f8db80df43deab8fb510397",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20191016",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.MIROC.MIROC6.historical.r1i1p1f1.day.psl.gn.v20191016"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20191016",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.MIROC.MIROC6.ssp585.r1i1p1f1.day.psl.gn.v20191016"
+        }
+      ],
+      "calendar": "standard",
+      "provenance_qualifications": [],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_MIROC-ES2L_pr",
+      "model": "MIROC-ES2L",
+      "variable": "pr",
+      "filename": "pr_MIROC-ES2L_19500101-21001231.nc",
+      "bytes": 12817170871,
+      "sha256": "f3419eb26236b4647c5382923bb886b47e442d9535a6030de494c9ae70aeecec",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "version": "20191129",
+          "dataset_id": "CMIP6.CMIP.MIROC.MIROC-ES2L.historical.r1i1p1f2.day.pr.gn.v20191129",
+          "provenance_hold": "",
+          "member": "r1i1p1f2"
+        },
+        {
+          "experiment": "ssp585",
+          "version": "20220530",
+          "dataset_id": "CMIP6.ScenarioMIP.MIROC.MIROC-ES2L.ssp585.r1i1p1f2.day.pr.gn.v20220530",
+          "provenance_hold": "",
+          "member": "r1i1p1f2"
+        }
+      ],
+      "calendar": "standard",
+      "provenance_qualifications": [],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_MIROC-ES2L_tas",
+      "model": "MIROC-ES2L",
+      "variable": "tas",
+      "filename": "tas_MIROC-ES2L_19500101-21001231.nc",
+      "bytes": 10688325865,
+      "sha256": "b1d5dbe137fc1b2bb1989ac380a2d7b67861fb30a9c959fc1182282097b614f3",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "version": "20191129",
+          "dataset_id": "CMIP6.CMIP.MIROC.MIROC-ES2L.historical.r1i1p1f2.day.tas.gn.v20191129",
+          "provenance_hold": "",
+          "member": "r1i1p1f2"
+        },
+        {
+          "experiment": "ssp585",
+          "version": "20220530",
+          "dataset_id": "CMIP6.ScenarioMIP.MIROC.MIROC-ES2L.ssp585.r1i1p1f2.day.tas.gn.v20220530",
+          "provenance_hold": "",
+          "member": "r1i1p1f2"
+        }
+      ],
+      "calendar": "standard",
+      "provenance_qualifications": [],
+      "effective_units": "K",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_MIROC-ES2L_psl",
+      "model": "MIROC-ES2L",
+      "variable": "psl",
+      "filename": "psl_MIROC-ES2L_19500101-21001231.nc",
+      "bytes": 10185603050,
+      "sha256": "4ffeffa961a282d1756311cb59766cc4477d432fea99afd3d86988c73623506f",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "version": "20191129",
+          "dataset_id": "CMIP6.CMIP.MIROC.MIROC-ES2L.historical.r1i1p1f2.day.psl.gn.v20191129",
+          "provenance_hold": "",
+          "member": "r1i1p1f2"
+        },
+        {
+          "experiment": "ssp585",
+          "version": "20220530",
+          "dataset_id": "CMIP6.ScenarioMIP.MIROC.MIROC-ES2L.ssp585.r1i1p1f2.day.psl.gn.v20220530",
+          "provenance_hold": "",
+          "member": "r1i1p1f2"
+        }
+      ],
+      "calendar": "standard",
+      "provenance_qualifications": [],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_MPI-ESM1-2-LR_pr",
+      "model": "MPI-ESM1-2-LR",
+      "variable": "pr",
+      "filename": "pr_MPI-ESM1-2-LR_19500101-21001230.nc",
+      "bytes": 12413863142,
+      "sha256": "46e5d24dd49c51026f84dfaeb7fae46740a28aaa893d986f63b4fa6345778d41",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190710",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.MPI-M.MPI-ESM1-2-LR.historical.r1i1p1f1.day.pr.gn.v20190710"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190710",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.MPI-M.MPI-ESM1-2-LR.ssp585.r1i1p1f1.day.pr.gn.v20190710"
+        }
+      ],
+      "calendar": "proleptic_gregorian",
+      "provenance_qualifications": [],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_MPI-ESM1-2-LR_tas",
+      "model": "MPI-ESM1-2-LR",
+      "variable": "tas",
+      "filename": "tas_MPI-ESM1-2-LR_19500101-21001230.nc",
+      "bytes": 10804953621,
+      "sha256": "a301e884af5f5dc88f3c545a4b03052d9e36a5d2a0c8539b28bc3a7b536b760d",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190710",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.MPI-M.MPI-ESM1-2-LR.historical.r1i1p1f1.day.tas.gn.v20190710"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190710",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.MPI-M.MPI-ESM1-2-LR.ssp585.r1i1p1f1.day.tas.gn.v20190710"
+        }
+      ],
+      "calendar": "proleptic_gregorian",
+      "provenance_qualifications": [],
+      "effective_units": "K",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_MPI-ESM1-2-LR_psl",
+      "model": "MPI-ESM1-2-LR",
+      "variable": "psl",
+      "filename": "psl_MPI-ESM1-2-LR_19500101-21001230.nc",
+      "bytes": 10339609596,
+      "sha256": "95940cd026fb18e47be3686c4395a923253cce7e2edadc95227750011e4d5193",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190710",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.MPI-M.MPI-ESM1-2-LR.historical.r1i1p1f1.day.psl.gn.v20190710"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190710",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.MPI-M.MPI-ESM1-2-LR.ssp585.r1i1p1f1.day.psl.gn.v20190710"
+        }
+      ],
+      "calendar": "proleptic_gregorian",
+      "provenance_qualifications": [],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_MRI-ESM2-0_pr",
+      "model": "MRI-ESM2-0",
+      "variable": "pr",
+      "filename": "pr_MRI-ESM2-0_19500101-21001230.nc",
+      "bytes": 13294896733,
+      "sha256": "b3a9e95ab2a5030b1e1791965354a05622d4bfda4e666cf3137768c28b58711f",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190603",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.MRI.MRI-ESM2-0.historical.r1i1p1f1.day.pr.gn.v20190603"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20191108",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.MRI.MRI-ESM2-0.ssp585.r1i1p1f1.day.pr.gn.v20191108"
+        }
+      ],
+      "calendar": "proleptic_gregorian",
+      "provenance_qualifications": [],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_MRI-ESM2-0_tas",
+      "model": "MRI-ESM2-0",
+      "variable": "tas",
+      "filename": "tas_MRI-ESM2-0_19500101-21001230.nc",
+      "bytes": 10797628485,
+      "sha256": "0152bcd9548650b30113d8d86431c6ba9b3eaa804c02eed6e6f54aca0fc6d48a",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190603",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.MRI.MRI-ESM2-0.historical.r1i1p1f1.day.tas.gn.v20190603"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20191108",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.MRI.MRI-ESM2-0.ssp585.r1i1p1f1.day.tas.gn.v20191108"
+        }
+      ],
+      "calendar": "proleptic_gregorian",
+      "provenance_qualifications": [],
+      "effective_units": "K",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_MRI-ESM2-0_psl",
+      "model": "MRI-ESM2-0",
+      "variable": "psl",
+      "filename": "psl_MRI-ESM2-0_19500101-21001230.nc",
+      "bytes": 10342407605,
+      "sha256": "ecfef6514ef9b8b66235ca03c94b94f078f8ff0c06e82f00ec728b3cdb70b507",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190603",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.MRI.MRI-ESM2-0.historical.r1i1p1f1.day.psl.gn.v20190603"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20191108",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.MRI.MRI-ESM2-0.ssp585.r1i1p1f1.day.psl.gn.v20191108"
+        }
+      ],
+      "calendar": "proleptic_gregorian",
+      "provenance_qualifications": [],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_NESM3_pr",
+      "model": "NESM3",
+      "variable": "pr",
+      "filename": "pr_NESM3_19500101-21001230.nc",
+      "bytes": 12602060842,
+      "sha256": "f2d9f56f0e6bb27e3dbd6078f86c336998c3951f3161a1a41e55ed8bbb984008",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190812",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.NUIST.NESM3.historical.r1i1p1f1.day.pr.gn.v20190812"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190811",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.NUIST.NESM3.ssp585.r1i1p1f1.day.pr.gn.v20190811"
+        }
+      ],
+      "calendar": "standard",
+      "provenance_qualifications": [],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_NESM3_tas",
+      "model": "NESM3",
+      "variable": "tas",
+      "filename": "tas_NESM3_19500101-21001230.nc",
+      "bytes": 10792117941,
+      "sha256": "3d22e015177bdab6b35d9145ae178b64043e3b2e39e6eda08a92477e83ad9778",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190812",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.NUIST.NESM3.historical.r1i1p1f1.day.tas.gn.v20190812"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190811",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.NUIST.NESM3.ssp585.r1i1p1f1.day.tas.gn.v20190811"
+        }
+      ],
+      "calendar": "standard",
+      "provenance_qualifications": [],
+      "effective_units": "K",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_NESM3_psl",
+      "model": "NESM3",
+      "variable": "psl",
+      "filename": "psl_NESM3_19500101-21001230.nc",
+      "bytes": 10338213905,
+      "sha256": "e4b9e144a2582351188f57e0627cb0b1c3beaabfe28c695880dab7e0361f98f0",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20190812",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.NUIST.NESM3.historical.r1i1p1f1.day.psl.gn.v20190812"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20190811",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.NUIST.NESM3.ssp585.r1i1p1f1.day.psl.gn.v20190811"
+        }
+      ],
+      "calendar": "standard",
+      "provenance_qualifications": [],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_NorESM2-MM_pr",
+      "model": "NorESM2-MM",
+      "variable": "pr",
+      "filename": "pr_NorESM2-MM_19500101-21001231.nc",
+      "bytes": 13307770773,
+      "sha256": "7d3356247d9022289142dc5da9b569825b33f806cd714fd22ee6f0266d3950d2",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "version": "20191108",
+          "dataset_id": "CMIP6.CMIP.NCC.NorESM2-MM.historical.r1i1p1f1.day.pr.gn.v20191108",
+          "provenance_hold": "",
+          "member": "r1i1p1f1"
+        },
+        {
+          "experiment": "ssp585",
+          "version": "20230616",
+          "dataset_id": "CMIP6.ScenarioMIP.NCC.NorESM2-MM.ssp585.r1i1p1f1.day.pr.gn.v20230616",
+          "provenance_hold": "",
+          "member": "r1i1p1f1"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_NorESM2-MM_tas",
+      "model": "NorESM2-MM",
+      "variable": "tas",
+      "filename": "tas_NorESM2-MM_19500101-21001231.nc",
+      "bytes": 10877172272,
+      "sha256": "2f2dbc8ce1528c097bf64607d844774291bc94d8c1d1266678e4a36676e9a207",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "version": "20191108",
+          "dataset_id": "CMIP6.CMIP.NCC.NorESM2-MM.historical.r1i1p1f1.day.tas.gn.v20191108",
+          "provenance_hold": "",
+          "member": "r1i1p1f1"
+        },
+        {
+          "experiment": "ssp585",
+          "version": "20230616",
+          "dataset_id": "CMIP6.ScenarioMIP.NCC.NorESM2-MM.ssp585.r1i1p1f1.day.tas.gn.v20230616",
+          "provenance_hold": "",
+          "member": "r1i1p1f1"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "K",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_NorESM2-MM_psl",
+      "model": "NorESM2-MM",
+      "variable": "psl",
+      "filename": "psl_NorESM2-MM_19500101-21001231.nc",
+      "bytes": 10370875694,
+      "sha256": "c478ef18bb55ffc6f0bc011242cf35a87ccd7bf24add6a1e86d90f21a84aa630",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "version": "20191108",
+          "dataset_id": "CMIP6.CMIP.NCC.NorESM2-MM.historical.r1i1p1f1.day.psl.gn.v20191108",
+          "provenance_hold": "",
+          "member": "r1i1p1f1"
+        },
+        {
+          "experiment": "ssp585",
+          "version": "20230616",
+          "dataset_id": "CMIP6.ScenarioMIP.NCC.NorESM2-MM.ssp585.r1i1p1f1.day.psl.gn.v20230616",
+          "provenance_hold": "",
+          "member": "r1i1p1f1"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_TaiESM1_pr",
+      "model": "TaiESM1",
+      "variable": "pr",
+      "filename": "pr_TaiESM1_19500101-21001230.nc",
+      "bytes": 13115231624,
+      "sha256": "ef692fdd51688e16e2140e3c8dc7210d8ad49865d91a6003f7db75c21629f287",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20200626",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.pr.gn.v20200626"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20200902",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.AS-RCEC.TaiESM1.ssp585.r1i1p1f1.day.pr.gn.v20200902"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_TaiESM1_tas",
+      "model": "TaiESM1",
+      "variable": "tas",
+      "filename": "tas_TaiESM1_19500101-21001230.nc",
+      "bytes": 10910484373,
+      "sha256": "baeed5361fda6eb32c31d1cdf751555e001747cc201c9d6c48aa68c0faece75f",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20200626",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.tas.gn.v20200626"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20200902",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.AS-RCEC.TaiESM1.ssp585.r1i1p1f1.day.tas.gn.v20200902"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "K",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_TaiESM1_psl",
+      "model": "TaiESM1",
+      "variable": "psl",
+      "filename": "psl_TaiESM1_19500101-21001230.nc",
+      "bytes": 10332159336,
+      "sha256": "81ed95207e124668f6002d3f779f2ab31352c3e40f57a348ca0bc99c1dc00af3",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f1",
+          "version": "v20200626",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.psl.gn.v20200626"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f1",
+          "version": "v20200902",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.AS-RCEC.TaiESM1.ssp585.r1i1p1f1.day.psl.gn.v20200902"
+        }
+      ],
+      "calendar": "365_day",
+      "provenance_qualifications": [],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5",
+        "pme"
+      ]
+    },
+    {
+      "logical_id": "corrected_UKESM1-0-LL_pr",
+      "model": "UKESM1-0-LL",
+      "variable": "pr",
+      "filename": "pr_UKESM1-0-LL_19500101-21001230.nc",
+      "bytes": 14175327996,
+      "sha256": "ab528a1aaa122a5e92761840b9b42108b68b76d96d9d5f949efb5cd7fcb8cf4e",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f2",
+          "version": "v20190627",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.MOHC.UKESM1-0-LL.historical.r1i1p1f2.day.pr.gn.v20190627"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f2",
+          "version": "v20190726",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.MOHC.UKESM1-0-LL.ssp585.r1i1p1f2.day.pr.gn.v20190726"
+        }
+      ],
+      "calendar": "360_day",
+      "provenance_qualifications": [
+        "Original flux attribute stale; independent source-map controls confirm values already multiplied by 86400. No further conversion."
+      ],
+      "effective_units": "mm day-1",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_UKESM1-0-LL_tas",
+      "model": "UKESM1-0-LL",
+      "variable": "tas",
+      "filename": "tas_UKESM1-0-LL_19500101-21001230.nc",
+      "bytes": 14175327884,
+      "sha256": "06f69be781aff4be847837a8082d670f4c5f046856ff8b3abba7bef98d8285af",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f2",
+          "version": "v20190627",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.MOHC.UKESM1-0-LL.historical.r1i1p1f2.day.tas.gn.v20190627"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f2",
+          "version": "v20190726",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.MOHC.UKESM1-0-LL.ssp585.r1i1p1f2.day.tas.gn.v20190726"
+        }
+      ],
+      "calendar": "360_day",
+      "provenance_qualifications": [],
+      "effective_units": "K",
+      "used_by": [
+        "era5"
+      ]
+    },
+    {
+      "logical_id": "corrected_UKESM1-0-LL_psl",
+      "model": "UKESM1-0-LL",
+      "variable": "psl",
+      "filename": "psl_UKESM1-0-LL_19500101-21001230.nc",
+      "bytes": 14175327986,
+      "sha256": "87bbeb04b3a42851aeaefa2fc6af38a4ed94637cbe01843938005ad9853ce6ad",
+      "source_identity": [
+        {
+          "experiment": "historical",
+          "member": "r1i1p1f2",
+          "version": "v20190627",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.CMIP.MOHC.UKESM1-0-LL.historical.r1i1p1f2.day.psl.gn.v20190627"
+        },
+        {
+          "experiment": "ssp585",
+          "member": "r1i1p1f2",
+          "version": "v20190726",
+          "grid": "gn",
+          "source_dataset_id": "c3s-cmip6.ScenarioMIP.MOHC.UKESM1-0-LL.ssp585.r1i1p1f2.day.psl.gn.v20190726"
+        }
+      ],
+      "calendar": "360_day",
+      "provenance_qualifications": [],
+      "effective_units": "Pa",
+      "used_by": [
+        "era5"
+      ]
+    }
+  ],
+  "support_scopes": {
+    "era5": {
+      "models": [
+        "ERA5",
+        "ACCESS-CM2",
+        "BCC-CSM2-MR",
+        "CanESM5",
+        "CMCC-CM2-SR5",
+        "CMCC-ESM2",
+        "CNRM-CM6-1-HR",
+        "CNRM-ESM2-1",
+        "EC-Earth3-CC",
+        "GFDL-ESM4",
+        "HadGEM3-GC31-LL",
+        "HadGEM3-GC31-MM",
+        "INM-CM4-8",
+        "INM-CM5-0",
+        "KACE-1-0-G",
+        "MIROC6",
+        "MIROC-ES2L",
+        "MPI-ESM1-2-LR",
+        "MRI-ESM2-0",
+        "NESM3",
+        "NorESM2-MM",
+        "TaiESM1",
+        "UKESM1-0-LL"
+      ],
+      "years": [
+        1951,
+        1952,
+        1953,
+        1954,
+        1955,
+        1956,
+        1957,
+        1958,
+        1959,
+        1960,
+        1961,
+        1962,
+        1963,
+        1964,
+        1965,
+        1966,
+        1967,
+        1968,
+        1969,
+        1970,
+        1971,
+        1972,
+        1973,
+        1974,
+        1975,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    "pme": {
+      "models": [
+        "ACCESS-CM2",
+        "BCC-CSM2-MR",
+        "CanESM5",
+        "CMCC-CM2-SR5",
+        "CNRM-CM6-1-HR",
+        "EC-Earth3-CC",
+        "GFDL-ESM4",
+        "INM-CM5-0",
+        "MIROC6",
+        "MIROC-ES2L",
+        "MPI-ESM1-2-LR",
+        "MRI-ESM2-0",
+        "NESM3",
+        "NorESM2-MM",
+        "TaiESM1"
+      ],
+      "years": [
+        1951,
+        1952,
+        1953,
+        1954,
+        1955,
+        1956,
+        1957,
+        1958,
+        1959,
+        1960,
+        1961,
+        1962,
+        1963,
+        1964,
+        1965,
+        1966,
+        1967,
+        1968,
+        1969,
+        1970,
+        1971,
+        1972,
+        1973,
+        1974,
+        1975,
+        1976,
+        1977,
+        1978,
+        1979,
+        1980,
+        1981,
+        1982,
+        1983,
+        1984,
+        1985,
+        1986,
+        1987,
+        1988,
+        1989,
+        1990,
+        1991,
+        1992,
+        1993,
+        1994,
+        1995,
+        1996,
+        1997,
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030,
+        2031,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036,
+        2037,
+        2038,
+        2039,
+        2040,
+        2041,
+        2042,
+        2043,
+        2044,
+        2045,
+        2046,
+        2047,
+        2048,
+        2049,
+        2050,
+        2051,
+        2052,
+        2053,
+        2054,
+        2055,
+        2056,
+        2057,
+        2058,
+        2059,
+        2060,
+        2061,
+        2062,
+        2063,
+        2064,
+        2065,
+        2066,
+        2067,
+        2068,
+        2069,
+        2070,
+        2071,
+        2072,
+        2073,
+        2074,
+        2075,
+        2076,
+        2077,
+        2078,
+        2079,
+        2080,
+        2081,
+        2082,
+        2083,
+        2084,
+        2085,
+        2086,
+        2087,
+        2088,
+        2089,
+        2090,
+        2091,
+        2092,
+        2093,
+        2094,
+        2095,
+        2096,
+        2097,
+        2098,
+        2099,
+        2100
+      ]
+    }
+  },
+  "supports": {
+    "era5": {
+      "models": [
+        "ERA5",
+        "ACCESS-CM2",
+        "BCC-CSM2-MR",
+        "CanESM5",
+        "CMCC-CM2-SR5",
+        "CMCC-ESM2",
+        "CNRM-CM6-1-HR",
+        "CNRM-ESM2-1",
+        "EC-Earth3-CC",
+        "GFDL-ESM4",
+        "HadGEM3-GC31-LL",
+        "HadGEM3-GC31-MM",
+        "INM-CM4-8",
+        "INM-CM5-0",
+        "KACE-1-0-G",
+        "MIROC6",
+        "MIROC-ES2L",
+        "MPI-ESM1-2-LR",
+        "MRI-ESM2-0",
+        "NESM3",
+        "NorESM2-MM",
+        "TaiESM1",
+        "UKESM1-0-LL"
+      ],
+      "years": [
+        1951,
+        1952,
+        1953,
+        1954,
+        1955,
+        1956,
+        1957,
+        1958,
+        1959,
+        1960,
+        1961,
+        1962,
+        1963,
+        1964,
+        1965,
+        1966,
+        1967,
+        1968,
+        1969,
+        1970,
+        1971,
+        1972,
+        1973,
+        1974,
+        1975,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "sha256": "5530eab3e4b67b5a26121614e08c52654ce55e7ab58790e097370ac0dd9e37ca",
+      "bytes": 1387276
+    },
+    "pme": {
+      "models": [
+        "ACCESS-CM2",
+        "BCC-CSM2-MR",
+        "CanESM5",
+        "CMCC-CM2-SR5",
+        "CNRM-CM6-1-HR",
+        "EC-Earth3-CC",
+        "GFDL-ESM4",
+        "INM-CM5-0",
+        "MIROC6",
+        "MIROC-ES2L",
+        "MPI-ESM1-2-LR",
+        "MRI-ESM2-0",
+        "NESM3",
+        "NorESM2-MM",
+        "TaiESM1"
+      ],
+      "years": [
+        1951,
+        1952,
+        1953,
+        1954,
+        1955,
+        1956,
+        1957,
+        1958,
+        1959,
+        1960,
+        1961,
+        1962,
+        1963,
+        1964,
+        1965,
+        1966,
+        1967,
+        1968,
+        1969,
+        1970,
+        1971,
+        1972,
+        1973,
+        1974,
+        1975,
+        1976,
+        1977,
+        1978,
+        1979,
+        1980,
+        1981,
+        1982,
+        1983,
+        1984,
+        1985,
+        1986,
+        1987,
+        1988,
+        1989,
+        1990,
+        1991,
+        1992,
+        1993,
+        1994,
+        1995,
+        1996,
+        1997,
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030,
+        2031,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036,
+        2037,
+        2038,
+        2039,
+        2040,
+        2041,
+        2042,
+        2043,
+        2044,
+        2045,
+        2046,
+        2047,
+        2048,
+        2049,
+        2050,
+        2051,
+        2052,
+        2053,
+        2054,
+        2055,
+        2056,
+        2057,
+        2058,
+        2059,
+        2060,
+        2061,
+        2062,
+        2063,
+        2064,
+        2065,
+        2066,
+        2067,
+        2068,
+        2069,
+        2070,
+        2071,
+        2072,
+        2073,
+        2074,
+        2075,
+        2076,
+        2077,
+        2078,
+        2079,
+        2080,
+        2081,
+        2082,
+        2083,
+        2084,
+        2085,
+        2086,
+        2087,
+        2088,
+        2089,
+        2090,
+        2091,
+        2092,
+        2093,
+        2094,
+        2095,
+        2096,
+        2097,
+        2098,
+        2099,
+        2100
+      ],
+      "sha256": "ca9394ce74fe78084e224116e37a196821782f31c1b6681592330ae3802058f4",
+      "bytes": 1377945
+    }
+  },
+  "access_status": "Exact prepared inputs and corrected support arrays are not deposited with this software. See docs/DATA_DOWNLOAD.md. Source qualifications remain unresolved."
+}

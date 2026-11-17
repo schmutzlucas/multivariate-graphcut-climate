@@ -1,0 +1,82 @@
+<!DOCTYPE html><html><head><title>R: Compute odd/even candidate-ranking stability for one latitude...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>compute_k_sensitivity_block</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Compute odd/even candidate-ranking stability for one latitude block</h2>
+
+<h3>Description</h3>
+
+<p>Compute odd/even candidate-ranking stability for one latitude block
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>compute_k_sensitivity_block(
+  lat_positions,
+  plans,
+  model_names,
+  reference_name,
+  variables,
+  range_var,
+  k_values,
+  verbose = FALSE
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="lat_positions">lat_positions</code></td>
+<td>
+<p>Positions of the block in the requested latitude vector.</p>
+</td></tr>
+<tr><td><code id="plans">plans</code></td>
+<td>
+<p>Matched model read plans from prepare_k_sensitivity_plans().</p>
+</td></tr>
+<tr><td><code id="model_names">model_names</code></td>
+<td>
+<p>Distinct model identifiers including the reference.</p>
+</td></tr>
+<tr><td><code id="reference_name">reference_name</code></td>
+<td>
+<p>Model treated as reference, excluded from ranked candidates.</p>
+</td></tr>
+<tr><td><code id="variables">variables</code></td>
+<td>
+<p>Ordered pr/tas/psl identifiers.</p>
+</td></tr>
+<tr><td><code id="range_var">range_var</code></td>
+<td>
+<p>Common full-grid support array [lon,lat,3,2].</p>
+</td></tr>
+<tr><td><code id="k_values">k_values</code></td>
+<td>
+<p>Integer per-variable histogram resolutions.</p>
+</td></tr>
+<tr><td><code id="verbose">verbose</code></td>
+<td>
+<p>Whether to print block progress.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List lat_positions, rho, n_models_valid and elapsed_seconds. rho and
+counts are lon x local-lat x resolution arrays. Spearman correlation requires
+at least three finite candidate pairs and nonconstant ranks in both splits;
+otherwise rho is NA. Streams models, retaining only Hellinger scores, not
+all PMFs. Does not run future periods, graph cut, LDR or tune production k=8.
+</p>
+
+</main>
+
+</div>
+</body></html>

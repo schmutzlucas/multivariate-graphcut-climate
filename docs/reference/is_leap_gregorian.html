@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head><title>R: Test the proleptic Gregorian leap-year rule</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>is_leap_gregorian</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Test the proleptic Gregorian leap-year rule</h2>
+
+<h3>Description</h3>
+
+<p>Test the proleptic Gregorian leap-year rule
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>is_leap_gregorian(year)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="year">year</code></td>
+<td>
+<p>Numeric vector of years.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Logical vector of equal length; missing years propagate.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>stopifnot(identical(is_leap_gregorian(c(1900, 2000)), c(FALSE, TRUE)))
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head><title>R: Combine two legacy support cubes using local minima and...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>combine_two_ranges</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Combine two legacy support cubes using local minima and maxima</h2>
+
+<h3>Description</h3>
+
+<p>Combine two legacy support cubes using local minima and maxima
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>combine_two_ranges(range_a, range_b)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="range_a">range_a</code>, <code id="range_b">range_b</code></td>
+<td>
+<p>Identically shaped [lon,lat,variable,2] support arrays.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Cube of the same shape/dimnames, taking the available endpoint when
+only one is NA. Errors if combined min exceeds max; does not approve remaining
+missing/zero-width bounds. Retained for archived workflows, not used to build
+separate held-out supports in the current common-support PME.
+</p>
+
+</main>
+
+</div>
+</body></html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html><html><head><title>R: Compute weighted empirical quantiles without interpolation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>weighted_quantile_value</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Compute weighted empirical quantiles without interpolation</h2>
+
+<h3>Description</h3>
+
+<p>Compute weighted empirical quantiles without interpolation
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>weighted_quantile_value(field, weights, probs, transform = identity)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="field">field</code>, <code id="weights">weights</code></td>
+<td>
+<p>Numeric field and nonnegative weights with identical shape.</p>
+</td></tr>
+<tr><td><code id="probs">probs</code></td>
+<td>
+<p>Finite numeric probabilities in [0,1], in the desired output order.</p>
+</td></tr>
+<tr><td><code id="transform">transform</code></td>
+<td>
+<p>Elementwise function applied before selecting finite values.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Numeric vector, the first sorted value whose cumulative normalised
+weight reaches each probability. Returns NA entries when no valid weight remains.
+</p>
+
+</main>
+
+</div>
+</body></html>

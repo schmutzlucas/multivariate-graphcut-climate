@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><title>R: Find the maximum kernel-density height for a common overlay...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>density_ymax</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Find the maximum kernel-density height for a common overlay axis</h2>
+
+<h3>Description</h3>
+
+<p>Find the maximum kernel-density height for a common overlay axis
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>density_ymax(df_period, method_colors)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="df_period">df_period</code></td>
+<td>
+<p>Stacked method/value/weight samples for one period.</p>
+</td></tr>
+<tr><td><code id="method_colors">method_colors</code></td>
+<td>
+<p>Named colour vector keyed by internal method labels.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Scalar maximum of ggplot2's evaluated area-weighted density curves,
+using adjust=1 and bounds/limits [0,1]. Does not save or display the plot.
+</p>
+
+</main>
+
+</div>
+</body></html>

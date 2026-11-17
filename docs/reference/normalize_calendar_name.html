@@ -1,0 +1,49 @@
+<!DOCTYPE html><html><head><title>R: Canonicalise the supported CF calendar names</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>normalize_calendar_name</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Canonicalise the supported CF calendar names</h2>
+
+<h3>Description</h3>
+
+<p>Canonicalise the supported CF calendar names
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>normalize_calendar_name(calendar_raw)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="calendar_raw">calendar_raw</code></td>
+<td>
+<p>Raw character calendar attribute; only its first value is used.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>One of <code>standard</code>, <code>proleptic_gregorian</code>, <code>julian</code>,
+<code>360_day</code>, <code>365_day</code>, <code>366_day</code>, or <code>unknown</code>.
+Missing, blank or non-character attributes default to <code>standard</code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>stopifnot(normalize_calendar_name("noleap") == "365_day")
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

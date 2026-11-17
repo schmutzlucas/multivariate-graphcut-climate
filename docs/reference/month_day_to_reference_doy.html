@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head><title>R: Convert a seasonal boundary to its one-based reference day</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>month_day_to_reference_doy</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Convert a seasonal boundary to its one-based reference day</h2>
+
+<h3>Description</h3>
+
+<p>Convert a seasonal boundary to its one-based reference day
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>month_day_to_reference_doy(md)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="md">md</code></td>
+<td>
+<p>Integer month/day pair valid in a 365-day year.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Integer day of year in 1 through 365, using year 2001.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>stopifnot(month_day_to_reference_doy(c(3, 1)) == 60L)
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

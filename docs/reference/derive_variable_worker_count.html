@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head><title>R: Limit support workers using the heuristic per-task memory...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>derive_variable_worker_count</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Limit support workers using the heuristic per-task memory estimate</h2>
+
+<h3>Description</h3>
+
+<p>Limit support workers using the heuristic per-task memory estimate
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>derive_variable_worker_count(
+  variable,
+  slab_gb,
+  requested_workers,
+  memory_budget_gb
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="variable">variable</code></td>
+<td>
+<p>Variable name passed to the task-memory estimator.</p>
+</td></tr>
+<tr><td><code id="slab_gb">slab_gb</code></td>
+<td>
+<p>Estimated raw cube/slab size per task in GiB; must be positive.</p>
+</td></tr>
+<tr><td><code id="requested_workers">requested_workers</code></td>
+<td>
+<p>Positive integer upper limit from the resource configuration.</p>
+</td></tr>
+<tr><td><code id="memory_budget_gb">memory_budget_gb</code></td>
+<td>
+<p>Finite positive scheduling budget in GiB.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Integer worker count between one and requested_workers. The minimum
+of one does not guarantee a task fits when its estimate exceeds the budget.
+</p>
+
+</main>
+
+</div>
+</body></html>

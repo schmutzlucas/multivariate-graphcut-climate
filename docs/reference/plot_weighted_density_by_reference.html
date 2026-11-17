@@ -1,0 +1,68 @@
+<!DOCTYPE html><html><head><title>R: Estimate and plot Hellinger densities for each held-out...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>plot_weighted_density_by_reference</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Estimate and plot Hellinger densities for each held-out reference</h2>
+
+<h3>Description</h3>
+
+<p>Estimate and plot Hellinger densities for each held-out reference
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>plot_weighted_density_by_reference(
+  df_metric,
+  summary_table,
+  metric_label,
+  method_colors,
+  period_label
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="df_metric">df_metric</code></td>
+<td>
+<p>Data frame with reference, method, value and weight columns;
+method uses the internal MMM/GC-0.125 identifiers. Values are scores in [0,1]
+and weights are cosine-latitude areas for each regular-grid cell.</p>
+</td></tr>
+<tr><td><code id="summary_table">summary_table</code></td>
+<td>
+<p>Data frame with reference, method, weighted_mean and
+weighted_median columns, computed from the same cells and weights.</p>
+</td></tr>
+<tr><td><code id="metric_label">metric_label</code></td>
+<td>
+<p>Scalar figure title identifying the diagnostic.</p>
+</td></tr>
+<tr><td><code id="method_colors">method_colors</code></td>
+<td>
+<p>Named colour vector for the internal method identifiers.</p>
+</td></tr>
+<tr><td><code id="period_label">period_label</code></td>
+<td>
+<p>Target-period text included in the calibration/evaluation subtitle.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>ggplot object with boundary-corrected weighted KDEs (adjust 1, bounds
+[0,1]), five facet columns and supplied mean/median markers. No files written.
+Visible legend labels translate MMM to D-MMM; raw numerical inputs are retained.
+</p>
+
+</main>
+
+</div>
+</body></html>

@@ -1,0 +1,45 @@
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Univariate, bivariate, and trivariate distributional evaluation of the ERA5 reconstruction for 1999--2023. The Hellinger distance and low-density-region (LDR) Hellinger score are evaluated for each indicated variable subset, using \(\ell_{\mathrm{LDR}}=0.01\). Univariate, bivariate, and trivariate PMFs use 32, 16, and 8 bins per variable, respectively, and all GC diagnostics retain the labels selected by the trivariate objective. D-MMM is the equal-weight distributional baseline. Both diagnostics are area-weighted, and relative improvement is computed from the unrounded scores relative to D-MMM. Positive improvement favours GC-\(0.125\); negative values indicate deterioration. Lower values are better. Scores are displayed to three decimals and improvements to one decimal, with improvements calculated before display rounding.}
+\label{tab:era5_distributional_sensitivity}
+\begin{tabular}{lrrrrrr}
+\hline
+Variable set
+& \multicolumn{3}{c}{Hellinger distance}
+& \multicolumn{3}{c}{LDR Hellinger score, \(\ell_{\mathrm{LDR}}=0.01\)} \\
+\cline{2-4}\cline{5-7}
+& D-MMM & GC & Improvement
+& D-MMM & GC & Improvement \\
+\hline
+\(\mathit{pr}^{\ast},\mathit{tas},\mathit{psl}\)
+& 0.248 & 0.189 & 23.6\,\%
+& 0.164 & 0.093 & 43.4\,\% \\
+
+\(\mathit{pr}^{\ast},\mathit{tas}\)
+& 0.242 & 0.191 & 20.9\,\%
+& 0.165 & 0.091 & 44.8\,\% \\
+
+\(\mathit{pr}^{\ast},\mathit{psl}\)
+& 0.144 & 0.137 & 5.2\,\%
+& 0.085 & 0.064 & 25.0\,\% \\
+
+\(\mathit{tas},\mathit{psl}\)
+& 0.246 & 0.179 & 27.2\,\%
+& 0.169 & 0.090 & 46.5\,\% \\
+
+\(\mathit{pr}^{\ast}\)
+& 0.077 & 0.094 & -21.4\,\%
+& 0.029 & 0.033 & -11.8\,\% \\
+
+\(\mathit{tas}\)
+& 0.207 & 0.140 & 32.4\,\%
+& 0.156 & 0.079 & 49.2\,\% \\
+
+\(\mathit{psl}\)
+& 0.104 & 0.078 & 24.9\,\%
+& 0.070 & 0.040 & 42.1\,\% \\
+\hline
+\end{tabular}
+\end{table}

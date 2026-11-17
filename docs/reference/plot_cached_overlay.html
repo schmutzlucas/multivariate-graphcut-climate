@@ -1,0 +1,62 @@
+<!DOCTYPE html><html><head><title>R: Replay a five-period PME density overlay from archived curve...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>plot_cached_overlay</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Replay a five-period PME density overlay from archived curve coordinates</h2>
+
+<h3>Description</h3>
+
+<p>Replay a five-period PME density overlay from archived curve coordinates
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>plot_cached_overlay(
+  recipe,
+  metric_type = "full",
+  tau_key = NULL,
+  inset_layout = c("standard", "appendix_enlarged")
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="recipe">recipe</code></td>
+<td>
+<p>Numeric plot-recipe list with coordinates (x,y,group,colour),
+five-row annotations (period_label,mmm,gc,mmm_color,gc_color,y) and a finite
+positive y_limit. No ggplot object or full experiment workspace is needed.</p>
+</td></tr>
+<tr><td><code id="metric_type">metric_type</code></td>
+<td>
+<p>Either full for ordinary Hellinger or partial for LDR.</p>
+</td></tr>
+<tr><td><code id="tau_key">tau_key</code></td>
+<td>
+<p>Numeric-character ell_LDR threshold in (0,1) for partial; NULL
+for full. Formatting is preserved in the plotmath table heading.</p>
+</td></tr>
+<tr><td><code id="inset_layout">inset_layout</code></td>
+<td>
+<p>Standard main-text or enlarged appendix inset typography.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>ggplot object with the original curves, table, colours and layout.
+Does not re-estimate densities, average references, save files or run graph cut.
+</p>
+
+</main>
+
+</div>
+</body></html>

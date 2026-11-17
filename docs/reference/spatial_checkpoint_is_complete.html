@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head><title>R: Check a spatial-sensitivity checkpoint for scientific...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>spatial_checkpoint_is_complete</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Check a spatial-sensitivity checkpoint for scientific identity and success</h2>
+
+<h3>Description</h3>
+
+<p>Check a spatial-sensitivity checkpoint for scientific identity and success
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>spatial_checkpoint_is_complete(record, lambda, signature, grid, n_models)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="record">record</code></td>
+<td>
+<p>Deserialised checkpoint list, or malformed value to reject.</p>
+</td></tr>
+<tr><td><code id="lambda">lambda</code></td>
+<td>
+<p>Expected scalar nonnegative numeric lambda.</p>
+</td></tr>
+<tr><td><code id="signature">signature</code></td>
+<td>
+<p>Exact expected scientific/input signature list.</p>
+</td></tr>
+<tr><td><code id="grid">grid</code></td>
+<td>
+<p>Expected longitude/latitude dimensions, a two-element integer vector.</p>
+</td></tr>
+<tr><td><code id="n_models">n_models</code></td>
+<td>
+<p>Positive integer candidate-model count.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>TRUE only for a complete matching checkpoint with finite integer labels
+in range and finite nonnegative native data/smooth energies. Malformed or
+unsuccessful payloads return FALSE, never partial numerical approval.
+</p>
+
+</main>
+
+</div>
+</body></html>

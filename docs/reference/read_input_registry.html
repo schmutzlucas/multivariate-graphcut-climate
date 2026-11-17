@@ -1,0 +1,58 @@
+<!DOCTYPE html><html><head><title>R: Read and validate the frozen input registry without reading...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>read_input_registry</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Read and validate the frozen input registry without reading climate payloads</h2>
+
+<h3>Description</h3>
+
+<p>Read and validate the frozen input registry without reading climate payloads
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>read_input_registry(
+  path = Sys.getenv("MVGC_INPUT_REGISTRY", ""),
+  required_models = NULL,
+  required_variables = c("pr", "tas", "psl")
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="path">path</code></td>
+<td>
+<p>Registry JSON path, defaulting to MVGC_INPUT_REGISTRY.</p>
+</td></tr>
+<tr><td><code id="required_models">required_models</code></td>
+<td>
+<p>Optional distinct model identifiers whose complete
+variable coverage must be present before starting an experiment.</p>
+</td></tr>
+<tr><td><code id="required_variables">required_variables</code></td>
+<td>
+<p>Distinct expected variables for each required model,
+default pr/tas/psl; only used when required_models is supplied.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Parsed list with roots/inputs and any producer metadata unchanged.
+Checks nonempty schema, unique identities, safe relative paths, byte sizes,
+optional checksum syntax and requested model-variable completeness. Does not
+open NetCDFs, establish complete dates/units or freshly hash payloads.
+</p>
+
+</main>
+
+</div>
+</body></html>

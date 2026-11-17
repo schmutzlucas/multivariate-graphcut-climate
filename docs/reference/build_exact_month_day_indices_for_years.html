@@ -1,0 +1,86 @@
+<!DOCTYPE html><html><head><title>R: Select inclusive seasonal dates from decoded month/day...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>build_exact_month_day_indices_for_years</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Select inclusive seasonal dates from decoded month/day components</h2>
+
+<h3>Description</h3>
+
+<p>Wrapped seasons include both ends of each selected year; no cross-year
+reassignment is made. Completeness diagnostics come from year_table; this
+routine checks missing years and empty selections, not every expected date.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>build_exact_month_day_indices_for_years(
+  year_table,
+  timestep_year,
+  timestep_slot,
+  timestep_month,
+  timestep_day,
+  selected_years,
+  season_start_md,
+  season_end_md,
+  requested_year_policy = c("warn", "stop")
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="year_table">year_table</code></td>
+<td>
+<p>Year diagnostics from <code>infer_time_structure_daily()</code>.</p>
+</td></tr>
+<tr><td><code id="timestep_year">timestep_year</code></td>
+<td>
+<p>Decoded year for each file record.</p>
+</td></tr>
+<tr><td><code id="timestep_slot">timestep_slot</code></td>
+<td>
+<p>Parallel slot/rank vector used in diagnostics only.</p>
+</td></tr>
+<tr><td><code id="timestep_month">timestep_month</code></td>
+<td>
+<p>Parallel decoded month vector.</p>
+</td></tr>
+<tr><td><code id="timestep_day">timestep_day</code></td>
+<td>
+<p>Parallel decoded day vector.</p>
+</td></tr>
+<tr><td><code id="selected_years">selected_years</code></td>
+<td>
+<p>Requested years, sorted and deduplicated.</p>
+</td></tr>
+<tr><td><code id="season_start_md">season_start_md</code></td>
+<td>
+<p>Inclusive start boundary on the 365-day reference calendar.</p>
+</td></tr>
+<tr><td><code id="season_end_md">season_end_md</code></td>
+<td>
+<p>Inclusive end boundary on that calendar.</p>
+</td></tr>
+<tr><td><code id="requested_year_policy">requested_year_policy</code></td>
+<td>
+<p>Warn or stop for missing years or empty selections.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List with integer file <code>indices</code> and <code>year_summary</code> table;
+raises an error if the combined selection is empty.
+</p>
+
+</main>
+
+</div>
+</body></html>

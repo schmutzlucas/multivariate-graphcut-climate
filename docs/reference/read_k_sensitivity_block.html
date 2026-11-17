@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head><title>R: Read one model's calibration latitude block for resolution...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>read_k_sensitivity_block</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Read one model's calibration latitude block for resolution sensitivity</h2>
+
+<h3>Description</h3>
+
+<p>Read one model's calibration latitude block for resolution sensitivity
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>read_k_sensitivity_block(model_plan, variables, lat_positions)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="model_plan">model_plan</code></td>
+<td>
+<p>Model entry from prepare_k_sensitivity_plans().</p>
+</td></tr>
+<tr><td><code id="variables">variables</code></td>
+<td>
+<p>Ordered pr/tas/psl identifiers.</p>
+</td></tr>
+<tr><td><code id="lat_positions">lat_positions</code></td>
+<td>
+<p>Positions in the requested latitude vector, not file-axis indices.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Named list of lon x block-lat x time cubes; pr uses the production
+shared nonnegative QC then log1p; tas/psl remain in prepared units. Opens/closes each
+variable file independently, including on read errors. Does not regrid data.
+</p>
+
+</main>
+
+</div>
+</body></html>

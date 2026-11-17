@@ -1,0 +1,60 @@
+<!DOCTYPE html><html><head><title>R: Select a tie-inclusive high-density region</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>select_hdr_indices</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Select a tie-inclusive high-density region</h2>
+
+<h3>Description</h3>
+
+<p>Sort reference-bin probabilities from largest to smallest and retain every
+bin at least as probable as the first cutoff reaching mass 1 - tau.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>select_hdr_indices(pdf_vector, tau = 0.1)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="pdf_vector">pdf_vector</code></td>
+<td>
+<p>Numeric vector of reference-bin masses. Positive total
+mass is normalised internally; nonfinite and negative entries are treated
+as zero for legacy compatibility. Use validate_pmf() for strict validation.</p>
+</td></tr>
+<tr><td><code id="tau">tau</code></td>
+<td>
+<p>Scalar in [0, 1); nominal mass outside the HDR.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Boundary ties are all included; the attained mass may exceed 1 - tau.
+</p>
+
+
+<h3>Value</h3>
+
+<p>Sorted one-based integer bin indices, or integer(0) for zero total mass.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>select_hdr_indices(c(0, 0.1, 0.9), tau = 0.1)
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

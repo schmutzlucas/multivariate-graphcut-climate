@@ -1,0 +1,49 @@
+<!DOCTYPE html><html><head><title>R: Compute the sensitivity reference helper's ordinary Hellinger...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>hellinger_distance_pmf</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Compute the sensitivity reference helper's ordinary Hellinger distance</h2>
+
+<h3>Description</h3>
+
+<p>Compute the sensitivity reference helper's ordinary Hellinger distance
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>hellinger_distance_pmf(p, q)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="p">p</code>, <code id="q">q</code></td>
+<td>
+<p>Valid normalised PMF vectors on identical ordered bins, or NULL for
+an empty split. Unlike the strict public API this internal helper assumes validity.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Scalar ordinary Hellinger distance, or NA_real_ when either split is NULL.
+No subset renormalisation, baseline percentage or latitude weighting is applied.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>stopifnot(hellinger_distance_pmf(c(1,0),c(0,1)) == 1)
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

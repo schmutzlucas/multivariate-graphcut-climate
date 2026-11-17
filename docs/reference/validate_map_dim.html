@@ -1,0 +1,50 @@
+<!DOCTYPE html><html><head><title>R: Require a PME map's exact spatial array dimensions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>validate_map_dim</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Require a PME map's exact spatial array dimensions</h2>
+
+<h3>Description</h3>
+
+<p>Require a PME map's exact spatial array dimensions
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>validate_map_dim(map_obj, expected_dim, label)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="map_obj">map_obj</code></td>
+<td>
+<p>Matrix/array to inspect.</p>
+</td></tr>
+<tr><td><code id="expected_dim">expected_dim</code></td>
+<td>
+<p>Expected dimension vector; no transposition or reshaping is guessed.</p>
+</td></tr>
+<tr><td><code id="label">label</code></td>
+<td>
+<p>Scientific map identity included in errors.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>NULL invisibly on success; errors on wrong rank/shape. Does not itself
+certify finite values, successful optimisation, units or statistical identity.
+</p>
+
+</main>
+
+</div>
+</body></html>

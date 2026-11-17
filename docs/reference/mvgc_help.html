@@ -1,0 +1,67 @@
+<!DOCTYPE html><html><head><title>R: Open a generated function reference without installing an R...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>mvgc_help</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Open a generated function reference without installing an R package</h2>
+
+<h3>Description</h3>
+
+<p>Open a generated function reference without installing an R package
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>mvgc_help(topic, source = NULL, open = interactive())
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="topic">topic</code></td>
+<td>
+<p>Function name, as a single character string.</p>
+</td></tr>
+<tr><td><code id="source">source</code></td>
+<td>
+<p>Optional repository-relative source file to disambiguate helpers
+with the same name in multiple modules.</p>
+</td></tr>
+<tr><td><code id="open">open</code></td>
+<td>
+<p>Logical; open the HTML page in a browser. Defaults to interactive().</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Run Rscript tools/build_reference_docs.R after editing roxygen blocks.
+Plain sourcing does not register standard R help databases, so ?topic is not
+guaranteed to find a repository-local function. This helper is explicit and
+leaves the scientific project as a script-based repository.
+</p>
+
+
+<h3>Value</h3>
+
+<p>Absolute HTML path invisibly. Errors if no unique generated page exists.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>if (file.exists("docs/reference/topics.csv")) {
+  mvgc_help("hellinger_distance", open = FALSE)
+}
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

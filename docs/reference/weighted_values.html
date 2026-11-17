@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head><title>R: Select finite positive-weight samples without recycling...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>weighted_values</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Select finite positive-weight samples without recycling mismatched fields</h2>
+
+<h3>Description</h3>
+
+<p>Select finite positive-weight samples without recycling mismatched fields
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>weighted_values(field, weights, transform = identity)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="field">field</code></td>
+<td>
+<p>Numeric field, usually a longitude x latitude matrix.</p>
+</td></tr>
+<tr><td><code id="weights">weights</code></td>
+<td>
+<p>Numeric weights with exactly the same length and dimensions.
+Nonfinite or zero weights are excluded; finite negative weights are invalid.</p>
+</td></tr>
+<tr><td><code id="transform">transform</code></td>
+<td>
+<p>Function returning one numeric transformed value per input cell.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List with valid transformed values, their weights and a logical valid
+mask in column-major order. Missing field cells are excluded with their weights.
+</p>
+
+</main>
+
+</div>
+</body></html>

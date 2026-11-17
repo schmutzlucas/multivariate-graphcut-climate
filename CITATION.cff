@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite the associated article and this software version."
+title: "Multivariate graph-cut combination of climate models: code and compact results"
+type: software
+version: "1.0.0"
+authors:
+  - family-names: Schmutz
+    given-names: Lucas
+    affiliation: "University of Lausanne, Switzerland"
+repository-code: "https://github.com/schmutzlucas/multivariate-graphcut-climate"
+license: MIT
+keywords:
+  - climate-model ensembles
+  - multivariate distributions
+  - Hellinger distance
+  - graph cuts
+  - CMIP6
+  - ERA5
+abstract: >-
+  Code, compact numerical results and documentation for "Beyond mean fields:
+  a multivariate graph-cut approach to climate-model combination". Regenerates
+  all article figures and tables from included results, demonstrates the
+  longitude-periodic graph-cut solver, and provides entry points for the full
+  ERA5 and perfect-model experiments, which require external prepared
+  ERA5/CMIP6 data. The external graph-cut solver and climate data keep their
+  own terms.
+references:
+  - type: article
+    title: "Beyond mean fields: a multivariate graph-cut approach to climate-model combination"
+    authors:
+      - family-names: Schmutz
+        given-names: Lucas
+    journal: "Earth System Dynamics (manuscript in preparation)"
+# Add the version DOI (identifiers/doi) and the article DOI once they are issued.

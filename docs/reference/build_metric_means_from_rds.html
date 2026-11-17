@@ -1,0 +1,75 @@
+<!DOCTYPE html><html><head><title>R: Summarise paired spatial PME scores separately for each...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>build_metric_means_from_rds</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Summarise paired spatial PME scores separately for each reference and period</h2>
+
+<h3>Description</h3>
+
+<p>First average each method's distance field with the supplied spatial weights,
+then compute 100 * (H_D-MMM - H_GC) / H_D-MMM for that reference. This is not
+an average of local percentage ratios and does not pool references. Both
+methods must have the same valid-cell mask; matching missing cells retain
+the historical common-area omission rule. Positive improvement favours GC.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>build_metric_means_from_rds(
+  results,
+  metric_type,
+  metric_label,
+  lambda_key,
+  tau_key,
+  weight_matrix
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="results">results</code></td>
+<td>
+<p>Compact PME result list with periods, metadata and method maps.</p>
+</td></tr>
+<tr><td><code id="metric_type">metric_type</code></td>
+<td>
+<p>Full ordinary Hellinger or partial internal LDR identifier.</p>
+</td></tr>
+<tr><td><code id="metric_label">metric_label</code></td>
+<td>
+<p>Human-readable label copied into each output row.</p>
+</td></tr>
+<tr><td><code id="lambda_key">lambda_key</code></td>
+<td>
+<p>GC smoothness map key, normally &quot;0.125&quot;.</p>
+</td></tr>
+<tr><td><code id="tau_key">tau_key</code></td>
+<td>
+<p>LDR threshold map key, ignored for full Hellinger.</p>
+</td></tr>
+<tr><td><code id="weight_matrix">weight_matrix</code></td>
+<td>
+<p>Finite nonnegative lon x lat weights with positive total.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Data frame with metric_label, period_id, period, reference, H_MMM,
+H_GC, delta_H and rel_improvement in percent. H_MMM denotes D-MMM internally.
+Requires complete reference sets, distinct periods, correct map shapes and
+finite paired means with a strictly positive D-MMM denominator.
+</p>
+
+</main>
+
+</div>
+</body></html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><title>R: Evaluate one candidate's split Hellinger scores through the R...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>compute_model_h_scores_block</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Evaluate one candidate's split Hellinger scores through the R reference path</h2>
+
+<h3>Description</h3>
+
+<p>Evaluate one candidate's split Hellinger scores through the R reference path
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>compute_model_h_scores_block(
+  raw,
+  model_plan,
+  reference_pmfs,
+  range_var,
+  lat_positions,
+  k_values
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="raw">raw</code></td>
+<td>
+<p>Named pr/tas/psl calibration cubes with already transformed pr.</p>
+</td></tr>
+<tr><td><code id="model_plan">model_plan</code></td>
+<td>
+<p>Candidate selected-year odd/even masks.</p>
+</td></tr>
+<tr><td><code id="reference_pmfs">reference_pmfs</code></td>
+<td>
+<p>Reference list arrays from compute_reference_pmfs_block().</p>
+</td></tr>
+<tr><td><code id="range_var">range_var</code></td>
+<td>
+<p>Common full-grid support array [lon,lat,3,2].</p>
+</td></tr>
+<tr><td><code id="lat_positions">lat_positions</code></td>
+<td>
+<p>Full-grid positions for this latitude block.</p>
+</td></tr>
+<tr><td><code id="k_values">k_values</code></td>
+<td>
+<p>Integer per-variable resolutions in desired output order.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Numeric array lon x local-lat x resolution x two splits. Empty sample
+comparisons are NA. This is a verification helper, not graph-cut optimisation.
+</p>
+
+</main>
+
+</div>
+</body></html>

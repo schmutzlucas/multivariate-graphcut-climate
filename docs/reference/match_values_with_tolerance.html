@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head><title>R: Match coordinates exactly or by one unambiguous nearby value</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>match_values_with_tolerance</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Match coordinates exactly or by one unambiguous nearby value</h2>
+
+<h3>Description</h3>
+
+<p>Match coordinates exactly or by one unambiguous nearby value
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>match_values_with_tolerance(requested, available, tolerance = 1e-06)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="requested">requested</code></td>
+<td>
+<p>Numeric coordinate vector in desired order.</p>
+</td></tr>
+<tr><td><code id="available">available</code></td>
+<td>
+<p>Numeric coordinates on the file axis.</p>
+</td></tr>
+<tr><td><code id="tolerance">tolerance</code></td>
+<td>
+<p>Absolute tolerance, in coordinate units, for fallback matching.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Integer indices into available. Unmatched or ambiguous nonexact
+requests remain NA; exact matching uses R's first-match convention.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>stopifnot(match_values_with_tolerance(1+1e-8, 1:3) == 1L)
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

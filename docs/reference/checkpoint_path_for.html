@@ -1,0 +1,54 @@
+<!DOCTYPE html><html><head><title>R: Build the period/reference PME checkpoint filename</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>checkpoint_path_for</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Build the period/reference PME checkpoint filename</h2>
+
+<h3>Description</h3>
+
+<p>Build the period/reference PME checkpoint filename
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>checkpoint_path_for(checkpoint_dir, period_id, ref_index, ref_name)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="checkpoint_dir">checkpoint_dir</code></td>
+<td>
+<p>Checkpoint root.</p>
+</td></tr>
+<tr><td><code id="period_id">period_id</code></td>
+<td>
+<p>Target period key.</p>
+</td></tr>
+<tr><td><code id="ref_index">ref_index</code></td>
+<td>
+<p>One-based reference position in the full ordered model list.</p>
+</td></tr>
+<tr><td><code id="ref_name">ref_name</code></td>
+<td>
+<p>Exact model identifier; sanitised only for the filename.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Path under checkpoint_dir/period_id with index and model name. Does
+not create directories or prove compatibility of any existing payload.
+</p>
+
+</main>
+
+</div>
+</body></html>

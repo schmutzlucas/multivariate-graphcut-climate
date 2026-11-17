@@ -1,0 +1,65 @@
+<!DOCTYPE html><html><head><title>R: Tabulate the fractional seasonal mapping for distinct year...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>build_mapping_by_year_length</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Tabulate the fractional seasonal mapping for distinct year lengths</h2>
+
+<h3>Description</h3>
+
+<p>Tabulate the fractional seasonal mapping for distinct year lengths
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>build_mapping_by_year_length(
+  year_lengths,
+  start_ref_doy,
+  end_ref_doy,
+  wraps_year_end
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="year_lengths">year_lengths</code></td>
+<td>
+<p>Nonempty vector of positive integer model/empirical year lengths.</p>
+</td></tr>
+<tr><td><code id="start_ref_doy">start_ref_doy</code></td>
+<td>
+<p>Inclusive start day on the 365-day reference calendar.</p>
+</td></tr>
+<tr><td><code id="end_ref_doy">end_ref_doy</code></td>
+<td>
+<p>Inclusive end day on that reference calendar.</p>
+</td></tr>
+<tr><td><code id="wraps_year_end">wraps_year_end</code></td>
+<td>
+<p>Whether selection includes both ends of each year.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Data frame with one row per sorted unique year length and columns
+year_length, start_mod, end_mod and wraps_window; NULL for empty input.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>build_mapping_by_year_length(c(360,365,366),1,365,FALSE)
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head><title>R: Compute non-renormalised LDR Hellinger score</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>ldr_hellinger_score</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Compute non-renormalised LDR Hellinger score</h2>
+
+<h3>Description</h3>
+
+<p>Compute non-renormalised LDR Hellinger score
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>ldr_hellinger_score(reference, candidate, ell_ldr = 0.01)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="reference">reference</code>, <code id="candidate">candidate</code></td>
+<td>
+<p>Numeric normalised PMFs on identical ordered bins.</p>
+</td></tr>
+<tr><td><code id="ell_ldr">ell_ldr</code></td>
+<td>
+<p>Scalar threshold strictly between zero and one, usually 0.01.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>The selected subvectors are not renormalised. This measures an
+absolute contribution to squared Hellinger distance, not distance between
+conditional distributions. Ties and zero-reference bins follow select_ldr_indices().
+</p>
+
+
+<h3>Value</h3>
+
+<p>Scalar restricted Hellinger score on reference-selected LDR bins.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>ldr_hellinger_score(c(0, 0.1, 0.9), c(0.2, 0.1, 0.7), ell_ldr = 0.01)
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

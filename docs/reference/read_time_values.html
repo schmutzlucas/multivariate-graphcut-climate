@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><title>R: Read raw numeric NetCDF time coordinates</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>read_time_values</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Read raw numeric NetCDF time coordinates</h2>
+
+<h3>Description</h3>
+
+<p>Read raw numeric NetCDF time coordinates
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>read_time_values(nc_obj, time_dim_name)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="nc_obj">nc_obj</code></td>
+<td>
+<p>Open <code>ncdf4</code> handle, not closed by this function.</p>
+</td></tr>
+<tr><td><code id="time_dim_name">time_dim_name</code></td>
+<td>
+<p>Name of the time coordinate/dimension.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Numeric vector, preferring a variable to cached dimension values.
+No decoding or time-zone conversion is performed.
+</p>
+
+</main>
+
+</div>
+</body></html>

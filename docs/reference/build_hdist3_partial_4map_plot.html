@@ -1,0 +1,61 @@
+<!DOCTYPE html><html><head><title>R: Assemble full-distribution and LDR ERA5 maps</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>build_hdist3_partial_4map_plot</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Assemble full-distribution and LDR ERA5 maps</h2>
+
+<h3>Description</h3>
+
+<p>Assemble full-distribution and LDR ERA5 maps
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>build_hdist3_partial_4map_plot(
+  h_mmm,
+  h_gc,
+  partial_h_mmm,
+  partial_h_gc,
+  lon,
+  lat,
+  tau_label
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="h_mmm">h_mmm</code>, <code id="h_gc">h_gc</code></td>
+<td>
+<p>Longitude x latitude full-distribution Hellinger distance matrices.</p>
+</td></tr>
+<tr><td><code id="partial_h_mmm">partial_h_mmm</code>, <code id="partial_h_gc">partial_h_gc</code></td>
+<td>
+<p>Longitude x latitude non-renormalised LDR Hellinger score matrices.</p>
+</td></tr>
+<tr><td><code id="lon">lon</code>, <code id="lat">lat</code></td>
+<td>
+<p>Longitude and latitude cell centres in degrees, matching matrix axes.</p>
+</td></tr>
+<tr><td><code id="tau_label">tau_label</code></td>
+<td>
+<p>Numeric-character LDR probability-mass threshold; accepted layout requires 0.01.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Gtable for full Hellinger distance and non-renormalised LDR Hellinger score; threshold must be 0.01.
+</p>
+
+</main>
+
+</div>
+</body></html>

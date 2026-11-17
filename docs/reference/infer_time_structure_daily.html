@@ -1,0 +1,96 @@
+<!DOCTYPE html><html><head><title>R: Build legacy daily time-selection metadata and completeness...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>infer_time_structure_daily</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Build legacy daily time-selection metadata and completeness diagnostics</h2>
+
+<h3>Description</h3>
+
+<p>Supports helper-based or empirical mapping, with Gregorian dates decoded from
+UTC offsets and non-Gregorian empirical years inferred from filename start
+plus day offsets. Full-year non-Gregorian files must start on January 1.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>infer_time_structure_daily(
+  nc_obj,
+  file_path,
+  time_dim_name,
+  calendar,
+  required_years,
+  strict_time_checks = TRUE,
+  time_decode_mode = c("auto", "helpers_cf", "empirical"),
+  requested_year_policy = c("warn", "stop")
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="nc_obj">nc_obj</code></td>
+<td>
+<p>Open NetCDF handle, not closed here.</p>
+</td></tr>
+<tr><td><code id="file_path">file_path</code></td>
+<td>
+<p>Path containing a date-range hint, used in diagnostics.</p>
+</td></tr>
+<tr><td><code id="time_dim_name">time_dim_name</code></td>
+<td>
+<p>Time dimension name.</p>
+</td></tr>
+<tr><td><code id="calendar">calendar</code></td>
+<td>
+<p>Canonical CF calendar name.</p>
+</td></tr>
+<tr><td><code id="required_years">required_years</code></td>
+<td>
+<p>Integer vector of requested years.</p>
+</td></tr>
+<tr><td><code id="strict_time_checks">strict_time_checks</code></td>
+<td>
+<p>Whether invalid ordering/fractional non-Gregorian
+offsets raise errors; gaps may still warn and receive per-year checks.</p>
+</td></tr>
+<tr><td><code id="time_decode_mode">time_decode_mode</code></td>
+<td>
+<p>One of auto, helpers_cf (no decode fallback), empirical.</p>
+</td></tr>
+<tr><td><code id="requested_year_policy">requested_year_policy</code></td>
+<td>
+<p>Warn or stop when requested years fail the active
+mapping's completeness test. Defaults to warn, unchanged from production.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Important: Gregorian/helper <code>is_full_year</code> uses modal observed counts
+within leap/non-leap groups, not only theoretical calendar lengths. A repeated
+missing-day pattern can therefore be classified full under the legacy mapping.
+<code>declared_calendar_mismatch</code> exposes this; it is not proof of complete
+dates. Corrected-data preparation separately verifies exact CF date coverage.
+Warn policy preserves the historical experiment behaviour; it does not repair
+or approve missing data. <code>time_phase</code> is a legacy NA placeholder.
+</p>
+
+
+<h3>Value</h3>
+
+<p>List containing backend/fallback diagnostics, <code>year_table</code>,
+file coverage, and per-record <code>timestep_year</code>, <code>timestep_slot</code>
+and <code>timestep_doy</code>. Slots can be observed-record ranks, not true DOYs.
+</p>
+
+</main>
+
+</div>
+</body></html>

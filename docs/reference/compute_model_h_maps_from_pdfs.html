@@ -1,0 +1,50 @@
+<!DOCTYPE html><html><head><title>R: Evaluate every candidate model against reference-selected...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>compute_model_h_maps_from_pdfs</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Evaluate every candidate model against reference-selected bins</h2>
+
+<h3>Description</h3>
+
+<p>Evaluate every candidate model against reference-selected bins
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>compute_model_h_maps_from_pdfs(pdf_ref, pdf_models, selected_indices)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="pdf_ref">pdf_ref</code></td>
+<td>
+<p>Valid reference PMF array longitude x latitude x bins.</p>
+</td></tr>
+<tr><td><code id="pdf_models">pdf_models</code></td>
+<td>
+<p>Valid candidate array longitude x latitude x bins x models.</p>
+</td></tr>
+<tr><td><code id="selected_indices">selected_indices</code></td>
+<td>
+<p>Nested longitude/latitude bin-index lists.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Longitude x latitude x models score array, retaining missing scores
+and a singleton model dimension. Does not normalise restricted PMFs.
+</p>
+
+</main>
+
+</div>
+</body></html>

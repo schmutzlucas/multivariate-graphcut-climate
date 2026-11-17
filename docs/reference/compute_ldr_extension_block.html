@@ -1,0 +1,61 @@
+<!DOCTYPE html><html><head><title>R: Evaluate reference-defined LDR scores for all saved lambda...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>compute_ldr_extension_block</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Evaluate reference-defined LDR scores for all saved lambda label maps</h2>
+
+<h3>Description</h3>
+
+<p>Evaluate reference-defined LDR scores for all saved lambda label maps
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>compute_ldr_extension_block(pmfs, labels, thresholds, models, lon_size)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="pmfs">pmfs</code></td>
+<td>
+<p>Numeric array bins x cells x models of finite nonnegative PMFs
+normalised per cell/model on the single common PME support.</p>
+</td></tr>
+<tr><td><code id="labels">labels</code></td>
+<td>
+<p>Named lambda list of named reference matrices on this latitude block;
+labels index the ordered candidates obtained after excluding that reference.</p>
+</td></tr>
+<tr><td><code id="thresholds">thresholds</code></td>
+<td>
+<p>Named numeric ell_LDR values strictly in (0,1).</p>
+</td></tr>
+<tr><td><code id="models">models</code></td>
+<td>
+<p>Ordered reference/model identifiers matching the PMF model axis.</p>
+</td></tr>
+<tr><td><code id="lon_size">lon_size</code></td>
+<td>
+<p>Positive integer number of longitude cells; cells must divide exactly.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Named threshold list with MMM reference matrices and GC lambda/reference
+matrices. Uses equal-model means, all zero-reference/cutoff-tied bins and the
+non-renormalised Hellinger formula. No labels are optimised or modified.
+</p>
+
+</main>
+
+</div>
+</body></html>

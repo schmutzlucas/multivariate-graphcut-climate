@@ -1,0 +1,79 @@
+name: Reproducibility checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+env:
+  SOLVER_REPOSITORY: schmutzlucas/gcoWrapR
+  SOLVER_COMMIT: 6b655d5feff7e7912d2ac0a7de95d0f8edd6d434
+jobs:
+  compact:
+    name: Level 1 - figures, tables and compact tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.4.3'
+          use-public-rspm: true
+      - name: Install system libraries
+        run: sudo apt-get update && sudo apt-get install -y libnetcdf-dev libssl-dev libcurl4-openssl-dev libxml2-dev libuv1-dev libpng-dev libfreetype6-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev libjpeg-dev libtiff-dev
+      - name: Install explicit CRAN environment
+        run: Rscript --vanilla tools/install_dependencies.R --accept-current-cran --with-docs
+      - name: Verify archive manifests and checksums
+        run: |
+          python tools/build_manifests.py
+          git diff --exit-code -- publication/release_manifest.csv publication/SHA256SUMS
+          sha256sum --check --quiet publication/SHA256SUMS
+      - name: Python and R tests (native solver absent; native tests report SKIP)
+        env:
+          MVGC_PRIVATE_VERIFICATION_DIR: ${{ runner.temp }}/scientific-tests
+          MVGC_OUTPUT_ROOT: ${{ runner.temp }}/scientific-outputs
+        run: |
+          python -m unittest discover -s tests -p 'test_*.py' -v
+          Rscript --vanilla tests/run_tests.R
+      - name: Validate offline documentation
+        run: Rscript --vanilla tools/build_reference_docs.R --examples --require-complete
+      - name: Level 1 compact reproduction
+        env:
+          MVGC_OUTPUT_ROOT: ${{ runner.temp }}/article-reproduction
+          MVGC_PRIVATE_VERIFICATION_DIR: ${{ runner.temp }}/reproduction-verification
+        run: Rscript --vanilla tools/reproduce.R
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: level1-outputs
+          path: ${{ runner.temp }}/article-reproduction
+          if-no-files-found: ignore
+
+  native:
+    name: Level 2 - pinned graph-cut solver demonstration
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.4.3'
+          use-public-rspm: true
+      - name: Install system libraries
+        run: sudo apt-get update && sudo apt-get install -y libnetcdf-dev libssl-dev libcurl4-openssl-dev libxml2-dev libuv1-dev libpng-dev libfreetype6-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev libjpeg-dev libtiff-dev
+      - name: Install explicit CRAN environment
+        run: Rscript --vanilla tools/install_dependencies.R --accept-current-cran
+      # The solver is fetched from its own public repository at the pinned commit.
+      # It is not stored in or redistributed by this repository; GCO terms apply.
+      - name: Install pinned longitude-periodic solver
+        run: Rscript --vanilla -e 'remotes::install_github(paste0(Sys.getenv("SOLVER_REPOSITORY"), "@", Sys.getenv("SOLVER_COMMIT")), upgrade = "never", dependencies = FALSE)'
+      - name: Graph-cut demonstration
+        env:
+          MVGC_OUTPUT_ROOT: ${{ runner.temp }}/demo-outputs
+        run: Rscript --vanilla experiments/demo.R
+      - name: Full R test suite with native solver
+        env:
+          MVGC_PRIVATE_VERIFICATION_DIR: ${{ runner.temp }}/native-tests
+          MVGC_OUTPUT_ROOT: ${{ runner.temp }}/native-outputs
+        run: Rscript --vanilla tests/run_tests.R

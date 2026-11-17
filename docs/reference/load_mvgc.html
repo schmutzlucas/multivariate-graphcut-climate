@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head><title>R: Load the reusable Article 1 functions without running an...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>load_mvgc</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Load the reusable Article 1 functions without running an experiment</h2>
+
+<h3>Description</h3>
+
+<p>Load the reusable Article 1 functions without running an experiment
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>load_mvgc(envir = parent.frame())
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="envir">envir</code></td>
+<td>
+<p>Environment in which to define configuration and reusable functions;
+defaults to the caller. Existing definitions of the same names are replaced.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Character vector of sourced module paths, invisibly. Paths are relative
+to the repository root. Does not download data or source experiment entry points.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>e &lt;- new.env()
+load_mvgc(e)
+stopifnot(exists("hellinger_distance", envir=e, inherits=FALSE))
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

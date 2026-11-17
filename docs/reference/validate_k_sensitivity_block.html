@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head><title>R: Validate a freshly computed or cached histogram-resolution...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>validate_k_sensitivity_block</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Validate a freshly computed or cached histogram-resolution block</h2>
+
+<h3>Description</h3>
+
+<p>Validate a freshly computed or cached histogram-resolution block
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>validate_k_sensitivity_block(value, dimensions, lat_positions, candidate_count)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="value">value</code></td>
+<td>
+<p>Block list with rho, n_models_valid, lat_positions and elapsed_seconds.</p>
+</td></tr>
+<tr><td><code id="dimensions">dimensions</code></td>
+<td>
+<p>Expected longitude x local-latitude x resolution dimensions.</p>
+</td></tr>
+<tr><td><code id="lat_positions">lat_positions</code></td>
+<td>
+<p>Exact ordered full-grid latitude positions.</p>
+</td></tr>
+<tr><td><code id="candidate_count">candidate_count</code></td>
+<td>
+<p>Total distinct ranked candidates, excluding the reference.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>TRUE invisibly or an error. Undefined correlations may be NA, but not
+NaN/Inf; finite correlations must lie in [-1,1] and have at least three valid
+candidates. Counts must be integer-valued and within the candidate population.
+This is structural/physical validation, not a cryptographic payload checksum.
+</p>
+
+</main>
+
+</div>
+</body></html>

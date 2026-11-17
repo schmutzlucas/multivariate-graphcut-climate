@@ -1,0 +1,53 @@
+<!DOCTYPE html><html><head><title>R: Require exact preservation of existing decoded climate values</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>repair_equal</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Require exact preservation of existing decoded climate values</h2>
+
+<h3>Description</h3>
+
+<p>Require exact preservation of existing decoded climate values
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>repair_equal(actual, expected, context)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="actual">actual</code>, <code id="expected">expected</code></td>
+<td>
+<p>Numeric arrays to compare, with matching dimensions and NA pattern.</p>
+</td></tr>
+<tr><td><code id="context">context</code></td>
+<td>
+<p>Diagnostic description included in failure messages.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Number of expected values invisibly. Errors on shape/missing-pattern
+mismatch, non-missing nonfinite actual values, or any nonzero absolute difference.
+This is exact value comparison, not a configurable numerical tolerance.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>repair_equal(array(c(1,NA),c(1,1,2)),array(c(1,NA),c(1,1,2)),"example")
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html><html><head><title>R: Validate paired regular-grid maps before constructing...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>validate_era5_map_pair</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Validate paired regular-grid maps before constructing plotting coordinates</h2>
+
+<h3>Description</h3>
+
+<p>Validate paired regular-grid maps before constructing plotting coordinates
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>validate_era5_map_pair(baseline, candidate, lon, lat, limits)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="baseline">baseline</code>, <code id="candidate">candidate</code></td>
+<td>
+<p>Numeric longitude x latitude matrices with identical
+dimensions. Missing values are permitted; infinities are rejected.</p>
+</td></tr>
+<tr><td><code id="lon">lon</code>, <code id="lat">lat</code></td>
+<td>
+<p>Finite distinct grid centres matching the matrix dimensions.
+Longitude lies in [-180,360) without duplicated periodic cells; latitude is
+in [-90,90]. Callers supply the regular cylindrical Article 1 grid.</p>
+</td></tr>
+<tr><td><code id="limits">limits</code></td>
+<td>
+<p>Two finite strictly increasing colour-scale endpoints.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>TRUE invisibly, or an error for incompatible/ambiguous map identities.
+</p>
+
+</main>
+
+</div>
+</body></html>

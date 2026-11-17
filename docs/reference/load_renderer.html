@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head><title>R: Load only whitelisted renderer definitions from source text</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>load_renderer</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Load only whitelisted renderer definitions from source text</h2>
+
+<h3>Description</h3>
+
+<p>Load only whitelisted renderer definitions from source text
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>load_renderer(code, environment)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="code">code</code></td>
+<td>
+<p>Character vector of R source lines; no top-level figure commands
+are executed. Definitions allowed are the caller's definitions character vector.</p>
+</td></tr>
+<tr><td><code id="environment">environment</code></td>
+<td>
+<p>Environment in which to evaluate the selected assignments.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>NULL invisibly; modifies environment with the whitelisted constants and
+function definitions, allowing tile and raster renderers to share code.
+</p>
+
+</main>
+
+</div>
+</body></html>

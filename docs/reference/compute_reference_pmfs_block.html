@@ -1,0 +1,65 @@
+<!DOCTYPE html><html><head><title>R: Build the R sensitivity reference PMFs for a latitude block</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>compute_reference_pmfs_block</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Build the R sensitivity reference PMFs for a latitude block</h2>
+
+<h3>Description</h3>
+
+<p>Build the R sensitivity reference PMFs for a latitude block
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>compute_reference_pmfs_block(
+  raw,
+  model_plan,
+  range_var,
+  lat_positions,
+  k_values
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="raw">raw</code></td>
+<td>
+<p>Named pr/tas/psl cubes, lon x local-lat x time, with transformed pr.</p>
+</td></tr>
+<tr><td><code id="model_plan">model_plan</code></td>
+<td>
+<p>Reference selected-year odd/even masks.</p>
+</td></tr>
+<tr><td><code id="range_var">range_var</code></td>
+<td>
+<p>Full requested-grid lon x lat x variable x min/max support array.</p>
+</td></tr>
+<tr><td><code id="lat_positions">lat_positions</code></td>
+<td>
+<p>Full-grid latitude positions corresponding to raw's local rows.</p>
+</td></tr>
+<tr><td><code id="k_values">k_values</code></td>
+<td>
+<p>Integer per-variable resolutions.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Named resolution list of lon x local-lat x two split list arrays.
+Every entry is a k^3 PMF or NULL. R verification/reference path; global
+production rank sensitivity uses compact native count arrays instead.
+</p>
+
+</main>
+
+</div>
+</body></html>

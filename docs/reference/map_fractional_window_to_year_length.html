@@ -1,0 +1,67 @@
+<!DOCTYPE html><html><head><title>R: Map a non-leap seasonal interval proportionally onto a model...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>map_fractional_window_to_year_length</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Map a non-leap seasonal interval proportionally onto a model year</h2>
+
+<h3>Description</h3>
+
+<p>Uses 1 + floor((start-1)*L/365) and floor(end*L/365), clamped to 1..L.
+A whole-year request always maps to every slot. A wrapped interval is the
+union of the end and start segments within each selected calendar year,
+not a season reassigned to the following year's label.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>map_fractional_window_to_year_length(
+  year_length,
+  start_ref_doy,
+  end_ref_doy,
+  wraps_year_end
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="year_length">year_length</code></td>
+<td>
+<p>Positive integer model/empirical year length L.</p>
+</td></tr>
+<tr><td><code id="start_ref_doy">start_ref_doy</code></td>
+<td>
+<p>One-based start day on the 365-day reference calendar.</p>
+</td></tr>
+<tr><td><code id="end_ref_doy">end_ref_doy</code></td>
+<td>
+<p>One-based end day on the same reference calendar.</p>
+</td></tr>
+<tr><td><code id="wraps_year_end">wraps_year_end</code></td>
+<td>
+<p>Logical scalar indicating an interval across December/January.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List of integer-like scalars <code>start_mod</code> and <code>end_mod</code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>stopifnot(map_fractional_window_to_year_length(360,1,365,FALSE)$end_mod == 360)
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

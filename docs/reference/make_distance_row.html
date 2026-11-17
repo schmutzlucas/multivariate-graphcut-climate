@@ -1,0 +1,65 @@
+<!DOCTYPE html><html><head><title>R: Create one spatial distance-summary row with archived column...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>make_distance_row</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create one spatial distance-summary row with archived column identities</h2>
+
+<h3>Description</h3>
+
+<p>Create one spatial distance-summary row with archived column identities
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>make_distance_row(
+  method,
+  dimension,
+  variable_set,
+  metric_type,
+  tau,
+  field,
+  weights
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="method">method</code></td>
+<td>
+<p>Method identifier; MMM internally denotes D-MMM.</p>
+</td></tr>
+<tr><td><code id="dimension">dimension</code>, <code id="variable_set">variable_set</code></td>
+<td>
+<p>Dimension and variable-set labels.</p>
+</td></tr>
+<tr><td><code id="metric_type">metric_type</code></td>
+<td>
+<p>Archived metric identifier, e.g. full_H or partial_LDR_H.</p>
+</td></tr>
+<tr><td><code id="tau">tau</code></td>
+<td>
+<p>LDR threshold; NULL for ordinary Hellinger.</p>
+</td></tr>
+<tr><td><code id="field">field</code>, <code id="weights">weights</code></td>
+<td>
+<p>Numeric score map and nonnegative weights of identical shape.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>One-row data frame of identifiers, H units and summarize_map() statistics.
+</p>
+
+</main>
+
+</div>
+</body></html>

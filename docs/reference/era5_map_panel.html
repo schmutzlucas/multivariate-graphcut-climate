@@ -1,0 +1,70 @@
+<!DOCTYPE html><html><head><title>R: Render a cached regular-grid diagnostic panel</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>era5_map_panel</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Render a cached regular-grid diagnostic panel</h2>
+
+<h3>Description</h3>
+
+<p>Render a cached regular-grid diagnostic panel
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>era5_map_panel(
+  field,
+  lon,
+  lat,
+  kind,
+  limits,
+  left,
+  bottom,
+  render_mode = c("raster", "tile")
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="field">field</code></td>
+<td>
+<p>Numeric longitude x latitude matrix; supplied values are not normalised or imputed.</p>
+</td></tr>
+<tr><td><code id="lon">lon</code>, <code id="lat">lat</code></td>
+<td>
+<p>Longitude and latitude cell centres in degrees, matching matrix axes.</p>
+</td></tr>
+<tr><td><code id="kind">kind</code></td>
+<td>
+<p>Diagnostic kind: distributional or bias for layouts, hellinger or bias for scales.</p>
+</td></tr>
+<tr><td><code id="limits">limits</code></td>
+<td>
+<p>Numeric two-element colour limits in the diagnostic units.</p>
+</td></tr>
+<tr><td><code id="left">left</code>, <code id="bottom">bottom</code></td>
+<td>
+<p>Logical flags controlling visible latitude and longitude axes.</p>
+</td></tr>
+<tr><td><code id="render_mode">render_mode</code></td>
+<td>
+<p>Raster (default) or tile primitive; changes rendering only, not arrays, colours or geometry.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>ggplot object with unchanged data and scales; raster fields prevent PDF seams, while overlays stay vector.
+</p>
+
+</main>
+
+</div>
+</body></html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html><html><head><title>R: Read one contiguous time slab and requested rectilinear...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>read_variable_time_chunk</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Read one contiguous time slab and requested rectilinear spatial positions</h2>
+
+<h3>Description</h3>
+
+<p>Read one contiguous time slab and requested rectilinear spatial positions
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>read_variable_time_chunk(
+  nc_obj,
+  variable,
+  dimension_info,
+  lon_indices,
+  lat_indices,
+  time_start,
+  time_count,
+  report_qc = FALSE
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="nc_obj">nc_obj</code></td>
+<td>
+<p>Open NetCDF handle, owned and closed by the caller.</p>
+</td></tr>
+<tr><td><code id="variable">variable</code></td>
+<td>
+<p>Three-dimensional variable name.</p>
+</td></tr>
+<tr><td><code id="dimension_info">dimension_info</code></td>
+<td>
+<p>Original axis names, positions and sizes from get_variable_dimension_info().</p>
+</td></tr>
+<tr><td><code id="lon_indices">lon_indices</code>, <code id="lat_indices">lat_indices</code></td>
+<td>
+<p>Nonempty integer positions in the original file axes.</p>
+</td></tr>
+<tr><td><code id="time_start">time_start</code></td>
+<td>
+<p>One-based first record of a contiguous time interval.</p>
+</td></tr>
+<tr><td><code id="time_count">time_count</code></td>
+<td>
+<p>Positive integer number of time records.</p>
+</td></tr>
+<tr><td><code id="report_qc">report_qc</code></td>
+<td>
+<p>Whether to return list(data, qc) with raw precipitation
+statistics alongside corrected data; FALSE retains the ordinary array API.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Lon x lat x time array, retaining singleton axes and requested spatial
+order, or list(data, qc) when requested. Finite negative pr is corrected
+immediately after reading; statistics describe only the selected cells.
+Reads a bounding spatial rectangle; no regridding or unit conversion.
+</p>
+
+</main>
+
+</div>
+</body></html>

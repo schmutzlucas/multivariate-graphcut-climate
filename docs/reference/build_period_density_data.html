@@ -1,0 +1,77 @@
+<!DOCTYPE html><html><head><title>R: Stack raw spatial PME distance fields for one pooled density...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>build_period_density_data</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Stack raw spatial PME distance fields for one pooled density panel</h2>
+
+<h3>Description</h3>
+
+<p>Stack raw spatial PME distance fields for one pooled density panel
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>build_period_density_data(
+  results,
+  period_id,
+  lambda_key,
+  tau_key,
+  metric_type,
+  lon,
+  lat,
+  weight_matrix
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="results">results</code></td>
+<td>
+<p>Compact PME result list containing both methods for every reference.</p>
+</td></tr>
+<tr><td><code id="period_id">period_id</code></td>
+<td>
+<p>Evaluation-period key.</p>
+</td></tr>
+<tr><td><code id="lambda_key">lambda_key</code></td>
+<td>
+<p>GC smoothness key used to construct the internal GC method label.</p>
+</td></tr>
+<tr><td><code id="tau_key">tau_key</code></td>
+<td>
+<p>LDR threshold key, ignored for full Hellinger.</p>
+</td></tr>
+<tr><td><code id="metric_type">metric_type</code></td>
+<td>
+<p>Full Hellinger or partial internal LDR identifier.</p>
+</td></tr>
+<tr><td><code id="lon">lon</code>, <code id="lat">lat</code></td>
+<td>
+<p>Coordinate vectors determining expected map shape.</p>
+</td></tr>
+<tr><td><code id="weight_matrix">weight_matrix</code></td>
+<td>
+<p>Matching lon x lat cosine-latitude weight matrix.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Data frame with method factor, value and weight. Internal MMM means
+D-MMM; nonfinite values/weights and negative weights are removed. This is
+a pooled grid-cell density, not the equal-reference distribution of relative
+improvements; no per-reference weight renormalisation is applied.
+</p>
+
+</main>
+
+</div>
+</body></html>

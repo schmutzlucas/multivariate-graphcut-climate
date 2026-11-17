@@ -1,0 +1,49 @@
+<!DOCTYPE html><html><head><title>R: Save and verify accepted ERA5 map layouts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>save_era5_fourmap</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Save and verify accepted ERA5 map layouts</h2>
+
+<h3>Description</h3>
+
+<p>Save and verify accepted ERA5 map layouts
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>save_era5_fourmap(plot, base, cache_path)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="plot">plot</code></td>
+<td>
+<p>Gtable returned by the accepted four-map builder, with era5_layout metadata.</p>
+</td></tr>
+<tr><td><code id="base">base</code></td>
+<td>
+<p>Output filename stem without extension; parent directory must exist.</p>
+</td></tr>
+<tr><td><code id="cache_path">cache_path</code></td>
+<td>
+<p>Existing compact RDS input whose bytes must remain unchanged.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Audit list invisibly; writes PDF, PNG and verification JSON at base, overwriting prior files. Requires Cairo and ragg; verifies cache hash remains unchanged.
+</p>
+
+</main>
+
+</div>
+</body></html>

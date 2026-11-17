@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><title>R: Load the histogram-sensitivity native routines for the...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>load_pmf_sensitivity_cpp</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Load the histogram-sensitivity native routines for the current process/source</h2>
+
+<h3>Description</h3>
+
+<p>Load the histogram-sensitivity native routines for the current process/source
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>load_pmf_sensitivity_cpp(
+  cpp_file = "src/bin_sensitivity.cpp",
+  cache_dir = file.path(tempdir(), "MVGraphCutRcppCache"),
+  force_load = FALSE
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="cpp_file">cpp_file</code></td>
+<td>
+<p>Path to the Rcpp histogram/count-distance implementation.</p>
+</td></tr>
+<tr><td><code id="cache_dir">cache_dir</code></td>
+<td>
+<p>Rcpp build-cache directory; created when needed.</p>
+</td></tr>
+<tr><td><code id="force_load">force_load</code></td>
+<td>
+<p>Whether to reload even when source identity and functions match.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>TRUE invisibly after native functions are available. Reuse requires
+matching canonical path/SHA-256 and process ID, not merely a global loaded flag.
+Multisession workers load their own DLL. Compilation requires Rcpp/toolchain.
+</p>
+
+</main>
+
+</div>
+</body></html>

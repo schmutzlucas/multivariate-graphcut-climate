@@ -1,0 +1,128 @@
+<!DOCTYPE html><html><head><title>R: Run calibration-only split-sample model-rank stability across...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>run_k_sensitivity</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Run calibration-only split-sample model-rank stability across histogram sizes</h2>
+
+<h3>Description</h3>
+
+<p>Uses odd/even calibration years and the same fixed local physical support at
+each k. Does not choose a new production discretisation, run graph cut or use
+future-period/reference-specific supports. Exact scientific input/code identity
+namespaces checkpoints; ordinary R comments/formatting do not invalidate them.
+Legacy directory identity uses file stats/plans, not full payload hashes; use
+the prepared-run launcher for fresh checksums before scientific reruns.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>run_k_sensitivity(
+  model_names,
+  reference_name,
+  variables,
+  data_dir,
+  years,
+  lon,
+  lat,
+  range_var,
+  k_values = 4:12,
+  workers = 1L,
+  latitude_block_size = 2L,
+  strict_time_checks = TRUE,
+  season_selection_mode = "auto",
+  time_decode_mode = "auto",
+  requested_year_policy = "warn",
+  verbose = TRUE,
+  checkpoint_dir = NULL
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="model_names">model_names</code></td>
+<td>
+<p>Distinct model identifiers: one reference and at least three candidates.</p>
+</td></tr>
+<tr><td><code id="reference_name">reference_name</code></td>
+<td>
+<p>Single model identifier excluded from candidate ranks.</p>
+</td></tr>
+<tr><td><code id="variables">variables</code></td>
+<td>
+<p>Exactly c(&quot;pr&quot;,&quot;tas&quot;,&quot;psl&quot;).</p>
+</td></tr>
+<tr><td><code id="data_dir">data_dir</code></td>
+<td>
+<p>Prepared daily NetCDF root unless registry resolution is active.</p>
+</td></tr>
+<tr><td><code id="years">years</code></td>
+<td>
+<p>Integer calibration years containing odd and even years.</p>
+</td></tr>
+<tr><td><code id="lon">lon</code>, <code id="lat">lat</code></td>
+<td>
+<p>Nonempty unique finite requested coordinates; latitudes in [-90,90].</p>
+</td></tr>
+<tr><td><code id="range_var">range_var</code></td>
+<td>
+<p>Finite strictly increasing bounds [lon,lat,3,2], with pr transformed.</p>
+</td></tr>
+<tr><td><code id="k_values">k_values</code></td>
+<td>
+<p>Integer bins per variable, sorted/deduplicated; default 4 through 12.</p>
+</td></tr>
+<tr><td><code id="workers">workers</code></td>
+<td>
+<p>Positive integer worker count; restores the prior future plan on exit.</p>
+</td></tr>
+<tr><td><code id="latitude_block_size">latitude_block_size</code></td>
+<td>
+<p>Positive integer requested latitude positions per task.</p>
+</td></tr>
+<tr><td><code id="strict_time_checks">strict_time_checks</code></td>
+<td>
+<p>Whether to enforce legacy daily-time assumptions.</p>
+</td></tr>
+<tr><td><code id="season_selection_mode">season_selection_mode</code></td>
+<td>
+<p>Auto, exact_month_day, or fractional full-year selection.</p>
+</td></tr>
+<tr><td><code id="time_decode_mode">time_decode_mode</code></td>
+<td>
+<p>Auto, helpers_cf, or empirical decoding.</p>
+</td></tr>
+<tr><td><code id="requested_year_policy">requested_year_policy</code></td>
+<td>
+<p>Warn or stop for unavailable/incomplete years.</p>
+</td></tr>
+<tr><td><code id="verbose">verbose</code></td>
+<td>
+<p>Whether to print metadata/block progress.</p>
+</td></tr>
+<tr><td><code id="checkpoint_dir">checkpoint_dir</code></td>
+<td>
+<p>Optional cache root. Namespaces exact identities, atomically
+installs new blocks, and rejects malformed/incompatible existing records.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List summary (area/unweighted mean rho and valid coverage), rho and
+n_models_valid arrays [lon,lat,k], and metadata including input/code cache
+identity and per-block reuse/timings. Correlations average over valid cells;
+this measures rank stability, not GC relative improvement over D-MMM.
+</p>
+
+</main>
+
+</div>
+</body></html>

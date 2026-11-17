@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head><title>R: Execute a prepared extraction plan for a subset of latitude...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>read_fractional_variable_plan_block</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Execute a prepared extraction plan for a subset of latitude positions</h2>
+
+<h3>Description</h3>
+
+<p>Execute a prepared extraction plan for a subset of latitude positions
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>read_fractional_variable_plan_block(plan, lat_positions)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="plan">plan</code></td>
+<td>
+<p>List returned as plan by <code>extract_fractional_variable_data()</code>.</p>
+</td></tr>
+<tr><td><code id="lat_positions">lat_positions</code></td>
+<td>
+<p>Nonempty integer positions within the plan's requested
+latitude selection, not positions in the original file axis.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List with present/future lon x selected-latitude x selected-time cubes.
+Opens/closes the file for this block; retains original data units.
+</p>
+
+</main>
+
+</div>
+</body></html>

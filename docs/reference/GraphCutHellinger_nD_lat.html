@@ -1,0 +1,114 @@
+<!DOCTYPE html><html><head><title>R: Optimise latitude-weighted cylindrical graph-cut model labels</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>GraphCutHellinger_nD_lat</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Optimise latitude-weighted cylindrical graph-cut model labels</h2>
+
+<h3>Description</h3>
+
+<p>Fit labels using calibration Hellinger unary costs and target-period PMF seam
+costs. Article 1 uses the pinned custom gcoWrapR solver and swap(-1).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>GraphCutHellinger_nD_lat(
+  pdf_models_future,
+  h_dist,
+  weight_data,
+  weight_smooth,
+  nBins,
+  lat,
+  seed,
+  verbose,
+  rebuild
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="pdf_models_future">pdf_models_future</code></td>
+<td>
+<p>Normalised target PMFs, dimensions longitude x
+latitude x joint bins x candidate models. Longitude must be periodic and
+ordered consistently; the native grid requires at least 3 x 2 cells and 2 labels.</p>
+</td></tr>
+<tr><td><code id="h_dist">h_dist</code></td>
+<td>
+<p>Nonnegative calibration Hellinger distances, longitude x latitude x models.</p>
+</td></tr>
+<tr><td><code id="weight_data">weight_data</code></td>
+<td>
+<p>Nonnegative scalar multiplying the unary term, normally 1.</p>
+</td></tr>
+<tr><td><code id="weight_smooth">weight_smooth</code></td>
+<td>
+<p>Nonnegative scalar lambda multiplying the seam term.</p>
+</td></tr>
+<tr><td><code id="nBins">nBins</code></td>
+<td>
+<p>Total number of joint bins, normally 512 for 8 x 8 x 8,
+not the number of bins along one variable.</p>
+</td></tr>
+<tr><td><code id="lat">lat</code></td>
+<td>
+<p>Latitude centres in degrees north, one per array latitude row.</p>
+</td></tr>
+<tr><td><code id="seed">seed</code></td>
+<td>
+<p>Seed for the pseudo-random initial labels; Article 1 fixes seed 1.</p>
+</td></tr>
+<tr><td><code id="verbose">verbose</code></td>
+<td>
+<p>Logical; print native solver and progress information.</p>
+</td></tr>
+<tr><td><code id="rebuild">rebuild</code></td>
+<td>
+<p>Logical; force recompilation of the native callback functions.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>R labels become zero-based for C++ and one-based on return. Unary
+costs use cos(latitude); an edge uses mean endpoint latitude weight times
+the sum of endpoint Hellinger differences between its two selected models.
+Longitude wraps east-west; latitude has no polar wrap. The pinned custom
+solver revision is enforced by production entry points, not this low-level API.
+Native callbacks deliberately accumulate in float precision. This function
+resets the process RNG kind/state and uses a locally converged swap solution;
+it does not promise a global optimum for arbitrary multi-label problems.
+</p>
+
+
+<h3>Value</h3>
+
+<p>List with label_attribution, a one-based longitude x latitude matrix,
+and 'Data and smooth cost', the native unary/seam energies. Runtime is printed
+when verbose but is not included in the returned list.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>
+p &lt;- array(0.5, c(3, 2, 2, 2))
+h &lt;- array(0.1, c(3, 2, 2))
+fit &lt;- GraphCutHellinger_nD_lat(p, h, 1, 0.125, 2, c(-30, 30),
+                               seed = 1, verbose = FALSE, rebuild = FALSE)
+dim(fit$label_attribution)
+
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

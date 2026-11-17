@@ -1,0 +1,57 @@
+<!DOCTYPE html><html><head><title>R: Validate the archived numerical inputs required by Article 1...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>validate_table_inputs</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Validate the archived numerical inputs required by Article 1 tables</h2>
+
+<h3>Description</h3>
+
+<p>Validate the archived numerical inputs required by Article 1 tables
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>validate_table_inputs(era, pme, periods, expected_references)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="era">era</code></td>
+<td>
+<p>ERA5 long-statistics data frame, with unique scientific identities
+and finite numeric metric_value. Missing tau is allowed for ordinary metrics.</p>
+</td></tr>
+<tr><td><code id="pme">pme</code></td>
+<td>
+<p>Reference-score data frame with reference, period_id, metric,
+H_D_MMM, H_GC and relative_improvement_pct columns.</p>
+</td></tr>
+<tr><td><code id="periods">periods</code></td>
+<td>
+<p>Configured period data frame containing unique period_id values.</p>
+</td></tr>
+<tr><td><code id="expected_references">expected_references</code></td>
+<td>
+<p>Exact configured held-out reference set, normally 15 models.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>TRUE invisibly, or an error for invalid/duplicate data, inconsistent
+relative improvements or incomplete full-H/LDR-one-percent reference-period populations.
+No table is written and no numerical input is modified.
+</p>
+
+</main>
+
+</div>
+</body></html>

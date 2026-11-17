@@ -1,0 +1,67 @@
+<!DOCTYPE html><html><head><title>R: Compute restricted Hellinger scores for vectors or global PMF...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>compute_partial_hdist</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Compute restricted Hellinger scores for vectors or global PMF arrays</h2>
+
+<h3>Description</h3>
+
+<p>Compute restricted Hellinger scores for vectors or global PMF arrays
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>compute_partial_hdist(pdf_ref, pdf_model, selected_indices)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="pdf_ref">pdf_ref</code></td>
+<td>
+<p>Reference PMF vector, or array longitude x latitude x bins.</p>
+</td></tr>
+<tr><td><code id="pdf_model">pdf_model</code></td>
+<td>
+<p>Candidate vector; bins x models matrix for a vector reference;
+or longitude x latitude x bins array with an optional fourth model axis.</p>
+</td></tr>
+<tr><td><code id="selected_indices">selected_indices</code></td>
+<td>
+<p>One-based bin indices for a single location, or nested
+lists selected_indices[[longitude]][[latitude]] for a global array.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Divides the square-root sum by sqrt(2) without renormalising selected
+masses. Selecting all bins gives ordinary Hellinger distance. Callers must
+supply common bins, valid masses and consistent selected indices.
+</p>
+
+
+<h3>Value</h3>
+
+<p>Scalar or model vector for vector inputs; longitude x latitude x models
+array for grid inputs, retaining a singleton model dimension. Empty selections
+return NA rather than silently returning a zero score.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>compute_partial_hdist(c(0.2, 0.8), c(0.3, 0.7), 1:2)
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

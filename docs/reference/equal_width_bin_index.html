@@ -1,0 +1,70 @@
+<!DOCTYPE html><html><head><title>R: Assign equal-width bins with explicit floating-edge handling</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>equal_width_bin_index</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Assign equal-width bins with explicit floating-edge handling</h2>
+
+<h3>Description</h3>
+
+<p>Assign equal-width bins with explicit floating-edge handling
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>equal_width_bin_index(x, xmin, xmax, nbins, zero_based = TRUE)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="x">x</code></td>
+<td>
+<p>Numeric observations; NA/NaN produce missing indices. Infinite and
+out-of-range observations saturate into the outermost bins.</p>
+</td></tr>
+<tr><td><code id="xmin">xmin</code>, <code id="xmax">xmax</code></td>
+<td>
+<p>Finite scalar support limits with xmax strictly larger.</p>
+</td></tr>
+<tr><td><code id="nbins">nbins</code></td>
+<td>
+<p>Positive integer number of bins along this one variable.</p>
+</td></tr>
+<tr><td><code id="zero_based">zero_based</code></td>
+<td>
+<p>Logical; return 0 through nbins - 1 rather than R's 1-based bins.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Values within eight scaled machine epsilons of an internal edge are
+snapped to that edge before flooring. This stabilises nested-bin derivation
+but is not bit-identical to findInterval for every value infinitesimally below
+an edge. Ordinary exact edges belong to the bin on their right; xmax belongs
+to the final bin. No physical support bounds are re-estimated here.
+</p>
+
+
+<h3>Value</h3>
+
+<p>Integer bin indices of length length(x), preserving missing entries.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>equal_width_bin_index(c(0, 0.25, 0.5, 1), 0, 1, 4)
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

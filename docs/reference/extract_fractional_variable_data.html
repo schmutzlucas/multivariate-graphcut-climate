@@ -1,0 +1,104 @@
+<!DOCTYPE html><html><head><title>R: Plan or read calibration and evaluation records for one...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>extract_fractional_variable_data</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Plan or read calibration and evaluation records for one climate variable</h2>
+
+<h3>Description</h3>
+
+<p>Opens and closes its own file. Auto season selection prefers decoded inclusive
+month/day boundaries and warns before falling back to fractional year slots.
+Precipitation is nonnegative-QC'd by the shared disk reader; its logarithmic
+transformation belongs to the PMF layer. Other physical variables are unchanged.
+Selection diagnostics distinguish filenames, observed record slots and decoded
+date identities. Callers aligning variables must compare selected date keys,
+not file-local indices, because file start years may differ.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>extract_fractional_variable_data(
+  file_path,
+  variable,
+  lon,
+  lat,
+  year_present,
+  year_future,
+  season_start_md,
+  season_end_md,
+  strict_time_checks = TRUE,
+  season_selection_mode = c("auto", "exact_month_day", "fractional"),
+  time_decode_mode = c("auto", "helpers_cf", "empirical"),
+  requested_year_policy = c("warn", "stop"),
+  read_data = TRUE
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="file_path">file_path</code></td>
+<td>
+<p>Path to one prepared rectilinear daily NetCDF file.</p>
+</td></tr>
+<tr><td><code id="variable">variable</code></td>
+<td>
+<p>Name of its three-dimensional climate variable.</p>
+</td></tr>
+<tr><td><code id="lon">lon</code>, <code id="lat">lat</code></td>
+<td>
+<p>Requested coordinate vectors in degrees, without interpolation.</p>
+</td></tr>
+<tr><td><code id="year_present">year_present</code>, <code id="year_future">year_future</code></td>
+<td>
+<p>Nonempty vectors of calibration/evaluation years.</p>
+</td></tr>
+<tr><td><code id="season_start_md">season_start_md</code>, <code id="season_end_md">season_end_md</code></td>
+<td>
+<p>Inclusive month/day pairs on a 365-day
+reference calendar; wrapped intervals include both ends of each selected year.</p>
+</td></tr>
+<tr><td><code id="strict_time_checks">strict_time_checks</code></td>
+<td>
+<p>Whether to enforce the legacy daily mapping assumptions.</p>
+</td></tr>
+<tr><td><code id="season_selection_mode">season_selection_mode</code></td>
+<td>
+<p>Auto, exact_month_day, or fractional.</p>
+</td></tr>
+<tr><td><code id="time_decode_mode">time_decode_mode</code></td>
+<td>
+<p>Auto, helpers_cf, or empirical date-decoding backend.</p>
+</td></tr>
+<tr><td><code id="requested_year_policy">requested_year_policy</code></td>
+<td>
+<p>Warn or stop for unavailable/incomplete requested
+years under the legacy mapping. Warn is retained from production.</p>
+</td></tr>
+<tr><td><code id="read_data">read_data</code></td>
+<td>
+<p>Logical; FALSE inspects metadata and creates plans without
+reading climate-variable cubes (coordinate/time axes are still read).</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List with optional data_present/data_future cubes, selected file
+indices and date keys, per-record year/slot metadata, diagnostics, year_table
+and a reusable block-reading plan. Data arrays are lon x lat x selected time.
+Known supported calendars use independent CF date keys; Julian/unknown
+fallback identities are explicitly labelled unverified year/slot strings.
+</p>
+
+</main>
+
+</div>
+</body></html>

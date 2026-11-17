@@ -1,0 +1,54 @@
+<!DOCTYPE html><html><head><title>R: Format paired ERA5 scores and their relative improvement as a...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>score_row</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Format paired ERA5 scores and their relative improvement as a LaTeX row</h2>
+
+<h3>Description</h3>
+
+<p>Format paired ERA5 scores and their relative improvement as a LaTeX row
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>score_row(label, vars, metric, tau = NA_real_, name = "weighted_mean")
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="label">label</code></td>
+<td>
+<p>Display label, already valid LaTeX.</p>
+</td></tr>
+<tr><td><code id="vars">vars</code>, <code id="metric">metric</code></td>
+<td>
+<p>Variable-set and metric-type keys for lookup().</p>
+</td></tr>
+<tr><td><code id="tau">tau</code></td>
+<td>
+<p>LDR threshold or NA_real_ for ordinary Hellinger/mean-field error.</p>
+</td></tr>
+<tr><td><code id="name">name</code></td>
+<td>
+<p>Metric-name key for lookup(), default weighted_mean.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Character row with baseline/GC scores to three decimals and percentage
+gain to one decimal. Improvement is computed from unrounded values first.
+</p>
+
+</main>
+
+</div>
+</body></html>

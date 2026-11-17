@@ -1,0 +1,57 @@
+source("R/load.R");load_mvgc();source("R/experiments/perfect_model.R")
+local({
+  root<-tempfile("pme_checkpoint_");dir.create(root)
+  support<-file.path(root,"support.rds");saveRDS(list(value=1),support)
+  previous_registry<-Sys.getenv("MVGC_INPUT_REGISTRY",unset=NA_character_)
+  Sys.unsetenv("MVGC_INPUT_REGISTRY")
+  on.exit(if(is.na(previous_registry))Sys.unsetenv("MVGC_INPUT_REGISTRY")else
+    Sys.setenv(MVGC_INPUT_REGISTRY=previous_registry))
+  cfg<-article1_config();cfg$lon<-0:2;cfg$lat<-c(-30,30)
+  cfg$pme_lambdas<-.125;cfg$pme_ldr_thresholds<-.01
+  settings<-pme_scientific_settings(cfg);period<-cfg$periods[1,,drop=FALSE]
+  pid<-period$period_id;models<-c("REF","A","B")
+  path<-checkpoint_path_for(root,pid,1L,"REF");dir.create(dirname(path))
+  map<-matrix(.1,3,2);fit<-list(label_attribution=matrix(1L,3,2))
+  cp<-list(meta=list(scientific_settings=settings,checkpoint_state="complete",
+    input_provenance=experiment_input_provenance(support),period_role="test-role",
+    calibration_years=cfg$calibration_years,year_present=cfg$calibration_years,
+    year_future=period$start_year:period$end_year,lambda_keys="0.125",partial_tau_keys="0.01",
+    model_names=models,range_sources=support,partial_h_definition="test-LDR",
+    ref_index=1L,ref_name="REF"),period_id=pid,ref_name="REF",
+    MMM_hdist_future_list=setNames(list(list(REF=map)),pid),
+    MMM_partial_hdist_future_list=setNames(list(list("0.01"=list(REF=map))),pid),
+    GC_result_list=setNames(list(list("0.125"=list(REF=fit))),pid),
+    GC_hdist_future_list=setNames(list(list("0.125"=list(REF=map))),pid),
+    GC_partial_hdist_future_list=setNames(list(list("0.01"=list("0.125"=list(REF=map)))),pid))
+  args<-list(checkpoint_file=path,period_row=period,calibration_years=cfg$calibration_years,
+    period_role="test-role",lambda_keys="0.125",tau_keys="0.01",expected_model_names=models,
+    range_sources=support,partial_h_definition="test-LDR",expected_settings=settings)
+  check<-function(value){saveRDS(value,path);do.call(checkpoint_is_compatible,args)}
+  stopifnot(check(cp))
+  bad<-cp;bad$meta$scientific_settings$parameters$seed<-2L;stopifnot(!check(bad))
+  bad<-cp;bad$meta$scientific_settings$parameters$pme_lambdas<-.125000001;stopifnot(!check(bad))
+  bad<-cp;bad$meta$checkpoint_state<-"incomplete_solver_failure";stopifnot(!check(bad))
+  bad<-cp;bad$meta$scientific_settings<-NULL;stopifnot(!check(bad))
+  bad<-cp;bad$meta$year_present[1]<-1951.5;stopifnot(!check(bad))
+  bad<-cp;bad$GC_result_list[[pid]][[1]]["REF"]<-list(NULL);stopifnot(!check(bad))
+  bad<-cp;bad$GC_hdist_future_list[[pid]][[1]][[1]][1]<-NA_real_;stopifnot(!check(bad))
+  bad<-cp;bad$GC_result_list[[pid]][[1]][[1]]$label_attribution[1]<-3;stopifnot(!check(bad))
+  bad<-cp;bad$GC_partial_hdist_future_list<-"malformed";stopifnot(!check(bad))
+  stopifnot(!check("malformed"))
+  saveRDS(cp,path)
+  result<-read_period_from_checkpoints(period,models,root,"0.125","0.01",c(3L,2L),
+    cfg$calibration_years,"test-role",models,support,"test-LDR",settings)
+  stopifnot(identical(result$completed_references,"REF"))
+  saveRDS(list(value=2),support)
+  stopifnot(!do.call(checkpoint_is_compatible,args))
+})
+local({
+  previous<-Sys.getenv("PME_PERIODS",unset=NA_character_)
+  on.exit(if(is.na(previous))Sys.unsetenv("PME_PERIODS")else Sys.setenv(PME_PERIODS=previous))
+  periods<-make_periods()
+  for(value in c(", ,",paste(rep(periods$period_id[1],2),collapse=","))) {
+    Sys.setenv(PME_PERIODS=value)
+    stopifnot(inherits(try(filter_periods_from_env(periods),silent=TRUE),"try-error"))
+  }
+})
+cat("PASS PME scientific/settings/input identity, successful numerical payload and period selection gates\n")

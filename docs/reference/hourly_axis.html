@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head><title>R: Validate the native ERA5 hourly precipitation grid and decode...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>hourly_axis</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Validate the native ERA5 hourly precipitation grid and decode its UTC stamps</h2>
+
+<h3>Description</h3>
+
+<p>Validate the native ERA5 hourly precipitation grid and decode its UTC stamps
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>hourly_axis(n)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="n">n</code></td>
+<td>
+<p>Open caller-owned ncdf4 handle containing tp in metres, accumulation
+step type, on the exact 0.25-degree longitude/descending-latitude/valid_time grid.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Numeric UTC seconds since the Unix epoch. Checks declared dimensions,
+units and Gregorian calendar; caller separately verifies complete hourly
+sequences/month boundaries. Reads coordinates only and does not close n.
+</p>
+
+</main>
+
+</div>
+</body></html>

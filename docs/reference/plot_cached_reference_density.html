@@ -1,0 +1,45 @@
+<!DOCTYPE html><html><head><title>R: Replay a reference-faceted PME density figure from its...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>plot_cached_reference_density</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Replay a reference-faceted PME density figure from its numeric recipe</h2>
+
+<h3>Description</h3>
+
+<p>Replay a reference-faceted PME density figure from its numeric recipe
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>plot_cached_reference_density(recipe)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="recipe">recipe</code></td>
+<td>
+<p>Plot-recipe list with coordinates (x,y,method,group,reference),
+annotations (x_value,method,statistic,reference) and labels (title,subtitle).
+MMM is the internal D-MMM method identifier; GC-0.125 is the other method.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>ggplot object using five facet columns, original curve coordinates and
+weighted-mean/median markers. The visible legend says D-MMM. No recomputation
+of densities or summaries and no output-file or graphics-device side effects.
+</p>
+
+</main>
+
+</div>
+</body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html><html><head><title>R: Adapt optional ncdf4.helpers time decoding to R Date</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>decode_time_with_ncdf4_helpers</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Adapt optional ncdf4.helpers time decoding to R Date</h2>
+
+<h3>Description</h3>
+
+<p>Tries three helper calling conventions and several Date coercions. Conversion
+can fail for dates unrepresentable by R's Gregorian Date (e.g. February 30).
+The caller chooses whether failure is fatal or permits a documented fallback.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>decode_time_with_ncdf4_helpers(nc_obj, time_dim_name)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="nc_obj">nc_obj</code></td>
+<td>
+<p>Open NetCDF handle, not closed here.</p>
+</td></tr>
+<tr><td><code id="time_dim_name">time_dim_name</code></td>
+<td>
+<p>Time dimension name supplied to the optional helper.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List with Date vector <code>date_values</code>, <code>helper_method</code> and
+<code>helper_result_class</code>; raises an error if all attempts fail.
+</p>
+
+</main>
+
+</div>
+</body></html>

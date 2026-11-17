@@ -1,0 +1,60 @@
+<!DOCTYPE html><html><head><title>R: Verify a historical retained-negative exception, not current...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>validate_support_precipitation</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Verify a historical retained-negative exception, not current ingestion QC</h2>
+
+<h3>Description</h3>
+
+<p>Verify a historical retained-negative exception, not current ingestion QC
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>validate_support_precipitation(values, model, sha256, exception = NULL)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="values">values</code></td>
+<td>
+<p>Nonempty numeric precipitation array/vector in mm per day.</p>
+</td></tr>
+<tr><td><code id="model">model</code></td>
+<td>
+<p>Prepared model identifier.</p>
+</td></tr>
+<tr><td><code id="sha256">sha256</code></td>
+<td>
+<p>Verified whole-input SHA-256 supplied by the calling scanner.</p>
+</td></tr>
+<tr><td><code id="exception">exception</code></td>
+<td>
+<p>NULL for strict nonnegativity, or a reviewed list containing
+model, sha256, minimum and action equal to retain_unchanged. The minimum
+must lie strictly above -1 and no higher than zero.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Number of negative observations, invisibly. Never modifies values,
+clips, converts units or changes the production precipitation transform.
+Nonfinite values, mismatched exceptions and out-of-bound negatives stop.
+Acceptance is a numerical preparation qualification, not physical validation.
+Retained only to interpret historical receipts. Current production reads use
+precipitation_qc() instead; this function does not implement the QC rerun.
+</p>
+
+</main>
+
+</div>
+</body></html>

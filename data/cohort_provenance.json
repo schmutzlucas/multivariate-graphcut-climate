@@ -1,0 +1,45 @@
+{
+  "note": "Research-source identities of the compact numerical cohorts. The research repository (schmutzlucas/MV_graphcut_paper) is private; revisions are recorded for provenance, not as access routes. CSV files are text-identical to the cited sources (line endings normalised to LF). RDS files are metadata-redacted copies: scientific arrays, coordinates and labels are unchanged, private storage paths were removed, so their file hashes differ from the sources.",
+  "cohorts": [
+    {
+      "canonical_path": "results/era5",
+      "historical_cohort": "era5_corrected_20261024",
+      "research_revision": "69a6faf8b20451a013425a7d72290e9b30a8221f",
+      "research_path": "results/era5_corrected_20261024"
+    },
+    {
+      "canonical_path": "results/perfect_model",
+      "historical_cohort": "perfect_model_corrected_20261026",
+      "research_revision": "69a6faf8b20451a013425a7d72290e9b30a8221f",
+      "research_path": "results/perfect_model_corrected_20261026"
+    },
+    {
+      "canonical_path": "results/histogram_resolution",
+      "historical_cohort": "histogram_resolution_corrected_20261027",
+      "research_revision": "69a6faf8b20451a013425a7d72290e9b30a8221f",
+      "research_path": "results/histogram_resolution_corrected_20261027"
+    },
+    {
+      "canonical_path": "results/spatial_regularisation",
+      "historical_cohort": "spatial_regularisation_corrected_20261024",
+      "research_revision": "89f0d0ed14963775cec4b12c628d36c0c38f862b",
+      "research_path": "results/spatial_regularisation_corrected_20261024",
+      "additional_inputs": [
+        {
+          "file": "lambda_tradeoff_metrics.csv",
+          "research_revision": "3f8cce7a3da597bfe34b938ca51669404c9330f3",
+          "research_path": "analysis/lambda_tradeoff_review/lambda_tradeoff_metrics.csv"
+        }
+      ]
+    },
+    {
+      "canonical_path": "data/supports",
+      "historical_cohort": "article1_precipitation_qc_campaign_v2 (supports built 2026-10-24)",
+      "research_path": "external preparation output; not stored in Git",
+      "original_files": {
+        "era5_support.rds": {"original_filename": "era5_required_data.rds", "original_sha256": "5530eab3e4b67b5a26121614e08c52654ce55e7ab58790e097370ac0dd9e37ca"},
+        "pme_support.rds": {"original_filename": "pme_required_data.rds", "original_sha256": "ca9394ce74fe78084e224116e37a196821782f31c1b6681592330ae3802058f4"}
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head><title>R: Coarsen zero-based indices on exactly nested equal-width...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>derive_nested_bin_index</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Coarsen zero-based indices on exactly nested equal-width grids</h2>
+
+<h3>Description</h3>
+
+<p>Coarsen zero-based indices on exactly nested equal-width grids
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>derive_nested_bin_index(finest_bin0, finest_nbins, target_nbins)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="finest_bin0">finest_bin0</code></td>
+<td>
+<p>Zero-based indices on the finest grid, possibly missing.</p>
+</td></tr>
+<tr><td><code id="finest_nbins">finest_nbins</code></td>
+<td>
+<p>Positive integer finest-grid resolution.</p>
+</td></tr>
+<tr><td><code id="target_nbins">target_nbins</code></td>
+<td>
+<p>Positive integer divisor of finest_nbins.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Zero-based integer indices obtained by integer division. No samples
+are rebinned independently; all grids must have the same physical bounds.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>derive_nested_bin_index(0:7, 8, 4)
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

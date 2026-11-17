@@ -1,0 +1,53 @@
+<!DOCTYPE html><html><head><title>R: Compute mean-field ensemble and selected-model biases against...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>compute_mmm_gc_bias_fields</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Compute mean-field ensemble and selected-model biases against a reference</h2>
+
+<h3>Description</h3>
+
+<p>Compute mean-field ensemble and selected-model biases against a reference
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>compute_mmm_gc_bias_fields(mean_future, gc_labels, var_name)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="mean_future">mean_future</code></td>
+<td>
+<p>Named list of numeric longitude x latitude x model mean
+arrays. Each array has reference at index 1 and candidate models afterwards.</p>
+</td></tr>
+<tr><td><code id="gc_labels">gc_labels</code></td>
+<td>
+<p>Finite integer longitude x latitude matrix indexing candidates
+from 1, so label k selects full-array model k+1.</p>
+</td></tr>
+<tr><td><code id="var_name">var_name</code></td>
+<td>
+<p>Scalar character variable key in mean_future.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List bias_mmm and bias_gc of longitude x latitude matrices, each method
+minus reference. The MMM is an equal-model mean; missing model values propagate.
+No precipitation/unit conversion is performed and invalid labels raise an error.
+</p>
+
+</main>
+
+</div>
+</body></html>

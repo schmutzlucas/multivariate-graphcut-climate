@@ -1,0 +1,87 @@
+<!DOCTYPE html><html><head><title>R: Check scientific identity and successful numerical payload of...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>checkpoint_is_compatible</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Check scientific identity and successful numerical payload of a PME checkpoint</h2>
+
+<h3>Description</h3>
+
+<p>Check scientific identity and successful numerical payload of a PME checkpoint
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>checkpoint_is_compatible(
+  checkpoint_file,
+  period_row,
+  calibration_years,
+  period_role,
+  lambda_keys,
+  tau_keys,
+  expected_model_names,
+  range_sources,
+  partial_h_definition,
+  expected_settings = pme_scientific_settings()
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="checkpoint_file">checkpoint_file</code></td>
+<td>
+<p>Existing checkpoint path, or a missing candidate path.</p>
+</td></tr>
+<tr><td><code id="period_row">period_row</code></td>
+<td>
+<p>One-row table describing the requested target period.</p>
+</td></tr>
+<tr><td><code id="calibration_years">calibration_years</code></td>
+<td>
+<p>Exact requested integer calibration years.</p>
+</td></tr>
+<tr><td><code id="period_role">period_role</code></td>
+<td>
+<p>Scientific calibration/projection role identifier.</p>
+</td></tr>
+<tr><td><code id="lambda_keys">lambda_keys</code>, <code id="tau_keys">tau_keys</code></td>
+<td>
+<p>Ordered smoothness and ell_LDR nested-list keys.</p>
+</td></tr>
+<tr><td><code id="expected_model_names">expected_model_names</code></td>
+<td>
+<p>Full ordered held-out/candidate model list.</p>
+</td></tr>
+<tr><td><code id="range_sources">range_sources</code></td>
+<td>
+<p>Exact support path used by this computation.</p>
+</td></tr>
+<tr><td><code id="partial_h_definition">partial_h_definition</code></td>
+<td>
+<p>Recorded LDR evaluation-definition string.</p>
+</td></tr>
+<tr><td><code id="expected_settings">expected_settings</code></td>
+<td>
+<p>Signature from pme_scientific_settings(), updated with
+the actual numerical lambda/threshold grids when run-specific overrides apply.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>TRUE only for matching, successful finite score/label payloads. Missing,
+old-signature, failed, malformed or different-input checkpoints return FALSE.
+Ordinary comments alone do not invalidate otherwise identical checkpoints.
+</p>
+
+</main>
+
+</div>
+</body></html>

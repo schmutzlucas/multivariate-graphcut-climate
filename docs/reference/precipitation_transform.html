@@ -1,0 +1,49 @@
+<!DOCTYPE html><html><head><title>R: Apply the Article 1 nonnegative precipitation logarithm</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>precipitation_transform</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Apply the Article 1 nonnegative precipitation logarithm</h2>
+
+<h3>Description</h3>
+
+<p>Apply the Article 1 nonnegative precipitation logarithm
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>precipitation_transform(values)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="values">values</code></td>
+<td>
+<p>Numeric precipitation vector/array in prepared mm/day units.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>log1p(precipitation_qc(values)), retaining dimensions and missing values.
+Infinite inputs stop explicitly. The shared transform is idempotent with
+respect to QC, not with respect to the logarithm: call once on physical data.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>stopifnot(identical(precipitation_transform(c(-1, 0, 1)), c(0, 0, log1p(1))))
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

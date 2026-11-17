@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head><title>R: Check whether the configured production data collection is...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>require_climate_data</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Check whether the configured production data collection is discoverable</h2>
+
+<h3>Description</h3>
+
+<p>Check whether the configured production data collection is discoverable
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>require_climate_data(config = article1_config())
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="config">config</code></td>
+<td>
+<p>Configuration list with input_registry and data_root fields.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Registry directory or data root invisibly. A registry is structurally
+checked; a directory-only root is checked for existence. This is not a payload
+checksum, coverage, unit, or complete-input validation. No computation starts.
+</p>
+
+</main>
+
+</div>
+</body></html>

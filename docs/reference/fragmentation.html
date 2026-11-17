@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head><title>R: Count differently labelled edges on the graph-cut cylindrical...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>fragmentation</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Count differently labelled edges on the graph-cut cylindrical grid</h2>
+
+<h3>Description</h3>
+
+<p>Count differently labelled edges on the graph-cut cylindrical grid
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>fragmentation(labels)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="labels">labels</code></td>
+<td>
+<p>Numeric matrix of positive finite integer labels indexed longitude
+x latitude, with at least three longitude and two latitude cells.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>One-row data frame with longitude/latitude/different/total edge counts
+and fragmentation_pct. Each four-connected edge is counted once; longitude
+wraps, latitude does not, polar rows remain, and no area/energy weighting occurs.
+</p>
+
+</main>
+
+</div>
+</body></html>

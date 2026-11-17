@@ -1,0 +1,45 @@
+<!DOCTYPE html><html><head><title>R: Compute the area-weighted root mean squared error of a bias...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>weighted_rmse_against_zero</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Compute the area-weighted root mean squared error of a bias field</h2>
+
+<h3>Description</h3>
+
+<p>Compute the area-weighted root mean squared error of a bias field
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>weighted_rmse_against_zero(field, weights)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="field">field</code></td>
+<td>
+<p>Numeric signed bias field.</p>
+</td></tr>
+<tr><td><code id="weights">weights</code></td>
+<td>
+<p>Nonnegative weights with identical shape to field.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Scalar sqrt(weighted mean(field^2)) on finite cells, or NA_real_.
+</p>
+
+</main>
+
+</div>
+</body></html>

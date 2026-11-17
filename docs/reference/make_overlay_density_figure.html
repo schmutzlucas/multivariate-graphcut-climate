@@ -1,0 +1,80 @@
+<!DOCTYPE html><html><head><title>R: Construct the five-period Article 1 PME density overlay from...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>make_overlay_density_figure</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Construct the five-period Article 1 PME density overlay from raw compact maps</h2>
+
+<h3>Description</h3>
+
+<p>Blue shades denote D-MMM and red shades GC, with period-specific intensity.
+Includes an area-weighted mean table, no vertical mean markers. This raw-map
+renderer supports re-curating numerical curve coordinates; Level 1 publication
+figures normally use the compact cached curves instead of all spatial maps.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>make_overlay_density_figure(
+  results,
+  lambda_key,
+  output_base,
+  save_dpi,
+  metric_type = "full",
+  tau_key = NULL,
+  save_outputs = TRUE
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="results">results</code></td>
+<td>
+<p>Compact PME result list with metadata, periods and complete maps.</p>
+</td></tr>
+<tr><td><code id="lambda_key">lambda_key</code></td>
+<td>
+<p>GC smoothness key, normally &quot;0.125&quot;.</p>
+</td></tr>
+<tr><td><code id="output_base">output_base</code></td>
+<td>
+<p>Output stem for PDF/PNG, without extension. Parent directory
+must exist; saving can overwrite these filenames, so select a new stem for review.</p>
+</td></tr>
+<tr><td><code id="save_dpi">save_dpi</code></td>
+<td>
+<p>Raster resolution passed to ggsave.</p>
+</td></tr>
+<tr><td><code id="metric_type">metric_type</code></td>
+<td>
+<p>Full ordinary Hellinger or partial internal LDR identifier.</p>
+</td></tr>
+<tr><td><code id="tau_key">tau_key</code></td>
+<td>
+<p>Character LDR threshold, used for maps and the table label;
+ignored in full-Hellinger mode.</p>
+</td></tr>
+<tr><td><code id="save_outputs">save_outputs</code></td>
+<td>
+<p>Whether to save the 29 x 18 cm PDF and PNG; FALSE constructs
+the plot for numerical curve caching without writing figure files.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>ggplot object invisibly, with pooled density curves and a summary table.
+Does not run PMF estimation, graph cut or select/repair an input dataset.
+</p>
+
+</main>
+
+</div>
+</body></html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html><html><head><title>R: Count complete multivariate samples with an explicit...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>safe_hist_counts</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Count complete multivariate samples with an explicit empty-sample result</h2>
+
+<h3>Description</h3>
+
+<p>Count complete multivariate samples with an explicit empty-sample result
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>safe_hist_counts(data_matrix, range_matrix, nbins, compute_hist_nd_fun)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="data_matrix">data_matrix</code></td>
+<td>
+<p>Observation x variable matrix; vectors become one-column matrices.</p>
+</td></tr>
+<tr><td><code id="range_matrix">range_matrix</code></td>
+<td>
+<p>Variable x two matrix of lower/upper common histogram bounds.</p>
+</td></tr>
+<tr><td><code id="nbins">nbins</code></td>
+<td>
+<p>Positive integer number of bins per variable.</p>
+</td></tr>
+<tr><td><code id="compute_hist_nd_fun">compute_hist_nd_fun</code></td>
+<td>
+<p>Histogram callback accepting data, range_var and nbins.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Flattened count vector of length nbins to the number of variables.
+Rows with NA/NaN are removed; an entirely empty sample returns all zero counts.
+Infinite values are not removed by complete.cases and follow the callback's
+boundary policy. Corrected production inputs are independently checked finite.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>safe_hist_counts(matrix(c(0.2,NA,0.8),ncol=1),matrix(c(0,1),nrow=1),8,compute_histND)
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html><html><head><title>R: Read selected NetCDF records in longitude-latitude-time order</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>read_variable_time_blocks</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Read selected NetCDF records in longitude-latitude-time order</h2>
+
+<h3>Description</h3>
+
+<p>Reads a bounding spatial rectangle per contiguous unique-time block, permutes
+original file axes, and subsets the requested spatial coordinates. It does not
+regrid, convert units, log-transform precipitation, or infer missing values.
+Finite negative precipitation is set to zero immediately after each disk read.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>read_variable_time_blocks(
+  nc_obj,
+  variable,
+  dimension_info,
+  lon_indices,
+  lat_indices,
+  time_indices
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="nc_obj">nc_obj</code></td>
+<td>
+<p>Open NetCDF handle, owned and closed by the caller.</p>
+</td></tr>
+<tr><td><code id="variable">variable</code></td>
+<td>
+<p>Name of the three-dimensional variable to read.</p>
+</td></tr>
+<tr><td><code id="dimension_info">dimension_info</code></td>
+<td>
+<p>Axis metadata from <code>get_variable_dimension_info()</code>.</p>
+</td></tr>
+<tr><td><code id="lon_indices">lon_indices</code>, <code id="lat_indices">lat_indices</code></td>
+<td>
+<p>Nonempty positive integer positions in original
+file axes. Requested order and repetitions are retained.</p>
+</td></tr>
+<tr><td><code id="time_indices">time_indices</code></td>
+<td>
+<p>Positive integer time positions, possibly unordered or
+repeated. Empty input is allowed; positions outside the file are rejected.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Numeric array longitude x latitude x requested time. Singleton axes
+remain present; time ordering/repetitions exactly follow the request.
+</p>
+
+</main>
+
+</div>
+</body></html>

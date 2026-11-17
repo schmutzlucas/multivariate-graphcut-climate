@@ -1,0 +1,61 @@
+<!DOCTYPE html><html><head><title>R: Independently decode CF dates without Gregorian coercion of...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>audit_cf_dates</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Independently decode CF dates without Gregorian coercion of fixed calendars</h2>
+
+<h3>Description</h3>
+
+<p>Gregorian inputs use UTC arithmetic. Fixed calendars use year-length and
+month-offset arithmetic, including origin time-of-day and negative offsets.
+A 1e-8-day boundary tolerance is applied before flooring fixed-calendar days.
+This decoder labels records; it does not itself certify ordering, uniqueness,
+complete years or the correctness of the climate-variable values.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>audit_cf_dates(values, units, calendar)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="values">values</code></td>
+<td>
+<p>Finite numeric CF time offsets.</p>
+</td></tr>
+<tr><td><code id="units">units</code></td>
+<td>
+<p>Days/hours/seconds-since units string with a supported UTC origin.</p>
+</td></tr>
+<tr><td><code id="calendar">calendar</code></td>
+<td>
+<p>Calendar name or alias: standard/proleptic Gregorian, 360_day,
+365_day or 366_day. Julian and unknown calendars are not supported here.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List with ok=TRUE, integer year/month/day vectors, a source label and
+NA error_message. Invalid coordinates/origins or unsupported calendars error.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>audit_cf_dates(59,"days since 2000-01-01","360_day") # February 30
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

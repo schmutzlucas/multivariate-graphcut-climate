@@ -1,0 +1,81 @@
+<!DOCTYPE html><html><head><title>R: Derive fallback endpoints when no filename date range can be...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>derive_date_range_from_time_axis</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Derive fallback endpoints when no filename date range can be read</h2>
+
+<h3>Description</h3>
+
+<p>Prefers the optional CF helper, then the modern Gregorian decoder. Last resort:
+add rounded min/max offsets to a Gregorian origin and explicitly mark the range
+estimated. The latter is not exact CF decoding for non-Gregorian calendars.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>derive_date_range_from_time_axis(
+  file_path,
+  nc_obj,
+  time_dim_name,
+  time_values,
+  time_units,
+  scale_days,
+  calendar,
+  time_decode_mode
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="file_path">file_path</code></td>
+<td>
+<p>Path used in diagnostic errors.</p>
+</td></tr>
+<tr><td><code id="nc_obj">nc_obj</code></td>
+<td>
+<p>Open NetCDF handle, not closed here.</p>
+</td></tr>
+<tr><td><code id="time_dim_name">time_dim_name</code></td>
+<td>
+<p>Time dimension name.</p>
+</td></tr>
+<tr><td><code id="time_values">time_values</code></td>
+<td>
+<p>Nonempty numeric time offsets.</p>
+</td></tr>
+<tr><td><code id="time_units">time_units</code></td>
+<td>
+<p>Character CF units attribute.</p>
+</td></tr>
+<tr><td><code id="scale_days">scale_days</code></td>
+<td>
+<p>Multiplier converting offsets to days.</p>
+</td></tr>
+<tr><td><code id="calendar">calendar</code></td>
+<td>
+<p>Canonical calendar name.</p>
+</td></tr>
+<tr><td><code id="time_decode_mode">time_decode_mode</code></td>
+<td>
+<p>Requested auto, helpers_cf, or empirical backend.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List with endpoint fields in <code>parsed</code>, a <code>source</code> label,
+and optional caution <code>note</code>. Errors if no origin can be recovered.
+</p>
+
+</main>
+
+</div>
+</body></html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html><html><head><title>R: Validate a seasonal boundary on the non-leap reference...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>validate_month_day</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Validate a seasonal boundary on the non-leap reference calendar</h2>
+
+<h3>Description</h3>
+
+<p>Seasonal boundaries use a 365-day reference year, not a particular model
+calendar. February 29 is therefore not an admissible boundary. Whole-year
+extraction can nevertheless include leap days in the data.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>validate_month_day(md, arg_name)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="md">md</code></td>
+<td>
+<p>Numeric length-two vector containing integer month and day.</p>
+</td></tr>
+<tr><td><code id="arg_name">arg_name</code></td>
+<td>
+<p>Argument label used in error messages.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Integer vector <code>c(month, day)</code>; invalid boundaries raise an error.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>validate_month_day(c(12, 31), "season_end")
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

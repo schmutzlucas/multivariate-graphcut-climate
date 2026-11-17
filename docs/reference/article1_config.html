@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head><title>R: Read the shared Article 1 scientific and runtime...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>article1_config</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Read the shared Article 1 scientific and runtime configuration</h2>
+
+<h3>Description</h3>
+
+<p>Scientific dates, model-list paths, 8/16/32 resolutions, lambda/threshold grids
+and seed 1 are explicit in this function. Only input registry, data/output/
+workspace roots and support paths use MVGC_* environment overrides. Loading
+configuration does not prove external inputs or supports are ready for a rerun.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>article1_config()
+</code></pre>
+
+
+<h3>Value</h3>
+
+<p>List of scientific parameters, model-list/support paths, data roots
+and the required custom solver repository/commit. No files are opened or
+directories created. Support paths must be supplied explicitly;
+no historical support is silently substituted.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>stopifnot(article1_config()$nbins3d == 8L, article1_config()$seed == 1L)
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

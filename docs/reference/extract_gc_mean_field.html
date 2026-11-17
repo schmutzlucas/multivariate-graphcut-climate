@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head><title>R: Extract selected candidate means from a reference-first mean...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>extract_gc_mean_field</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Extract selected candidate means from a reference-first mean array</h2>
+
+<h3>Description</h3>
+
+<p>Extract selected candidate means from a reference-first mean array
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>extract_gc_mean_field(mean_array, gc_labels)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="mean_array">mean_array</code></td>
+<td>
+<p>Numeric longitude x latitude x models array, reference first.</p>
+</td></tr>
+<tr><td><code id="gc_labels">gc_labels</code></td>
+<td>
+<p>Finite integer longitude x latitude candidate labels in
+1..(number of full models minus one).</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Longitude x latitude matrix selecting full model index label+1.
+Missing field values propagate; invalid labels or mismatched grids error.
+</p>
+
+</main>
+
+</div>
+</body></html>

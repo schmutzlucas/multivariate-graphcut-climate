@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head><title>R: Flatten and count multivariate bin states in R array order</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>tabulate_linear_states</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Flatten and count multivariate bin states in R array order</h2>
+
+<h3>Description</h3>
+
+<p>Flatten and count multivariate bin states in R array order
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>tabulate_linear_states(bin_indices0, nbins)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="bin_indices0">bin_indices0</code></td>
+<td>
+<p>Observations x variables matrix of valid zero-based bin
+indices; incomplete rows are excluded. Callers supply indices below nbins.</p>
+</td></tr>
+<tr><td><code id="nbins">nbins</code></td>
+<td>
+<p>Number of bins per variable, identical along every axis.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>The first variable varies fastest: for pr/tas/psl the state is
+b_pr + nbins*b_tas + nbins^2*b_psl. Returned counts are not normalised PMFs.
+</p>
+
+
+<h3>Value</h3>
+
+<p>Integer counts of length nbins raised to the number of variables.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>tabulate_linear_states(rbind(c(0, 1), c(1, 0)), 2)
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

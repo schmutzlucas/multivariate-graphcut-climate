@@ -1,0 +1,18 @@
+source("R/load.R"); load_mvgc()
+files <- sort(list.files("tests",pattern="^test_.*\\.R$",full.names=TRUE))
+rs <- file.path(R.home("bin"),if(.Platform$OS.type=="windows")"Rscript.exe"else"Rscript")
+private <- Sys.getenv("MVGC_PRIVATE_VERIFICATION_DIR", tempfile("mvgc-tests-"))
+dir.create(private,recursive=TRUE,showWarnings=FALSE)
+if (!nzchar(Sys.getenv("MVGC_OUTPUT_ROOT", "")))
+ Sys.setenv(MVGC_OUTPUT_ROOT=file.path(private,"outputs"))
+rows <- lapply(files,function(path) {
+ log <- file.path(private,paste0(basename(path),".txt"))
+ code <- system2(rs,c("--vanilla",shQuote(path)),stdout=log,stderr=log)
+ lines <- readLines(log,warn=FALSE)
+ status <- if(code!=0L)"FAIL"else if(any(grepl("^SKIP:",lines)))"BLOCKED"else"PASS"
+ cat(status,path,"\n")
+ if(code!=0L)cat(lines,sep="\n")
+ data.frame(test=path,status=status,exit_status=code)
+})
+result <- do.call(rbind,rows);write.csv(result,file.path(private,"r_tests.csv"),row.names=FALSE)
+if(any(result$status=="FAIL"))stop("Tests failed; inspect private logs.")

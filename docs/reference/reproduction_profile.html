@@ -1,0 +1,45 @@
+<!DOCTYPE html><html><head><title>R: Resolve the compact numerical inputs for a named article...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>reproduction_profile</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Resolve the compact numerical inputs for a named article reproduction profile</h2>
+
+<h3>Description</h3>
+
+<p>Resolve the compact numerical inputs for a named article reproduction profile
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>reproduction_profile(
+  profile = Sys.getenv("MVGC_REPRODUCTION_PROFILE", "current")
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="profile">profile</code></td>
+<td>
+<p>Current (completed October reruns)
+(the accepted publication cohort). MVGC_REPRODUCTION_PROFILE selects it.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Named list with profile, paths, environment override names and cohort
+manifests. No file is read, directory created or experiment configured.
+</p>
+
+</main>
+
+</div>
+</body></html>

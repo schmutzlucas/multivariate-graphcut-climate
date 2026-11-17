@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head><title>R: Convert supported CF time units to a scale in days</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>resolve_time_units_scale_days</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Convert supported CF time units to a scale in days</h2>
+
+<h3>Description</h3>
+
+<p>Convert supported CF time units to a scale in days
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>resolve_time_units_scale_days(time_units)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="time_units">time_units</code></td>
+<td>
+<p>Character units attribute of the form days/hours/seconds since origin.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Scalar multiplier (1, 1/24, or 1/86400); unsupported units raise an error.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>stopifnot(resolve_time_units_scale_days("hours since 1950-01-01") == 1/24)
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

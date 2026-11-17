@@ -1,0 +1,48 @@
+<!DOCTYPE html><html><head><title>R: Read the common PME support and reorder longitude to the...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>build_range_cube</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Read the common PME support and reorder longitude to the graph-cut grid</h2>
+
+<h3>Description</h3>
+
+<p>Read the common PME support and reorder longitude to the graph-cut grid
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>build_range_cube(range_file_path, variables)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="range_file_path">range_file_path</code></td>
+<td>
+<p>RDS with a ranges list in 0:359 longitude / -90:90 latitude order.</p>
+</td></tr>
+<tr><td><code id="variables">variables</code></td>
+<td>
+<p>Requested ordered variable identifiers, normally pr/tas/psl.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Array [360,181,variables,2] in -180:179 longitude order with dimnames.
+Reads existing bounds, never estimates per-reference supports. Requires each
+variable entry to be exactly [360,181,2]; later PMF validation checks finite,
+strictly increasing bounds and the prepared-support resolver checks provenance.
+</p>
+
+</main>
+
+</div>
+</body></html>

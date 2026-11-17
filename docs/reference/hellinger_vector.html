@@ -1,0 +1,42 @@
+<!DOCTYPE html><html><head><title>R: Compute ordinary Hellinger distance for two valid PMF vectors</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>hellinger_vector</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Compute ordinary Hellinger distance for two valid PMF vectors</h2>
+
+<h3>Description</h3>
+
+<p>Compute ordinary Hellinger distance for two valid PMF vectors
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>hellinger_vector(pdf_ref, pdf_model)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="pdf_ref">pdf_ref</code>, <code id="pdf_model">pdf_model</code></td>
+<td>
+<p>Numeric normalised PMFs on identical ordered bins.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Scalar Hellinger distance in [0,1]. Invalid masses raise an error;
+they are never clipped or replaced with zeros.
+</p>
+
+</main>
+
+</div>
+</body></html>

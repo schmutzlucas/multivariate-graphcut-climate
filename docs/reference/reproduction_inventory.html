@@ -1,0 +1,48 @@
+<!DOCTYPE html><html><head><title>R: Verify and inventory the compact inputs selected for Level 1...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>reproduction_inventory</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Verify and inventory the compact inputs selected for Level 1 rendering</h2>
+
+<h3>Description</h3>
+
+<p>Verify and inventory the compact inputs selected for Level 1 rendering
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>reproduction_inventory(scripts, profile = reproduction_profile())
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="scripts">scripts</code></td>
+<td>
+<p>Nonempty selected figure/table entry-point paths.</p>
+</td></tr>
+<tr><td><code id="profile">profile</code></td>
+<td>
+<p>Resolved current publication compact-result profile.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Data frame of exact selected input paths, sizes, SHA-256, overrides and
+manifest matches. Default inputs must match their archived manifests. Custom
+overrides are hashed but not certified as the publication cohort. Climate
+inputs, supports, checkpoints and large production workspaces are never read.
+</p>
+
+</main>
+
+</div>
+</body></html>

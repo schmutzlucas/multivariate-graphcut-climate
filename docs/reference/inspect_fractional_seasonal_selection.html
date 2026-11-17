@@ -1,0 +1,92 @@
+<!DOCTYPE html><html><head><title>R: Inspect one point's seasonal extraction and its time...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>inspect_fractional_seasonal_selection</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Inspect one point's seasonal extraction and its time diagnostics</h2>
+
+<h3>Description</h3>
+
+<p>Inspect one point's seasonal extraction and its time diagnostics
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>inspect_fractional_seasonal_selection(
+  nc_file,
+  variable,
+  year_span,
+  season_start_md,
+  season_end_md,
+  lon_target = NULL,
+  lat_target = NULL,
+  strict_time_checks = TRUE,
+  season_selection_mode = c("auto", "exact_month_day", "fractional"),
+  time_decode_mode = c("auto", "helpers_cf", "empirical"),
+  requested_year_policy = c("warn", "stop"),
+  verbose = TRUE
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="nc_file">nc_file</code></td>
+<td>
+<p>Path to a prepared daily NetCDF file.</p>
+</td></tr>
+<tr><td><code id="variable">variable</code></td>
+<td>
+<p>Variable name to inspect.</p>
+</td></tr>
+<tr><td><code id="year_span">year_span</code></td>
+<td>
+<p>Requested years, sorted/deduplicated before extraction.</p>
+</td></tr>
+<tr><td><code id="season_start_md">season_start_md</code>, <code id="season_end_md">season_end_md</code></td>
+<td>
+<p>Inclusive non-leap reference month/day boundaries.</p>
+</td></tr>
+<tr><td><code id="lon_target">lon_target</code>, <code id="lat_target">lat_target</code></td>
+<td>
+<p>Scalar coordinates; missing coordinates default
+independently to the first corresponding file coordinate.</p>
+</td></tr>
+<tr><td><code id="strict_time_checks">strict_time_checks</code></td>
+<td>
+<p>Whether to enforce daily-mapping assumptions.</p>
+</td></tr>
+<tr><td><code id="season_selection_mode">season_selection_mode</code></td>
+<td>
+<p>Auto, exact_month_day, or fractional selection.</p>
+</td></tr>
+<tr><td><code id="time_decode_mode">time_decode_mode</code></td>
+<td>
+<p>Auto, helpers_cf, or empirical decoding.</p>
+</td></tr>
+<tr><td><code id="requested_year_policy">requested_year_policy</code></td>
+<td>
+<p>Warn or stop for unavailable/incomplete years.</p>
+</td></tr>
+<tr><td><code id="verbose">verbose</code></td>
+<td>
+<p>Whether to print the diagnostic tables.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Extraction diagnostics list. This convenience inspector reads the
+selected climate values at one point; it is not metadata-only.
+</p>
+
+</main>
+
+</div>
+</body></html>

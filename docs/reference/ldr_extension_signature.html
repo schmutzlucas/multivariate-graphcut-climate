@@ -1,0 +1,62 @@
+<!DOCTYPE html><html><head><title>R: Bind LDR extension caches to saved results, support, settings...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>ldr_extension_signature</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Bind LDR extension caches to saved results, support, settings and input discovery</h2>
+
+<h3>Description</h3>
+
+<p>Bind LDR extension caches to saved results, support, settings and input discovery
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>ldr_extension_signature(
+  input,
+  range_path,
+  bundle,
+  data_dir,
+  cfg = article1_config()
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="input">input</code>, <code id="range_path">range_path</code></td>
+<td>
+<p>Existing source-bundle and common-support file paths.</p>
+</td></tr>
+<tr><td><code id="bundle">bundle</code></td>
+<td>
+<p>Validated source bundle, including saved labels and scientific settings.</p>
+</td></tr>
+<tr><td><code id="data_dir">data_dir</code></td>
+<td>
+<p>Actual prepared data root used for NetCDF discovery.</p>
+</td></tr>
+<tr><td><code id="cfg">cfg</code></td>
+<td>
+<p>Shared configuration, including the requested LDR threshold set.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Signature list with fresh bundle/support/registry hashes, exact scientific
+settings, canonical code/native hashes and selected input file size/mtime records.
+Raw climate payloads are not rehashed here; legacy directory identity is
+explicitly weaker than a frozen registry plus the prepared-run payload checks.
+</p>
+
+</main>
+
+</div>
+</body></html>

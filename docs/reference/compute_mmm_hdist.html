@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head><title>R: Evaluate ordinary Hellinger distance from a reference to...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>compute_mmm_hdist</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Evaluate ordinary Hellinger distance from a reference to D-MMM</h2>
+
+<h3>Description</h3>
+
+<p>Evaluate ordinary Hellinger distance from a reference to D-MMM
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>compute_mmm_hdist(pdf_ref, pdf_models, mmm_pdf = NULL)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="pdf_ref">pdf_ref</code></td>
+<td>
+<p>Reference PMFs, lon x lat x bins, normalised on the common support.</p>
+</td></tr>
+<tr><td><code id="pdf_models">pdf_models</code></td>
+<td>
+<p>Candidate PMFs, lon x lat x bins x models, used if mmm_pdf is NULL.</p>
+</td></tr>
+<tr><td><code id="mmm_pdf">mmm_pdf</code></td>
+<td>
+<p>Optional precomputed equal-model PMF average. Supplying it avoids
+recomputing the same mixture for each diagnostic/threshold; caller owns model identity.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Lon x lat distance matrix, retaining singleton spatial axes. Invalid
+masses fail rather than converting a NaN distance to a perfect score of zero.
+</p>
+
+</main>
+
+</div>
+</body></html>

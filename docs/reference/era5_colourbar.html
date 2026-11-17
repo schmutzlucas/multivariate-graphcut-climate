@@ -1,0 +1,53 @@
+<!DOCTYPE html><html><head><title>R: Build a physical colourbar from the map scale</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>era5_colourbar</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Build a physical colourbar from the map scale</h2>
+
+<h3>Description</h3>
+
+<p>Build a physical colourbar from the map scale
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>era5_colourbar(scale, row, name, unit_label = NULL)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="scale">scale</code></td>
+<td>
+<p>ggplot2 fill scale already trained for the panel.</p>
+</td></tr>
+<tr><td><code id="row">row</code></td>
+<td>
+<p>One-based diagnostic row (1 or 2).</p>
+</td></tr>
+<tr><td><code id="name">name</code></td>
+<td>
+<p>Grid grob identifier.</p>
+</td></tr>
+<tr><td><code id="unit_label">unit_label</code></td>
+<td>
+<p>Optional text/plotmath physical-unit label.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Grid tree with raster colour strip, vector ticks and unit label; no device opened.
+</p>
+
+</main>
+
+</div>
+</body></html>

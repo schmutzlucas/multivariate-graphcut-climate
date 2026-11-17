@@ -1,0 +1,65 @@
+<!DOCTYPE html><html><head><title>R: Save a compact PME period result with explicit metadata</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>write_period_result</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Save a compact PME period result with explicit metadata</h2>
+
+<h3>Description</h3>
+
+<p>Save a compact PME period result with explicit metadata
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>write_period_result(
+  period_result,
+  period_row,
+  period_output_dir,
+  run_stamp,
+  meta_base
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="period_result">period_result</code></td>
+<td>
+<p>Nested score/solver/checkpoint containers for one period.</p>
+</td></tr>
+<tr><td><code id="period_row">period_row</code></td>
+<td>
+<p>One-row target period descriptor.</p>
+</td></tr>
+<tr><td><code id="period_output_dir">period_output_dir</code></td>
+<td>
+<p>Destination directory, created recursively if absent.</p>
+</td></tr>
+<tr><td><code id="run_stamp">run_stamp</code></td>
+<td>
+<p>Run identifier used in the filename; select a new run directory
+to avoid normal saveRDS overwrite behaviour.</p>
+</td></tr>
+<tr><td><code id="meta_base">meta_base</code></td>
+<td>
+<p>Shared scientific/input metadata.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Written compact RDS path. Adds save time and completed-reference list;
+does not independently certify that all required references have completed.
+</p>
+
+</main>
+
+</div>
+</body></html>

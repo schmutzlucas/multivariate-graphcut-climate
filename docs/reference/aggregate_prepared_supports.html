@@ -1,0 +1,49 @@
+<!DOCTYPE html><html><head><title>R: Pool checked per-input extrema into separate ERA5 and common...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>aggregate_prepared_supports</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Pool checked per-input extrema into separate ERA5 and common PME supports</h2>
+
+<h3>Description</h3>
+
+<p>Pool checked per-input extrema into separate ERA5 and common PME supports
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>aggregate_prepared_supports(job)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="job">job</code></td>
+<td>
+<p>Parsed aggregation job with era5/pme scopes, signed cache records,
+input_registry_sha256, preparation_identity, new output paths, archived
+support paths and a new JSON report path. Bounds use the fixed 360 x 181 grid.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Named era5/pme manifest invisibly. Each support contains exactly its
+ordered model/year scope, transforms, numerical settings and input metadata.
+Validates both complete supports before publishing any output; refuses
+overwrite. Checks cache model/variable/job/source identities and dimensions,
+not just their filenames. No raw inputs are changed or experiments started.
+Missing pooled cells fail with explicit locations. Constant empirical bounds
+preserve their minimum and use the documented upper-only numerical envelope.
+</p>
+
+</main>
+
+</div>
+</body></html>

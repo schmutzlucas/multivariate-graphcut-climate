@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head><title>R: Rank finite candidate and ensemble scores with smaller values...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>summarize_ensemble_scores</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Rank finite candidate and ensemble scores with smaller values preferred</h2>
+
+<h3>Description</h3>
+
+<p>Rank finite candidate and ensemble scores with smaller values preferred
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>summarize_ensemble_scores(scores, mmm_value, gc_value)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="scores">scores</code></td>
+<td>
+<p>Numeric vector with distinct nonempty candidate model names.</p>
+</td></tr>
+<tr><td><code id="mmm_value">mmm_value</code>, <code id="gc_value">gc_value</code></td>
+<td>
+<p>Scalar D-MMM and GC scores; nonfinite values are unranked.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>One-row data frame of best/worst model identities and scores, unweighted
+type-7 ensemble quartiles, and minimum ranks among models plus both methods.
+No finite candidate scores yields missing summary fields.
+</p>
+
+</main>
+
+</div>
+</body></html>

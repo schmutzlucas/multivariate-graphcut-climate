@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head><title>R: Match requested rectilinear coordinates without regridding</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>match_requested_coordinates</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Match requested rectilinear coordinates without regridding</h2>
+
+<h3>Description</h3>
+
+<p>Longitudes at least 180 are shifted once by -360 in both request and file.
+This handles the Article 1 0..359/-180..179 conventions, not arbitrary turns
+of longitude. Output indices preserve requested order, including latitude order.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>match_requested_coordinates(nc_obj, dimension_info, lon, lat)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="nc_obj">nc_obj</code></td>
+<td>
+<p>Open NetCDF handle, not closed here.</p>
+</td></tr>
+<tr><td><code id="dimension_info">dimension_info</code></td>
+<td>
+<p>Axis description from <code>get_variable_dimension_info()</code>.</p>
+</td></tr>
+<tr><td><code id="lon">lon</code></td>
+<td>
+<p>Requested longitude vector in degrees east.</p>
+</td></tr>
+<tr><td><code id="lat">lat</code></td>
+<td>
+<p>Requested latitude vector in degrees north.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List with integer <code>lon_indices</code> and <code>lat_indices</code> into
+original file axes. Missing/ambiguous coordinates raise errors.
+</p>
+
+</main>
+
+</div>
+</body></html>

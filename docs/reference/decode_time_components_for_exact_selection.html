@@ -1,0 +1,70 @@
+<!DOCTYPE html><html><head><title>R: Try to obtain year/month/day vectors for exact seasonal...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>decode_time_components_for_exact_selection</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Try to obtain year/month/day vectors for exact seasonal selection</h2>
+
+<h3>Description</h3>
+
+<p>Try to obtain year/month/day vectors for exact seasonal selection
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>decode_time_components_for_exact_selection(
+  nc_obj,
+  time_dim_name,
+  time_values,
+  time_units,
+  calendar,
+  time_decode_mode
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="nc_obj">nc_obj</code></td>
+<td>
+<p>Open NetCDF handle, not closed here.</p>
+</td></tr>
+<tr><td><code id="time_dim_name">time_dim_name</code></td>
+<td>
+<p>Time dimension supplied to optional CF helpers.</p>
+</td></tr>
+<tr><td><code id="time_values">time_values</code></td>
+<td>
+<p>Numeric offsets for Gregorian fallback decoding.</p>
+</td></tr>
+<tr><td><code id="time_units">time_units</code></td>
+<td>
+<p>CF time units with UTC origin.</p>
+</td></tr>
+<tr><td><code id="calendar">calendar</code></td>
+<td>
+<p>Canonical calendar name.</p>
+</td></tr>
+<tr><td><code id="time_decode_mode">time_decode_mode</code></td>
+<td>
+<p>Auto/helpers_cf/empirical; empirical skips optional helpers.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List with <code>ok</code>, decoded <code>year</code>, <code>month</code>, <code>day</code>,
+<code>source</code>, and <code>error_message</code>. Non-Gregorian helper failure
+returns ok=FALSE; this routine does not invent Gregorian model dates.
+</p>
+
+</main>
+
+</div>
+</body></html>

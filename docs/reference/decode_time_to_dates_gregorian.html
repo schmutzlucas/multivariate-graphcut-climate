@@ -1,0 +1,54 @@
+<!DOCTYPE html><html><head><title>R: Decode a Gregorian time coordinate to UTC dates</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>decode_time_to_dates_gregorian</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Decode a Gregorian time coordinate to UTC dates</h2>
+
+<h3>Description</h3>
+
+<p>This routine uses R's proleptic Gregorian/UTC arithmetic. It is appropriate
+for the modern Article 1 Gregorian dates, not 360-day or no-leap calendars
+or historical mixed-calendar reform transitions.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>decode_time_to_dates_gregorian(time_values, time_units)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="time_values">time_values</code></td>
+<td>
+<p>Numeric offsets in the declared time units.</p>
+</td></tr>
+<tr><td><code id="time_units">time_units</code></td>
+<td>
+<p>One days/hours/seconds-since units string with UTC origin.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>R <code>Date</code> vector; records are assigned to their UTC calendar day.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>stopifnot(all(as.character(decode_time_to_dates_gregorian(c(0,24),
+  "hours since 2000-01-01")) == c("2000-01-01","2000-01-02")))
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

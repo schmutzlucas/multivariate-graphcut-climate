@@ -1,0 +1,18 @@
+# Use an external temporary device for layout metrics before explicit export.
+options(device = function(...) grDevices::pdf(file = tempfile("mvgc-layout-", fileext=".pdf")))
+# Render only approved target-period signed bias fields; no experiment or score computation.
+source("R/load.R"); load_mvgc()
+source("R/utils/reproduction.R")
+require_packages(c("ggplot2","gtable","maps","scales","RColorBrewer","ragg","digest","jsonlite"))
+source("R/plotting/era5_maps.R")
+if (.Platform$OS.type == 'windows') Sys.setlocale('LC_CTYPE','.UTF-8')
+cache <- reproduction_input("era5_bias")
+if (!file.exists(cache)) stop("Missing approved figure-field cache; no numerical results are recomputed.")
+b <- readRDS(cache)
+stopifnot(identical(b$calibration,1951:1975),identical(b$target,1999:2023))
+plot <- build_bias_4map_plot(b$tas$bias_mmm,b$tas$bias_gc,b$pr$bias_mmm,b$pr$bias_gc,b$lon,b$lat)
+out <- Sys.getenv("MVGC_FIGURE_OUTPUT_ROOT",unset=mvgc_output_dir("figures"))
+dir.create(out,recursive=TRUE,showWarnings=FALSE)
+base <- file.path(out,"era5_bias_maps")
+save_era5_fourmap(plot,base,cache)
+message("PASS: cached signed biases, coordinates, RdBu palette and -8..8/-4..4 scales unchanged; layout verified.")

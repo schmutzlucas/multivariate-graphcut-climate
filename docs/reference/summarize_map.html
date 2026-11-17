@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><title>R: Summarise a spatial diagnostic with the published...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>summarize_map</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Summarise a spatial diagnostic with the published area-weighting convention</h2>
+
+<h3>Description</h3>
+
+<p>Summarise a spatial diagnostic with the published area-weighting convention
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>summarize_map(field, weights)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="field">field</code></td>
+<td>
+<p>Numeric field, typically a Hellinger score map.</p>
+</td></tr>
+<tr><td><code id="weights">weights</code></td>
+<td>
+<p>Nonnegative weights with identical shape.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>One-row data frame containing mean, median, population SD, IQR,
+90th/95th percentiles and finite-area fraction.
+</p>
+
+</main>
+
+</div>
+</body></html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><title>R: Measure the area with a strict reduction in absolute error</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>weighted_fraction_improved</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Measure the area with a strict reduction in absolute error</h2>
+
+<h3>Description</h3>
+
+<p>Measure the area with a strict reduction in absolute error
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>weighted_fraction_improved(err_gc, err_mmm, weights)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="err_gc">err_gc</code>, <code id="err_mmm">err_mmm</code></td>
+<td>
+<p>Numeric GC and D-MMM errors with identical shape.</p>
+</td></tr>
+<tr><td><code id="weights">weights</code></td>
+<td>
+<p>Nonnegative weights of the same shape.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Weighted fraction abs(err_gc) &lt; abs(err_mmm) on common finite cells,
+or NA_real_ when none remain. Exact ties are not improvements.
+</p>
+
+</main>
+
+</div>
+</body></html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head><title>R: Make constant empirical supports valid without forcing minima...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>regularize_empirical_support</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Make constant empirical supports valid without forcing minima to zero</h2>
+
+<h3>Description</h3>
+
+<p>Make constant empirical supports valid without forcing minima to zero
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>regularize_empirical_support(lower, upper, variable)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="lower">lower</code>, <code id="upper">upper</code></td>
+<td>
+<p>Numeric arrays of empirical lower/upper bounds with the
+same shape. Jointly missing bounds are retained, not fabricated.</p>
+</td></tr>
+<tr><td><code id="variable">variable</code></td>
+<td>
+<p>Variable name; precipitation minima must be nonnegative.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List min, max, constant and expansion. The empirical minimum is
+unchanged. For finite constant cells only, the upper bound is increased by
+max(1e-12, 64 * machine epsilon * max(1, abs(min))). On the log-precipitation
+scale this is an explicit numerical envelope around a point mass; identical
+observations remain in the first bin. Missing/constant cells are reported
+by production aggregation. Inconsistent, infinite or reversed bounds fail.
+</p>
+
+</main>
+
+</div>
+</body></html>

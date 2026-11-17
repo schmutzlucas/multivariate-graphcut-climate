@@ -1,0 +1,50 @@
+<!DOCTYPE html><html><head><title>R: Read the last date-range token from a climate filename</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>parse_filename_date_range</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Read the last date-range token from a climate filename</h2>
+
+<h3>Description</h3>
+
+<p>Performs lexical range validation, not full calendar validation: February 30
+can be legitimate for a 360-day model. Filename coverage is a discovery hint,
+never independent proof of the actual time-coordinate coverage.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>parse_filename_date_range(file_path)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="file_path">file_path</code></td>
+<td>
+<p>Single path whose basename may contain YYYYMMDD-YYYYMMDD.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List containing <code>ok</code> and start/end year, month and day integers.
+Missing or invalid tokens return <code>ok=FALSE</code> rather than throwing.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>parse_filename_date_range("pr_MODEL_19500101-21001230.nc")
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

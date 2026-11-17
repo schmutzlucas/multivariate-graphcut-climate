@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><title>R: Count an equal-width histogram using vectorised indices</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>compute_histND_equal_width_fast</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Count an equal-width histogram using vectorised indices</h2>
+
+<h3>Description</h3>
+
+<p>Count an equal-width histogram using vectorised indices
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>compute_histND_equal_width_fast(data, range_var, nbins)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="data">data</code></td>
+<td>
+<p>Numeric observations x variables matrix or matrix-coercible data.</p>
+</td></tr>
+<tr><td><code id="range_var">range_var</code></td>
+<td>
+<p>Variables x 2 matrix of finite minimum/maximum bounds.</p>
+</td></tr>
+<tr><td><code id="nbins">nbins</code></td>
+<td>
+<p>Positive integer bins per axis, not total multivariate states.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Applies equal_width_bin_index() separately to each variable and
+excludes rows with missing bin assignments. One-observation and empty inputs
+retain their correct multivariate dimensionality. See floating-edge semantics
+in equal_width_bin_index(); this function does not normalise counts.
+</p>
+
+
+<h3>Value</h3>
+
+<p>Integer count vector of length nbins^ncol(data), in column-major bin order.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>compute_histND_equal_width_fast(matrix(c(0.2, 0.8), 1), cbind(c(0, 0), c(1, 1)), 8)
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

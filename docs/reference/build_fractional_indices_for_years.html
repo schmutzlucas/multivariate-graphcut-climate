@@ -1,0 +1,80 @@
+<!DOCTYPE html><html><head><title>R: Select seasonal file indices under the fractional year-slot...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>build_fractional_indices_for_years</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Select seasonal file indices under the fractional year-slot convention</h2>
+
+<h3>Description</h3>
+
+<p>Select seasonal file indices under the fractional year-slot convention
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>build_fractional_indices_for_years(
+  year_table,
+  timestep_year,
+  timestep_slot,
+  selected_years,
+  start_ref_doy,
+  end_ref_doy,
+  wraps_year_end,
+  requested_year_policy = c("warn", "stop")
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="year_table">year_table</code></td>
+<td>
+<p>Year diagnostics from <code>infer_time_structure_daily()</code>.</p>
+</td></tr>
+<tr><td><code id="timestep_year">timestep_year</code></td>
+<td>
+<p>Integer year label for every file record.</p>
+</td></tr>
+<tr><td><code id="timestep_slot">timestep_slot</code></td>
+<td>
+<p>Corresponding one-based slot under the active time mapping.</p>
+</td></tr>
+<tr><td><code id="selected_years">selected_years</code></td>
+<td>
+<p>Requested years, sorted and deduplicated before selection.</p>
+</td></tr>
+<tr><td><code id="start_ref_doy">start_ref_doy</code></td>
+<td>
+<p>Seasonal start day on a 365-day reference year.</p>
+</td></tr>
+<tr><td><code id="end_ref_doy">end_ref_doy</code></td>
+<td>
+<p>Seasonal end day on that reference year.</p>
+</td></tr>
+<tr><td><code id="wraps_year_end">wraps_year_end</code></td>
+<td>
+<p>Whether to take both ends of each selected year.</p>
+</td></tr>
+<tr><td><code id="requested_year_policy">requested_year_policy</code></td>
+<td>
+<p>Warn or stop for absent/incomplete/empty years.
+Warn mode uses observed maximum slot as effective length for incomplete years.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List with integer <code>indices</code> in chronological selected-year
+order and a <code>year_summary</code> table. Errors if nothing can be selected.
+</p>
+
+</main>
+
+</div>
+</body></html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html><html><head><title>R: Check every merged ERA5 daily value against its signed...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>verify_era5_monthly_merge</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Check every merged ERA5 daily value against its signed monthly input</h2>
+
+<h3>Description</h3>
+
+<p>Check every merged ERA5 daily value against its signed monthly input
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>verify_era5_monthly_merge(final_nc, expected_keys, sources)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="final_nc">final_nc</code></td>
+<td>
+<p>Open caller-owned ncdf4 handle for the merged daily pr product.</p>
+</td></tr>
+<tr><td><code id="expected_keys">expected_keys</code></td>
+<td>
+<p>Complete ordered YYYY-MM-DD keys already verified for final_nc.</p>
+</td></tr>
+<tr><td><code id="sources">sources</code></td>
+<td>
+<p>Ordered monthly records with YYYYMM month, file, bytes and sha256.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Total compared values invisibly. Requires every expected month exactly
+once, fresh monthly payload hashes and matching dates/coordinates/units.
+Uses exact decoded-value equality, not a numerical tolerance or summary mean.
+Opens/closes monthly handles and reads at most one monthly cube at a time;
+leaves final_nc open. Requires the NetCDF helpers repair_axis/repair_equal
+definitions, loaded explicitly by the UTC validation entry point.
+</p>
+
+</main>
+
+</div>
+</body></html>

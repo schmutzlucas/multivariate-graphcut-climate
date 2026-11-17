@@ -1,0 +1,82 @@
+<!DOCTYPE html><html><head><title>R: Build the Article 1 univariate, bivariate and trivariate...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>compute_multires_hist_counts_fast</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Build the Article 1 univariate, bivariate and trivariate counts together</h2>
+
+<h3>Description</h3>
+
+<p>Build the Article 1 univariate, bivariate and trivariate counts together
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>compute_multires_hist_counts_fast(
+  pr,
+  tas,
+  psl,
+  range_3d,
+  nbins3d = 8L,
+  nbins2d = 16L,
+  nbins1d = 32L,
+  profile = FALSE
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="pr">pr</code>, <code id="tas">tas</code>, <code id="psl">psl</code></td>
+<td>
+<p>Equally sized numeric observation vectors. Precipitation
+must already have the production log(1 + precipitation) transform applied.</p>
+</td></tr>
+<tr><td><code id="range_3d">range_3d</code></td>
+<td>
+<p>A 3 x 2 matrix of transformed/physical bounds ordered pr,tas,psl.</p>
+</td></tr>
+<tr><td><code id="nbins3d">nbins3d</code>, <code id="nbins2d">nbins2d</code>, <code id="nbins1d">nbins1d</code></td>
+<td>
+<p>Per-axis resolutions for three-, two-, and
+one-dimensional histograms. Article 1 fixes these to 8, 16 and 32.</p>
+</td></tr>
+<tr><td><code id="profile">profile</code></td>
+<td>
+<p>Logical; append indexing/tabulation timings in seconds.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Nested resolutions reuse finest-grid indices. Non-nested settings
+compute their grids separately. Missing values are excluded per diagnostic,
+so marginal sample counts can differ when raw variables contain missing data.
+</p>
+
+
+<h3>Value</h3>
+
+<p>List pdf3 (joint counts), pdf2 (pr_tas, pr_psl, tas_psl count vectors),
+and pdf1 (pr, tas, psl counts), with optional timing. The pdf names are legacy:
+values are counts until the calling PMF builder normalises each histogram.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>x &lt;- c(0.1, 0.5, 0.9)
+counts &lt;- compute_multires_hist_counts_fast(x, x, x, cbind(rep(0, 3), rep(1, 3)))
+sum(counts$pdf3)
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

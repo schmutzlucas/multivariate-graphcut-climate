@@ -1,0 +1,142 @@
+<!DOCTYPE html><html><head><title>R: Build one model's marginal and joint PMFs using the reference...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>compute_model_pdfs_fractional_legacy</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Build one model's marginal and joint PMFs using the reference histograms</h2>
+
+<h3>Description</h3>
+
+<p>Internal worker for the public multi-model entry point. Reads all selected
+variables for both periods before looping over cells. Precipitation uses the
+shared nonnegative QC then log1p; precipitation means use corrected physical
+observations before transformation. Missing rows are omitted separately for each marginal/joint
+diagnostic. Empty local samples retain zero arrays, not valid PMFs.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>compute_model_pdfs_fractional_legacy(
+  model,
+  variables,
+  data_dir,
+  year_present,
+  year_future,
+  lon,
+  lat,
+  range_var,
+  season_start_md,
+  season_end_md,
+  pdf2_names,
+  nbins3d,
+  nbins2d,
+  nbins1d,
+  strict_time_checks,
+  season_selection_mode,
+  time_decode_mode,
+  requested_year_policy,
+  diagnostics,
+  verbose,
+  compute_hist_nd_fun,
+  profile = FALSE,
+  spatial_block_size = NULL
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="model">model</code></td>
+<td>
+<p>Single prepared model identifier.</p>
+</td></tr>
+<tr><td><code id="variables">variables</code></td>
+<td>
+<p>Exactly c(&quot;pr&quot;, &quot;tas&quot;, &quot;psl&quot;), in this order.</p>
+</td></tr>
+<tr><td><code id="data_dir">data_dir</code></td>
+<td>
+<p>Prepared data hierarchy root, unless registry resolution is active.</p>
+</td></tr>
+<tr><td><code id="year_present">year_present</code>, <code id="year_future">year_future</code></td>
+<td>
+<p>Requested calibration/evaluation year vectors.</p>
+</td></tr>
+<tr><td><code id="lon">lon</code>, <code id="lat">lat</code></td>
+<td>
+<p>Ordered longitude/latitude coordinate vectors.</p>
+</td></tr>
+<tr><td><code id="range_var">range_var</code></td>
+<td>
+<p>Common local support array [lon,lat,variable,min/max], with
+precipitation bounds already on the log(1+pr) scale.</p>
+</td></tr>
+<tr><td><code id="season_start_md">season_start_md</code>, <code id="season_end_md">season_end_md</code></td>
+<td>
+<p>Inclusive non-leap reference month/day boundaries.</p>
+</td></tr>
+<tr><td><code id="pdf2_names">pdf2_names</code></td>
+<td>
+<p>Pair identifiers pr_tas, pr_psl and tas_psl.</p>
+</td></tr>
+<tr><td><code id="nbins3d">nbins3d</code>, <code id="nbins2d">nbins2d</code>, <code id="nbins1d">nbins1d</code></td>
+<td>
+<p>Positive integer bins per axis for joint,
+bivariate and univariate histograms respectively, normally 8/16/32.</p>
+</td></tr>
+<tr><td><code id="strict_time_checks">strict_time_checks</code></td>
+<td>
+<p>Whether to enforce legacy daily-time assumptions.</p>
+</td></tr>
+<tr><td><code id="season_selection_mode">season_selection_mode</code></td>
+<td>
+<p>Auto, exact_month_day, or fractional selection.</p>
+</td></tr>
+<tr><td><code id="time_decode_mode">time_decode_mode</code></td>
+<td>
+<p>Auto, helpers_cf, or empirical time decoding.</p>
+</td></tr>
+<tr><td><code id="requested_year_policy">requested_year_policy</code></td>
+<td>
+<p>Warn or stop for incomplete/unavailable years.</p>
+</td></tr>
+<tr><td><code id="diagnostics">diagnostics</code></td>
+<td>
+<p>Whether detailed extraction diagnostics may be printed.</p>
+</td></tr>
+<tr><td><code id="verbose">verbose</code></td>
+<td>
+<p>Whether to print progress and, if diagnostics is TRUE, tables.</p>
+</td></tr>
+<tr><td><code id="compute_hist_nd_fun">compute_hist_nd_fun</code></td>
+<td>
+<p>Reference-compatible count callback with data,
+range_var and nbins arguments.</p>
+</td></tr>
+<tr><td><code id="profile">profile</code></td>
+<td>
+<p>Compatibility profiling flag; timing is collected either way.</p>
+</td></tr>
+<tr><td><code id="spatial_block_size">spatial_block_size</code></td>
+<td>
+<p>Accepted for backend compatibility; ignored by this worker.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List of present/future three-dimensional PMF arrays, named lists of
+bivariate/univariate arrays and mean matrices, plus diagnostics/timing/performance.
+The first variable varies fastest in flattened histogram states.
+</p>
+
+</main>
+
+</div>
+</body></html>

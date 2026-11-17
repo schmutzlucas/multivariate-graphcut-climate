@@ -1,0 +1,50 @@
+<!DOCTYPE html><html><head><title>R: Enforce nonnegative finite precipitation without modifying...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>precipitation_qc</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Enforce nonnegative finite precipitation without modifying missing values</h2>
+
+<h3>Description</h3>
+
+<p>Enforce nonnegative finite precipitation without modifying missing values
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>precipitation_qc(values)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="values">values</code></td>
+<td>
+<p>Numeric precipitation vector/array in already prepared units.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Copy with every finite negative observation replaced by zero. Existing
+zeros/positives, dimensions, NA and NaN are preserved. Infinities are retained
+as invalid observations, not silently repaired; production validation rejects
+them. No unit conversion, file editing or logarithm is performed here.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>stopifnot(identical(precipitation_qc(c(-1, 0, 2, NA_real_)), c(0, 0, 2, NA_real_)))
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

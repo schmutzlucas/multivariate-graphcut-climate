@@ -1,0 +1,76 @@
+<!DOCTYPE html><html><head><title>R: Create a new rectilinear NetCDF container for a recovered...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>repair_new_file</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create a new rectilinear NetCDF container for a recovered input</h2>
+
+<h3>Description</h3>
+
+<p>Create a new rectilinear NetCDF container for a recovered input
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>repair_new_file(
+  nc,
+  variable,
+  path,
+  times,
+  units,
+  calendar,
+  output_units = NULL
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="nc">nc</code></td>
+<td>
+<p>Open template handle with two rectilinear spatial axes followed by time.</p>
+</td></tr>
+<tr><td><code id="variable">variable</code></td>
+<td>
+<p>Float/double source variable name; packed integer variables are unsupported.</p>
+</td></tr>
+<tr><td><code id="path">path</code></td>
+<td>
+<p>New output path; existing files are refused.</p>
+</td></tr>
+<tr><td><code id="times">times</code></td>
+<td>
+<p>Full numeric output time coordinates supplied by the recovery plan.</p>
+</td></tr>
+<tr><td><code id="units">units</code></td>
+<td>
+<p>CF time-coordinate units, not climate-variable units.</p>
+</td></tr>
+<tr><td><code id="calendar">calendar</code></td>
+<td>
+<p>Canonical CF calendar for the output time axis.</p>
+</td></tr>
+<tr><td><code id="output_units">output_units</code></td>
+<td>
+<p>Optional climate-variable units override; defaults to its template attribute.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Open writable ncdf4 handle, which the caller must close. Writes a
+NetCDF4 definition with compression 1, full-spatial/one-time chunks, original
+precision/missing value, and selected source/member/experiment/grid attributes.
+Does not fill the climate data or copy every template metadata attribute.
+</p>
+
+</main>
+
+</div>
+</body></html>

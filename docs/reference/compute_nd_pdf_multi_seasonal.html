@@ -1,0 +1,147 @@
+<!DOCTYPE html><html><head><title>R: Build calibration and evaluation PMFs on one fixed support...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>compute_nd_pdf_multi_seasonal</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Build calibration and evaluation PMFs on one fixed support for multiple models</h2>
+
+<h3>Description</h3>
+
+<p>Validates common grid/support/model configuration, dispatches model workers,
+then assembles arrays with a final model axis. This is a memory-intensive
+computation: latitude blocking limits raw input cubes, not retained outputs.
+Missing observations are excluded per marginal/joint sample; all-zero local
+histograms remain zero under the legacy convention and must not be fed to a
+solver as normalised PMFs. No new support or reference-specific support is made.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>compute_nd_pdf_multi_seasonal(
+  variables,
+  model_names,
+  data_dir,
+  year_present,
+  year_future,
+  lon,
+  lat,
+  range_var,
+  season_start_md = c(4, 15),
+  season_end_md = c(10, 14),
+  nbins3d = 8,
+  nbins2d = 16,
+  nbins1d = 32,
+  workers = 4,
+  strict_time_checks = TRUE,
+  diagnostics = FALSE,
+  verbose = FALSE,
+  season_selection_mode = c("auto", "exact_month_day", "fractional"),
+  time_decode_mode = c("auto", "helpers_cf", "empirical"),
+  requested_year_policy = c("warn", "stop"),
+  pmf_backend = c("optimized", "legacy"),
+  profile = FALSE,
+  spatial_block_size = 8L
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="variables">variables</code></td>
+<td>
+<p>Exactly c(&quot;pr&quot;, &quot;tas&quot;, &quot;psl&quot;), in that order.</p>
+</td></tr>
+<tr><td><code id="model_names">model_names</code></td>
+<td>
+<p>Distinct nonempty model identifiers in desired output order.</p>
+</td></tr>
+<tr><td><code id="data_dir">data_dir</code></td>
+<td>
+<p>Prepared daily NetCDF root; registry resolution takes precedence.</p>
+</td></tr>
+<tr><td><code id="year_present">year_present</code>, <code id="year_future">year_future</code></td>
+<td>
+<p>Nonempty finite integer calibration/evaluation years.</p>
+</td></tr>
+<tr><td><code id="lon">lon</code>, <code id="lat">lat</code></td>
+<td>
+<p>Nonempty unique finite longitude/latitude coordinate vectors.</p>
+</td></tr>
+<tr><td><code id="range_var">range_var</code></td>
+<td>
+<p>Finite strictly increasing bounds [lon,lat,3,2], aligned with
+the requested grid; pr bounds must already represent log(1+pr).</p>
+</td></tr>
+<tr><td><code id="season_start_md">season_start_md</code>, <code id="season_end_md">season_end_md</code></td>
+<td>
+<p>Inclusive month/day boundaries on a 365-day
+reference year. Helper defaults are seasonal; Article 1 entry points explicitly
+pass January 1 through December 31, so do not infer production dates from defaults.</p>
+</td></tr>
+<tr><td><code id="nbins3d">nbins3d</code>, <code id="nbins2d">nbins2d</code>, <code id="nbins1d">nbins1d</code></td>
+<td>
+<p>Positive integer bins per variable, default 8/16/32.</p>
+</td></tr>
+<tr><td><code id="workers">workers</code></td>
+<td>
+<p>Positive integer model-worker count. Uses multicore on Unix and
+multisession elsewhere, restoring the previous future plan on exit.</p>
+</td></tr>
+<tr><td><code id="strict_time_checks">strict_time_checks</code></td>
+<td>
+<p>Whether to enforce the legacy daily-mapping assumptions.</p>
+</td></tr>
+<tr><td><code id="diagnostics">diagnostics</code></td>
+<td>
+<p>Whether detailed model extraction diagnostics may be printed.</p>
+</td></tr>
+<tr><td><code id="verbose">verbose</code></td>
+<td>
+<p>Whether workers print progress and requested diagnostics.</p>
+</td></tr>
+<tr><td><code id="season_selection_mode">season_selection_mode</code></td>
+<td>
+<p>Auto, exact_month_day, or fractional seasonal selection.</p>
+</td></tr>
+<tr><td><code id="time_decode_mode">time_decode_mode</code></td>
+<td>
+<p>Auto, helpers_cf, or empirical time decoding.</p>
+</td></tr>
+<tr><td><code id="requested_year_policy">requested_year_policy</code></td>
+<td>
+<p>Warn or stop for missing/incomplete requested years;
+warn preserves the original experiment behaviour, not an input repair policy.</p>
+</td></tr>
+<tr><td><code id="pmf_backend">pmf_backend</code></td>
+<td>
+<p>Optimized shared-index/blocked worker or legacy reference worker.</p>
+</td></tr>
+<tr><td><code id="profile">profile</code></td>
+<td>
+<p>Compatibility profiling flag forwarded to each model worker.</p>
+</td></tr>
+<tr><td><code id="spatial_block_size">spatial_block_size</code></td>
+<td>
+<p>Latitude positions per optimized raw-input block; NULL
+disables blocked reads. Defaults to eight, independently of the histogram bins.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List pdf3/pdf2/pdf1/mean, each with present/future outputs; arrays have
+longitude x latitude x bins x models, mean arrays omit the bin axis.
+Bivariate/univariate/mean entries are named lists. Also returns diagnostics,
+calendars, timing/performance lists by model, and the selected pmf_backend.
+</p>
+
+</main>
+
+</div>
+</body></html>

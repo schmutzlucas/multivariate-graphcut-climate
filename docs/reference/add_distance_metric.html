@@ -1,0 +1,66 @@
+<!DOCTYPE html><html><head><title>R: Build ordinary and LDR distance summaries for one variable...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>add_distance_metric</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Build ordinary and LDR distance summaries for one variable set</h2>
+
+<h3>Description</h3>
+
+<p>Build ordinary and LDR distance summaries for one variable set
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>add_distance_metric(
+  dimension,
+  variable_set,
+  pdf_ref,
+  pdf_models,
+  pdf_mmm,
+  pdf_gc,
+  full_mmm_map = NULL,
+  full_gc_map = NULL
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="dimension">dimension</code>, <code id="variable_set">variable_set</code></td>
+<td>
+<p>Archived dimension/variable labels.</p>
+</td></tr>
+<tr><td><code id="pdf_ref">pdf_ref</code>, <code id="pdf_mmm">pdf_mmm</code>, <code id="pdf_gc">pdf_gc</code></td>
+<td>
+<p>Normalised longitude x latitude x bins arrays.</p>
+</td></tr>
+<tr><td><code id="pdf_models">pdf_models</code></td>
+<td>
+<p>Normalised longitude x latitude x bins x candidates array.</p>
+</td></tr>
+<tr><td><code id="full_mmm_map">full_mmm_map</code>, <code id="full_gc_map">full_gc_map</code></td>
+<td>
+<p>Optional precomputed ordinary Hellinger maps;
+if either is NULL both are recomputed from PMFs.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List of distance, comparison and ensemble summary data frames for
+ordinary Hellinger plus each tau_values threshold. Uses caller-environment
+area_weight_matrix, model_names and tau_values; no output files are written.
+Shapes/model count and complete finite normalised PMFs are validated first.
+</p>
+
+</main>
+
+</div>
+</body></html>

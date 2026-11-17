@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head><title>R: Validate target PMFs before handing their memory to native...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>validate_target_pmfs</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Validate target PMFs before handing their memory to native callbacks</h2>
+
+<h3>Description</h3>
+
+<p>Validate target PMFs before handing their memory to native callbacks
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>validate_target_pmfs(pdf_models_future, tolerance = 1e-08)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="pdf_models_future">pdf_models_future</code></td>
+<td>
+<p>Numeric longitude x latitude x bins x models array.</p>
+</td></tr>
+<tr><td><code id="tolerance">tolerance</code></td>
+<td>
+<p>Absolute tolerance for each local PMF's total mass.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Scans one latitude slab at a time to bound extra memory. Missing,
+negative and nonfinite masses are rejected before C++ square roots or graph
+optimisation can consume them. Valid PMFs are not modified or renormalised.
+</p>
+
+
+<h3>Value</h3>
+
+<p>TRUE invisibly; invalid masses or dimensions raise an R error.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>validate_target_pmfs(array(0.5, c(3, 2, 2, 2)))
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

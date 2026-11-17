@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head><title>R: Record the registry and support identity for a result or...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>experiment_input_provenance</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Record the registry and support identity for a result or checkpoint</h2>
+
+<h3>Description</h3>
+
+<p>Record the registry and support identity for a result or checkpoint
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>experiment_input_provenance(support)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="support">support</code></td>
+<td>
+<p>Path to one histogram-support RDS.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List containing paths, freshly calculated registry/support SHA-256 and
+an input-identity description. Payload hashes are not recalculated here;
+directory-only legacy selection is explicitly weaker than a frozen registry.
+</p>
+
+</main>
+
+</div>
+</body></html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head><title>R: Write a manuscript-ready booktabs table from already...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>write_table</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Write a manuscript-ready booktabs table from already formatted LaTeX fragments</h2>
+
+<h3>Description</h3>
+
+<p>Write a manuscript-ready booktabs table from already formatted LaTeX fragments
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>write_table(filename, label, caption, header, rows, columns)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="filename">filename</code></td>
+<td>
+<p>Output filename below caller-environment out; existing generated
+files follow writeLines() overwrite behaviour.</p>
+</td></tr>
+<tr><td><code id="label">label</code>, <code id="caption">caption</code></td>
+<td>
+<p>LaTeX label and caption text, supplied without escaping.</p>
+</td></tr>
+<tr><td><code id="header">header</code></td>
+<td>
+<p>Character header row without the terminating line break.</p>
+</td></tr>
+<tr><td><code id="rows">rows</code></td>
+<td>
+<p>Character vector of body rows without terminating line breaks.</p>
+</td></tr>
+<tr><td><code id="columns">columns</code></td>
+<td>
+<p>LaTeX tabular column specification, e.g. lrrr.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>NULL invisibly after writing a complete table environment. Caller must
+provide valid LaTeX and booktabs in the manuscript; no document compilation.
+</p>
+
+</main>
+
+</div>
+</body></html>

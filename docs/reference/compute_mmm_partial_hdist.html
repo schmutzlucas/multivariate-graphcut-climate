@@ -1,0 +1,60 @@
+<!DOCTYPE html><html><head><title>R: Evaluate non-renormalised LDR Hellinger score from a...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>compute_mmm_partial_hdist</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Evaluate non-renormalised LDR Hellinger score from a reference to D-MMM</h2>
+
+<h3>Description</h3>
+
+<p>Evaluate non-renormalised LDR Hellinger score from a reference to D-MMM
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>compute_mmm_partial_hdist(
+  pdf_ref,
+  pdf_models,
+  selected_indices,
+  mmm_pdf = NULL
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="pdf_ref">pdf_ref</code></td>
+<td>
+<p>Reference PMFs, lon x lat x bins, normalised on the common support.</p>
+</td></tr>
+<tr><td><code id="pdf_models">pdf_models</code></td>
+<td>
+<p>Candidate PMFs, lon x lat x bins x models, used if mmm_pdf is NULL.</p>
+</td></tr>
+<tr><td><code id="selected_indices">selected_indices</code></td>
+<td>
+<p>Nested list indexed longitude then latitude, containing
+valid one-based reference-selected bin indices. Empty selections are not valid here.</p>
+</td></tr>
+<tr><td><code id="mmm_pdf">mmm_pdf</code></td>
+<td>
+<p>Optional precomputed equal-model average, as in compute_mmm_hdist().</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Lon x lat score matrix with no renormalisation on selected bins. Invalid
+inputs/nonfinite scores raise an error; singleton spatial dimensions are retained.
+</p>
+
+</main>
+
+</div>
+</body></html>

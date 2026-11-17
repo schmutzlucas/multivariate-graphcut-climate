@@ -1,0 +1,78 @@
+<!DOCTYPE html><html><head><title>R: Render a pair of ordinary or restricted Hellinger maps</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>build_hdist3_pair_plot</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Render a pair of ordinary or restricted Hellinger maps</h2>
+
+<h3>Description</h3>
+
+<p>Render a pair of ordinary or restricted Hellinger maps
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>build_hdist3_pair_plot(
+  h_mmm,
+  h_gc,
+  lon,
+  lat,
+  limits = c(0, 0.5),
+  palette_high = "#015a8c",
+  left_title = "D-MMM",
+  right_title = "GC-0.125",
+  row_title = "Hellinger distance",
+  show_x_title = TRUE
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="h_mmm">h_mmm</code>, <code id="h_gc">h_gc</code></td>
+<td>
+<p>Numeric longitude x latitude D-MMM/GC score matrices in [0,1];
+missing cells remain missing and values above limits are visually squished.</p>
+</td></tr>
+<tr><td><code id="lon">lon</code>, <code id="lat">lat</code></td>
+<td>
+<p>Regular cylindrical grid centres matching the matrices.</p>
+</td></tr>
+<tr><td><code id="limits">limits</code></td>
+<td>
+<p>Two finite increasing shared colour-scale endpoints.</p>
+</td></tr>
+<tr><td><code id="palette_high">palette_high</code></td>
+<td>
+<p>Colour at the upper endpoint of a white-to-colour gradient.</p>
+</td></tr>
+<tr><td><code id="left_title">left_title</code>, <code id="right_title">right_title</code></td>
+<td>
+<p>Scalar character method panel titles; empty hides.</p>
+</td></tr>
+<tr><td><code id="row_title">row_title</code></td>
+<td>
+<p>Character or plotmath title for the shared row; empty hides.</p>
+</td></tr>
+<tr><td><code id="show_x_title">show_x_title</code></td>
+<td>
+<p>Logical; include the Longitude axis title when TRUE.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>patchwork plot with equal-size maps, shared scale/legend and the
+manuscript coastline, crop and typography. No scores or files are modified.
+</p>
+
+</main>
+
+</div>
+</body></html>

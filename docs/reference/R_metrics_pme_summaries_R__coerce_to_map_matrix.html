@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head><title>R: Resolve one PME map without silently reinterpreting a...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>coerce_to_map_matrix</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Resolve one PME map without silently reinterpreting a different grid shape</h2>
+
+<h3>Description</h3>
+
+<p>Resolve one PME map without silently reinterpreting a different grid shape
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>coerce_to_map_matrix(map_obj, expected_dim, label)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="map_obj">map_obj</code></td>
+<td>
+<p>Numeric matrix of the expected shape, or a dimensionless legacy
+vector already in longitude-fastest column-major order.</p>
+</td></tr>
+<tr><td><code id="expected_dim">expected_dim</code></td>
+<td>
+<p>Positive integer c(nlon,nlat) shape.</p>
+</td></tr>
+<tr><td><code id="label">label</code></td>
+<td>
+<p>Map identity used in error messages.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Lon x lat matrix. A matrix/array with a different shape fails even
+when its element count matches; only a raw vector can be reshaped.
+</p>
+
+</main>
+
+</div>
+</body></html>

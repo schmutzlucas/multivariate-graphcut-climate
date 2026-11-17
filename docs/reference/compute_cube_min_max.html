@@ -1,0 +1,49 @@
+<!DOCTYPE html><html><head><title>R: Reduce a climate cube to local histogram-support extrema</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>compute_cube_min_max</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Reduce a climate cube to local histogram-support extrema</h2>
+
+<h3>Description</h3>
+
+<p>Reduce a climate cube to local histogram-support extrema
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>compute_cube_min_max(cube, variable)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="cube">cube</code></td>
+<td>
+<p>Numeric lon x lat x time array in prepared physical units.</p>
+</td></tr>
+<tr><td><code id="variable">variable</code></td>
+<td>
+<p>Variable identifier. pr is transformed with log1p before extrema;
+tas and psl remain unchanged. Finite negative pr is corrected before log1p.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List with lon x lat min/max matrices, omitting missing samples;
+nonfinite extrema become NA. This is not the strict corrected-input approval
+gate: infinities are invalid; missing observations are omitted. Cells with
+no valid observations retain NA bounds rather than an invented support.
+</p>
+
+</main>
+
+</div>
+</body></html>

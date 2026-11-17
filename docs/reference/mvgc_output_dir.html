@@ -1,0 +1,42 @@
+<!DOCTYPE html><html><head><title>R: Create and resolve a configured local output directory</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>mvgc_output_dir</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create and resolve a configured local output directory</h2>
+
+<h3>Description</h3>
+
+<p>Create and resolve a configured local output directory
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>mvgc_output_dir(component = "")
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="component">component</code></td>
+<td>
+<p>Relative output subdirectory, or an empty string for the root.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Path under article1_config()$output_root. Creates missing directories
+recursively; callers should pass repository-controlled relative components.
+</p>
+
+</main>
+
+</div>
+</body></html>

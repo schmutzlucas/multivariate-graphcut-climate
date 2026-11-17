@@ -1,0 +1,57 @@
+<!DOCTYPE html><html><head><title>R: Resolve one prepared NetCDF input for a model and variable</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>find_matching_netcdf_file</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Resolve one prepared NetCDF input for a model and variable</h2>
+
+<h3>Description</h3>
+
+<p>An active <code>MVGC_INPUT_REGISTRY</code> takes precedence and never falls back to
+directory discovery. Otherwise search <code>data_dir/model/variable</code>; with
+multiple files choose the smallest filename year span covering the request.
+A sole file is returned without proving its dates; extraction audits it later.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>find_matching_netcdf_file(data_dir, model, variable, required_years)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="data_dir">data_dir</code></td>
+<td>
+<p>Root directory used only without an active input registry.</p>
+</td></tr>
+<tr><td><code id="model">model</code></td>
+<td>
+<p>Single model identifier, e.g. <code>ERA5</code>.</p>
+</td></tr>
+<tr><td><code id="variable">variable</code></td>
+<td>
+<p>Prepared variable identifier, e.g. <code>pr</code>.</p>
+</td></tr>
+<tr><td><code id="required_years">required_years</code></td>
+<td>
+<p>Nonempty integer vector of requested years.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>One path. Missing/ambiguous coverage raises an error; choosing among
+multiple covering files emits a warning.
+</p>
+
+</main>
+
+</div>
+</body></html>

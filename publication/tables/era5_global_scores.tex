@@ -1,0 +1,38 @@
+\begin{table}[t]
+\centering
+\caption{Area-weighted scores in the ERA5 experiment for the equal-weight baselines and the hybrid graph-cut reconstruction with \(\lambda=0.125\). Distributional scores use D-MMM as the baseline, while mean absolute errors of target-period mean fields use MMM. Relative improvement (\%) is computed from unrounded scores as \(100(S_{\mathrm{baseline}}-S_{\mathrm{GC}})/S_{\mathrm{baseline}}\); positive values favour GC-\(0.125\), whereas negative values indicate deterioration. Lower scores are better. Scores are displayed to three decimals and improvements to one decimal, with improvements calculated before display rounding.}
+\label{tab:era5_global_scores}
+\begin{tabular}{llrrr}
+\hline
+Metric & Variables & Baseline & GC-\(0.125\) & Improvement \\
+\hline
+Hellinger distance
+& \(\mathit{pr}^{\ast},\mathit{tas},\mathit{psl}\)
+& 0.248 & 0.189 & 23.6\,\% \\
+
+LDR Hellinger score, \(\ell_{\mathrm{LDR}}=0.01\)
+& \(\mathit{pr}^{\ast},\mathit{tas},\mathit{psl}\)
+& 0.164 & 0.093 & 43.4\,\% \\
+
+LDR Hellinger score, \(\ell_{\mathrm{LDR}}=0.05\)
+& \(\mathit{pr}^{\ast},\mathit{tas},\mathit{psl}\)
+& 0.189 & 0.121 & 36.2\,\% \\
+
+LDR Hellinger score, \(\ell_{\mathrm{LDR}}=0.10\)
+& \(\mathit{pr}^{\ast},\mathit{tas},\mathit{psl}\)
+& 0.200 & 0.136 & 32.2\,\% \\
+
+Mean absolute error
+& \(\mathit{tas}\) [K]
+& 0.866 & 0.604 & 30.3\,\% \\
+
+Mean absolute error
+& \(\mathit{pr}\) [mm day\(^{-1}\)]
+& 0.511 & 0.481 & 5.9\,\% \\
+
+Mean absolute error
+& \(\mathit{psl}\) [Pa]
+& 69.468 & 71.612 & -3.1\,\% \\
+\hline
+\end{tabular}
+\end{table}

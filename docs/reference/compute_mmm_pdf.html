@@ -1,0 +1,48 @@
+<!DOCTYPE html><html><head><title>R: Average candidate PMFs with equal model weight to form D-MMM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>compute_mmm_pdf</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Average candidate PMFs with equal model weight to form D-MMM</h2>
+
+<h3>Description</h3>
+
+<p>Average candidate PMFs with equal model weight to form D-MMM
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>compute_mmm_pdf(pdf_models)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="pdf_models">pdf_models</code></td>
+<td>
+<p>Normalised nonnegative finite PMFs, lon x lat x bins x models.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Lon x lat x bins arithmetic mean. Models, not their sample counts,
+have equal weight. Invalid candidate PMFs raise an error before averaging.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class='language-R'>compute_mmm_pdf(array(c(.2,.8,.4,.6),c(1,1,2,2)))
+</code></pre>
+
+</main>
+
+</div>
+</body></html>

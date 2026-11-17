@@ -1,0 +1,97 @@
+<!DOCTYPE html><html><head><title>R: Prepare matched odd/even calibration-date read plans across...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>prepare_k_sensitivity_plans</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Prepare matched odd/even calibration-date read plans across model variables</h2>
+
+<h3>Description</h3>
+
+<p>Prepare matched odd/even calibration-date read plans across model variables
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>prepare_k_sensitivity_plans(
+  model_names,
+  variables,
+  data_dir,
+  years,
+  lon,
+  lat,
+  season_start_md = c(1, 1),
+  season_end_md = c(12, 31),
+  strict_time_checks = TRUE,
+  season_selection_mode = "auto",
+  time_decode_mode = "auto",
+  requested_year_policy = "warn",
+  verbose = TRUE
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="model_names">model_names</code></td>
+<td>
+<p>Distinct prepared model identifiers, including the reference.</p>
+</td></tr>
+<tr><td><code id="variables">variables</code></td>
+<td>
+<p>Ordered pr/tas/psl identifiers.</p>
+</td></tr>
+<tr><td><code id="data_dir">data_dir</code></td>
+<td>
+<p>Prepared NetCDF hierarchy root unless a frozen registry is active.</p>
+</td></tr>
+<tr><td><code id="years">years</code></td>
+<td>
+<p>Requested calibration years; record year parity defines the split.</p>
+</td></tr>
+<tr><td><code id="lon">lon</code>, <code id="lat">lat</code></td>
+<td>
+<p>Requested rectilinear coordinate vectors, without interpolation.</p>
+</td></tr>
+<tr><td><code id="season_start_md">season_start_md</code>, <code id="season_end_md">season_end_md</code></td>
+<td>
+<p>Inclusive non-leap reference month/day boundaries.</p>
+</td></tr>
+<tr><td><code id="strict_time_checks">strict_time_checks</code></td>
+<td>
+<p>Whether to enforce legacy daily-mapping assumptions.</p>
+</td></tr>
+<tr><td><code id="season_selection_mode">season_selection_mode</code></td>
+<td>
+<p>Auto, exact_month_day, or fractional selection.</p>
+</td></tr>
+<tr><td><code id="time_decode_mode">time_decode_mode</code></td>
+<td>
+<p>Auto, helpers_cf, or empirical decoding.</p>
+</td></tr>
+<tr><td><code id="requested_year_policy">requested_year_policy</code></td>
+<td>
+<p>Warn or stop for unavailable/incomplete requested years.</p>
+</td></tr>
+<tr><td><code id="verbose">verbose</code></td>
+<td>
+<p>Whether to print per-model metadata progress.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Named model list with per-variable extraction plans, selected_year,
+odd/even logical masks. Reads time/coordinate metadata, not climate cubes;
+compares date identities across variables rather than their file-local offsets.
+</p>
+
+</main>
+
+</div>
+</body></html>

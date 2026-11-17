@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><title>R: Read a finite positive numeric resource setting</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>read_positive_numeric_env</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Read a finite positive numeric resource setting</h2>
+
+<h3>Description</h3>
+
+<p>Read a finite positive numeric resource setting
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>read_positive_numeric_env(var_name, default_value)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="var_name">var_name</code></td>
+<td>
+<p>Environment-variable name, usually a support memory-budget setting.</p>
+</td></tr>
+<tr><td><code id="default_value">default_value</code></td>
+<td>
+<p>Finite positive numeric default supplied by the caller.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Numeric value; unset/empty settings use the default, invalid nonempty
+settings warn and use it. Does not modify the environment or allocate memory.
+</p>
+
+</main>
+
+</div>
+</body></html>

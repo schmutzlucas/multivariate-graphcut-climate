@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><title>R: Construct one cell's odd/even trivariate PMFs at explicit...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>cell_pmfs_for_k</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Construct one cell's odd/even trivariate PMFs at explicit resolutions</h2>
+
+<h3>Description</h3>
+
+<p>Construct one cell's odd/even trivariate PMFs at explicit resolutions
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>cell_pmfs_for_k(pr, tas, psl, range_3d, split_masks, k_values)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="pr">pr</code>, <code id="tas">tas</code>, <code id="psl">psl</code></td>
+<td>
+<p>Aligned numeric calibration samples; pr is already log transformed.</p>
+</td></tr>
+<tr><td><code id="range_3d">range_3d</code></td>
+<td>
+<p>Three x two common-support matrix in pr/tas/psl order.</p>
+</td></tr>
+<tr><td><code id="split_masks">split_masks</code></td>
+<td>
+<p>List of logical sample masks, normally odd and even years.</p>
+</td></tr>
+<tr><td><code id="k_values">k_values</code></td>
+<td>
+<p>Positive integer per-variable resolutions to evaluate.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Named resolution list, each containing split PMF vectors of length k^3.
+Empty complete-case splits retain NULL slots rather than deleting/shifting
+list entries. Uses the same equal-width floating-edge convention as production.
+</p>
+
+</main>
+
+</div>
+</body></html>

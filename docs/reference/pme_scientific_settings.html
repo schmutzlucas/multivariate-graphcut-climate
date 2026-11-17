@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head><title>R: Construct a reproducible signature of the PME scientific...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>pme_scientific_settings</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Construct a reproducible signature of the PME scientific implementation/settings</h2>
+
+<h3>Description</h3>
+
+<p>Construct a reproducible signature of the PME scientific implementation/settings
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>pme_scientific_settings(cfg = article1_config())
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="cfg">cfg</code></td>
+<td>
+<p>Shared experiment configuration, optionally a compact test grid.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List of exact scientific parameters, canonical source fingerprints,
+R/platform and relevant installed software versions. Ignores ordinary R
+comments/formatting but not executable changes.
+Does not hash climate payloads; input/support provenance is checked separately.
+</p>
+
+</main>
+
+</div>
+</body></html>

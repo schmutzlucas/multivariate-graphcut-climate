@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><title>R: Select one Level 1 input while preserving explicit...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>reproduction_input</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Select one Level 1 input while preserving explicit environment overrides</h2>
+
+<h3>Description</h3>
+
+<p>Select one Level 1 input while preserving explicit environment overrides
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>reproduction_input(key, profile = reproduction_profile())
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="key">key</code></td>
+<td>
+<p>One named input from reproduction_profile()$paths.</p>
+</td></tr>
+<tr><td><code id="profile">profile</code></td>
+<td>
+<p>Resolved compact-result profile, defaulting to the selected profile.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Path from the named override, or the selected profile. An explicitly
+empty override fails; missing files never trigger selection of another cohort.
+</p>
+
+</main>
+
+</div>
+</body></html>

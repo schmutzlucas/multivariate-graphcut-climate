@@ -1,0 +1,6 @@
+table_label,accepted_latex,entry_point,input
+tab:cmip6_models,publication/tables/cmip6_models.tex,tables/render.R,config/*_models.txt
+tab:era5_global_scores,publication/tables/era5_global_scores.tex,tables/render.R,results/era5/summary_long.csv
+tab:era5_distributional_sensitivity,publication/tables/era5_variable_subsets.tex,tables/render.R,results/era5/summary_long.csv
+tab:pme_reference_improvement,publication/tables/pme_reference_hellinger.tex,tables/render.R,results/perfect_model/evaluation/reference_scores.csv
+tab:pme_reference_improvement_ldr,publication/tables/pme_reference_ldr.tex,tables/render.R,results/perfect_model/evaluation/reference_scores.csv

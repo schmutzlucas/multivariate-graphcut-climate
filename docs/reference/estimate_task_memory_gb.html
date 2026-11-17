@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><title>R: Apply the support builder's heuristic per-worker memory...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>estimate_task_memory_gb</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Apply the support builder's heuristic per-worker memory multiplier</h2>
+
+<h3>Description</h3>
+
+<p>Apply the support builder's heuristic per-worker memory multiplier
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>estimate_task_memory_gb(variable, cube_gb)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="variable">variable</code></td>
+<td>
+<p>Prepared variable name; pr requires transformation temporaries.</p>
+</td></tr>
+<tr><td><code id="cube_gb">cube_gb</code></td>
+<td>
+<p>Dense selected-cube size in GiB.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Estimated GiB, using multiplier 2.2 for pr and 1.2 for other variables.
+This is a scheduling heuristic, not a measured or guaranteed peak-memory bound.
+</p>
+
+</main>
+
+</div>
+</body></html>

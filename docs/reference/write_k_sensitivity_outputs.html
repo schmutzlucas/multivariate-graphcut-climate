@@ -1,0 +1,49 @@
+<!DOCTYPE html><html><head><title>R: Save the Article 1 histogram-resolution diagnostic and its...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container"><main>
+
+<table style="width: 100%;"><tr><td>write_k_sensitivity_outputs</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Save the Article 1 histogram-resolution diagnostic and its numerical outputs</h2>
+
+<h3>Description</h3>
+
+<p>Save the Article 1 histogram-resolution diagnostic and its numerical outputs
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>write_k_sensitivity_outputs(result, output_dir)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr><td><code id="result">result</code></td>
+<td>
+<p>Result list from run_k_sensitivity(), including a finite k=8 score.</p>
+</td></tr>
+<tr><td><code id="output_dir">output_dir</code></td>
+<td>
+<p>Output directory to create if absent. Fixed diagnostic
+filenames may overwrite earlier renders; production controllers require a new
+run directory. Validation precedes all writes, including CSV/RDS output.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Paths to global CSV, cellwise RDS, PNG and PDF, invisibly. Writes a
+29 x 18 cm figure at 300 dpi, with actual scope annotations. Does not change
+production k, launch an experiment, or imply scientific approval of a run.
+</p>
+
+</main>
+
+</div>
+</body></html>
