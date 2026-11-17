@@ -33,5 +33,13 @@ references:
     authors:
       - family-names: Schmutz
         given-names: Lucas
-    journal: "Earth System Dynamics (manuscript in preparation)"
+      - family-names: Vrac
+        given-names: Mathieu
+      - family-names: Allard
+        given-names: Denis
+      - family-names: Thao
+        given-names: Soulivanh
+      - family-names: Mariethoz
+        given-names: Gregoire
+    journal: "Earth System Dynamics (submitted manuscript)"
 # Add the version DOI (identifiers/doi) and the article DOI once they are issued.
